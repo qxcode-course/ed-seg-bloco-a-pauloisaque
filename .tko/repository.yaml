@@ -14,8 +14,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@revisão
 - ed@main-quest
+- ed@revisão
 tasks: {}
 flags:
   painel: 0
