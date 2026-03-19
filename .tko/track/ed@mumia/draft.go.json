@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-19_11-14-15",
+            "content": "@@ -169,23 +169,16 @@\n a int32)\n- string\n  %7B%0A%09if a\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-19_11-15-12",
+            "content": "@@ -124,10 +124,12 @@\n e, %22\n+ \n eh\n+ \n %22, v\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-19_11-15-29",
+            "content": "@@ -220,16 +220,17 @@\n %0A%09if a %3C\n+=\n  18 %7B%0A%09%09\n@@ -254,16 +254,17 @@\n %0A%09if a %3C\n+=\n  65 %7B%0A%09%09\n@@ -289,16 +289,17 @@\n %0A%09if a %3C\n+=\n  1000 %7B%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-19_11-16-27",
+            "content": "@@ -184,16 +184,17 @@\n %0A%09if a %3C\n+=\n  12 %7B%0A%09%09\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-19_11-18-01",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar name string\n\tvar age int32\n\tfmt.Scan(&name)\n\tfmt.Scan(&age)\n\tfmt.Println(name, \"eh\", verifyAge(age))\n}\n\nfunc verifyAge(a int32) string {\n\tif a < 12 {\n\t\treturn \"crianca\"\n\t}\n\tif a < 18 {\n\t\treturn \"jovem\"\n\t}\n\tif a < 65 {\n\t\treturn \"adulto\"\n\t}\n\tif a < 1000 {\n\t\treturn \"idoso\"\n\t}\n\treturn \"mumia\"\n}\n",
+            "lines": "27"
+        }
+    ]
+}

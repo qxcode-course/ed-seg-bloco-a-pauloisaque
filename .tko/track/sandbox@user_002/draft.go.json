@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-18_10-29-42",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n fmt.Prin\n@@ -63,34 +63,6 @@\n e%22)%0A\n-%09fmt.Println(%22mais e mais%22)%0A\n %7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-18_10-30-07",
+            "content": "@@ -39,86 +39,8 @@\n ) %7B%0A\n-%09var matricula int32%0A%09fmt.Print(%22Digite a matr%C3%ADcula: %22)%0A%09fmt.Scan(&matricula)%0A\n %09fmt\n@@ -90,44 +90,6 @@\n s%22)%0A\n-%09fmt.Println(%22Matr%C3%ADcula:%22, matricula)%0A\n %7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-18_10-34-44",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar matricula int32\n\tfmt.Print(\"Digite a matr\u00edcula: \")\n\tfmt.Scan(&matricula)\n\tfmt.Println(\"qxcode\")\n\tfmt.Println(\"mais e mais\")\n\tfmt.Println(\"Matr\u00edcula:\", matricula)\n}\n",
+            "lines": "12"
+        }
+    ]
+}

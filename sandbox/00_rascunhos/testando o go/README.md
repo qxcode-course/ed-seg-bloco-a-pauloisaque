@@ -1,12 +1,8 @@
 ---
-key: user_001
+key: user_002
 ---
 
---- rascunho 1
-key: user_001
----
-
-# rasc
+# testando o go
 
 Escreva aqui as informações que você quer salvar, esse é o seu rascunho.
 O texto abaixo é informativo e você pode apagar depois de aprender como usar os rascunhos.

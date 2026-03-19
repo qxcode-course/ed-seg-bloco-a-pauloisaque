@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_16-17-05",
+            "content": "@@ -11,85 +11,8 @@\n in%0A%0A\n-import fmt%0A%0Afmt.scan(a)%0Afmt.scan(b)%0Afmt.scan(c)%0Afmt.println(heron(a, b, c))%0A%0A\n func\n@@ -120,48 +120,9 @@\n p * \n-(p - a) * (p - b) * (p - c))%0A%09return area\n+1)\n %0A%7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-19_10-48-39",
+            "content": "@@ -18,135 +18,54 @@\n ort \n-(%0A%09%22fmt%22%0A%09%22math%22%0A)%0A%0Afunc main() %7B%0A%09var a float64%0A%09var b float64%0A%09var c float64%0A%09\n+fmt%0A%0A\n fmt.\n-S\n+s\n can(\n-&\n a)%0A\n-%09\n fmt.\n-S\n+s\n can(\n-&\n b)%0A\n-%09\n fmt.\n-S\n+s\n can(\n-&\n c)%0A\n-%09\n fmt.\n-P\n+p\n rint\n@@ -82,18 +82,16 @@\n , b, c))\n-%0A%7D\n %0A%0Afunc h\n@@ -101,46 +101,43 @@\n n(a \n-float64, b float64, c float64)\n+int, b int, c int) %7B%0A%09var p\n  float64\n  %7B%0A%09\n@@ -132,18 +132,16 @@\n  float64\n- %7B\n %0A%09p := f\n@@ -188,14 +188,9 @@\n a = \n-math.S\n+s\n qrt(\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-19_10-58-49",
+            "content": "@@ -149,20 +149,11 @@\n rint\n-f(%22%25.2f/n%22, \n+ln(\n hero\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-19_11-00-38",
+            "content": "@@ -152,16 +152,18 @@\n tf(%22%25.2f\n+/n\n %22, heron\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-19_11-00-47",
+            "content": "@@ -156,10 +156,8 @@\n %25.2f\n-%5Cn\n %22, h\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-19_11-01-05",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar a float64\n\tvar b float64\n\tvar c float64\n\tfmt.Scan(&a)\n\tfmt.Scan(&b)\n\tfmt.Scan(&c)\n\tfmt.Printf(\"%.2f\\n\", heron(a, b, c))\n}\n\nfunc heron(a float64, b float64, c float64) float64 {\n\tp := float64(a+b+c) / 2\n\tvar area float64\n\tarea = math.Sqrt(p * (p - a) * (p - b) * (p - c))\n\treturn area\n}\n",
+            "lines": "23"
+        }
+    ]
+}

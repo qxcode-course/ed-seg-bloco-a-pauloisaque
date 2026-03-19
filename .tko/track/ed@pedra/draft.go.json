@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_16-31-15",
+            "content": "@@ -76,123 +76,154 @@\n  %7B%0A%09\n-qtd := 0%0A%09fmt.Scan(&qtd)%0A%09jogadas := make(%5B%5DJogada, qtd)%0A%09for _, jog := range jogadas %7B%0A%09%09fmt.Scan(&jog.pa, &jog.pb\n+jogadas := make(%5B%5DJogada, 0)%0A%09qtd := 0%0A%09fmt.Scan(&qtd)%0A%09for range qtd %7B%0A%09%09var a, b int%0A%09%09fmt.Scan(&a, &b)%0A%09%09jogadas = append(jogadas, Jogada%7Ba, b%7D\n )%0A%09%7D\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-03-16_16-34-00",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Jogada struct {\n\tpa, pb int\n}\n\nfunc main() {\n\tqtd := 0\n\tfmt.Scan(&qtd)\n\tjogadas := make([]Jogada, qtd)\n\tfor _, jog := range jogadas {\n\t\tfmt.Scan(&jog.pa, &jog.pb)\n\t}\n\tfmt.Println(jogadas)\n}\n",
+            "lines": "17"
+        }
+    ]
+}
