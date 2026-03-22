@@ -7,8 +7,38 @@
         },
         {
             "label": "2026-03-16_16-34-00",
-            "content": "package main\n\nimport \"fmt\"\n\ntype Jogada struct {\n\tpa, pb int\n}\n\nfunc main() {\n\tqtd := 0\n\tfmt.Scan(&qtd)\n\tjogadas := make([]Jogada, qtd)\n\tfor _, jog := range jogadas {\n\t\tfmt.Scan(&jog.pa, &jog.pb)\n\t}\n\tfmt.Println(jogadas)\n}\n",
+            "content": "@@ -213,87 +213,11 @@\n joga\n-r(jogadas))%0A%7D%0A%0Afunc jogar(jogadas Jogada) %7B%0A%09fmt.Println(jogadas.pa, jogadas.pb\n+das\n )%0A%7D%0A\n",
             "lines": "17"
+        },
+        {
+            "label": "2026-03-21_08-34-23",
+            "content": "@@ -247,24 +247,15 @@\n das \n-%5B%5D\n Jogada)\n- string\n  %7B%0A%09\n@@ -277,25 +277,23 @@\n adas\n-%5B0%5D.pa)%0A%09return %22%22\n+.pa, jogadas.pb)\n %0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-21_08-36-44",
+            "content": "@@ -257,134 +257,16 @@\n da) \n-int32 %7B%0A%09var resultado int32 = 0%0A%09for i := range jogadas %7B%0A%09%09if jogadas%5Bi%5D.pa %3C 10 %7C%7C jogadas%5Bi%5D.pb %3C 10 %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%7D\n+string %7B\n %0A%09fm\n@@ -302,16 +302,9 @@\n urn \n-resultado\n+%22%22\n %0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-21_08-49-56",
+            "content": "@@ -270,29 +270,27 @@\n var \n-placarFinal %5B%5D%5B%5D\n+resultado \n int32\n+ = 0\n %0A%09fo\n@@ -318,86 +318,11 @@\n %7B%0A%09%09\n-var resultadoJogada %5B%5Dint32%0A%09%09resultadoJogada = append(resultadoJogada, int32(\n+if \n joga\n@@ -333,10 +333,18 @@\n i%5D.p\n-b-\n+a %3C 10 %7C%7C \n joga\n@@ -355,113 +355,81 @@\n i%5D.p\n-a), int32(i))%0A%09%09placarFinal = append(placarFinal, resultadoJogada)%0A%09%09fmt.Println(placarFinal)%0A%09%7D%0A%09return 0\n+b %3C 10 %7B%0A%09%09%09continue%0A%09%09%7D%0A%0A%09%7D%0A%09fmt.Println(jogadas%5B0%5D.pa)%0A%09return resultado\n %0A%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-21_09-02-27",
+            "content": "@@ -292,30 +292,8 @@\n t32%0A\n-%09fmt.Println(jogadas)%0A\n %09for\n@@ -487,16 +487,43 @@\n Jogada)%0A\n+%09%09fmt.Println(placarFinal)%0A\n %09%7D%0A%09retu\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-21_09-03-37",
+            "content": "@@ -130,25 +130,30 @@\n , qtd)%0A%09for \n-i\n+_, jog\n  := range jo\n@@ -175,23 +175,16 @@\n can(&jog\n-adas%5Bi%5D\n .pa, &jo\n@@ -184,23 +184,16 @@\n pa, &jog\n-adas%5Bi%5D\n .pb)%0A%09%7D%0A\n@@ -301,27 +301,23 @@\n Println(\n-placarFinal\n+jogadas\n )%0A%09for i\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-21_09-07-29",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Jogada struct {\n\tpa, pb int\n}\n\nfunc main() {\n\tqtd := 0\n\tfmt.Scan(&qtd)\n\tjogadas := make([]Jogada, qtd)\n\tfor i := range jogadas {\n\t\tfmt.Scan(&jogadas[i].pa, &jogadas[i].pb)\n\t}\n\tfmt.Println(jogar(jogadas))\n}\n\nfunc jogar(jogadas []Jogada) int32 {\n\tvar placarFinal [][]int32\n\tfmt.Println(placarFinal)\n\tfor i := range jogadas {\n\t\tvar resultadoJogada []int32\n\t\tresultadoJogada = append(resultadoJogada, int32(jogadas[i].pb-jogadas[i].pa), int32(i))\n\t\tplacarFinal = append(placarFinal, resultadoJogada)\n\t}\n\treturn 0\n}\n",
+            "lines": "28"
         }
     ]
 }

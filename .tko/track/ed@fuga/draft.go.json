@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-19_13-21-14",
+            "content": "@@ -836,35 +836,8 @@\n %0A%09%7D%0A\n-%09fmt.Print(fugitivoBuffer)%0A\n %09ret\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-19_15-14-16",
+            "content": "@@ -410,19 +410,14 @@\n vo%0A%09\n-var fugiu =\n+return\n  ePo\n@@ -488,53 +488,8 @@\n ao)%0A\n-%09if fugiu == 1 %7B%0A%09%09return %22S%22%0A%09%7D%0A%09return %22N%22%0A\n %7D%0A%0Af\n@@ -587,21 +587,22 @@\n  int32) \n-int32\n+string\n  %7B%0A%09if f\n@@ -773,17 +773,19 @@\n %09return \n-1\n+%22N%22\n %0A%09%7D%0A%09if \n@@ -825,17 +825,19 @@\n %09return \n-0\n+%22S%22\n %0A%09%7D%0A%09fmt\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-19_15-21-19",
+            "content": "@@ -336,22 +336,16 @@\n fugitivo\n-Buffer\n  int32, \n@@ -381,23 +381,276 @@\n fugi\n-u = %22%22%0A%09for\n+tivoBuffer int32 = fugitivo%0A%09var fugiu = ePolicialOuHelicoptero(fugitivoBuffer, policial, helicoptero, direcao)%0A%09if fugiu == 1 %7B%0A%09%09return %22S%22%0A%09%7D%0A%09return %22N%22%0A%7D%0A%0Afunc ePolicialOuHelicoptero(fugitivoBuffer int32, policial int32, helicoptero int32, direcao int32) int32\n  %7B%0A\n-%09\n %09if \n@@ -686,25 +686,24 @@\n ao == 1 %7B%0A%09%09\n-%09\n fugitivoBuff\n@@ -709,21 +709,19 @@\n fer = 0%0A\n-%09\n %09%7D%0A\n-%09\n %09if fugi\n@@ -753,25 +753,24 @@\n o == -1 %7B%0A%09%09\n-%09\n fugitivoBuff\n@@ -777,21 +777,19 @@\n er = 15%0A\n-%09\n %09%7D%0A\n-%09\n %09if fugi\n@@ -806,51 +806,33 @@\n  == \n-helicoptero %7B%0A%09%09%09fugiu = %22S%22%0A%09%09%09break%0A%09\n+policial %7B%0A%09%09return 1%0A\n %09%7D%0A\n-%09\n %09if \n@@ -853,49 +853,95 @@\n  == \n-policial %7B%0A%09%09%09fugiu = %22N%22%0A%09%09%09break%0A%09%09%7D%0A%09%09\n+helicoptero %7B%0A%09%09return 0%0A%09%7D%0A%09fmt.Print(fugitivoBuffer)%0A%09return ePolicialOuHelicoptero((\n fugi\n@@ -955,18 +955,17 @@\n fer \n-+=\n+-\n  direcao\n %0A%09%7D%0A\n@@ -964,24 +964,41 @@\n ecao\n-%0A%09%7D%0A%09return fugiu\n+), policial, helicoptero, direcao)\n %0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-19_15-34-36",
+            "content": "@@ -713,14 +713,7 @@\n ugiu\n- + %22%5Cn%22\n %0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-19_15-35-26",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar helicoptero int32\n\tvar policial int32\n\tvar fugitivo int32\n\tvar direcao int32\n\tfmt.Scan(&helicoptero)\n\tfmt.Scan(&policial)\n\tfmt.Scan(&fugitivo)\n\tfmt.Scan(&direcao)\n\tfmt.Print(consegueFugir(helicoptero, policial, fugitivo, direcao))\n}\n\nfunc consegueFugir(helicoptero int32, policial int32, fugitivoBuffer int32, direcao int32) string {\n\tvar fugiu = \"\"\n\tfor {\n\t\tif fugitivoBuffer == 16 && direcao == 1 {\n\t\t\tfugitivoBuffer = 0\n\t\t}\n\t\tif fugitivoBuffer == 0 && direcao == -1 {\n\t\t\tfugitivoBuffer = 15\n\t\t}\n\t\tif fugitivoBuffer == helicoptero {\n\t\t\tfugiu = \"S\"\n\t\t\tbreak\n\t\t}\n\t\tif fugitivoBuffer == policial {\n\t\t\tfugiu = \"N\"\n\t\t\tbreak\n\t\t}\n\t\tfugitivoBuffer += direcao\n\t}\n\treturn fugiu + \"\\n\"\n}\n",
+            "lines": "37"
+        }
+    ]
+}
