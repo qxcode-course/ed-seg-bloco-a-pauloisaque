@@ -37,8 +37,68 @@
         },
         {
             "label": "2026-03-21_09-07-29",
-            "content": "package main\n\nimport \"fmt\"\n\ntype Jogada struct {\n\tpa, pb int\n}\n\nfunc main() {\n\tqtd := 0\n\tfmt.Scan(&qtd)\n\tjogadas := make([]Jogada, qtd)\n\tfor i := range jogadas {\n\t\tfmt.Scan(&jogadas[i].pa, &jogadas[i].pb)\n\t}\n\tfmt.Println(jogar(jogadas))\n}\n\nfunc jogar(jogadas []Jogada) int32 {\n\tvar placarFinal [][]int32\n\tfmt.Println(placarFinal)\n\tfor i := range jogadas {\n\t\tvar resultadoJogada []int32\n\t\tresultadoJogada = append(resultadoJogada, int32(jogadas[i].pb-jogadas[i].pa), int32(i))\n\t\tplacarFinal = append(placarFinal, resultadoJogada)\n\t}\n\treturn 0\n}\n",
+            "content": "@@ -297,16 +297,42 @@\n %5B%5Dint32%0A\n+%09fmt.Println(placarFinal)%0A\n %09for i :\n@@ -529,34 +529,8 @@\n %0A%09%7D%0A\n-%09fmt.Println(placarFinal)%0A\n %09ret\n",
             "lines": "28"
+        },
+        {
+            "label": "2026-03-22_19-47-14",
+            "content": "@@ -529,146 +529,16 @@\n al)%0A\n-%0A%09var vencedor int32 = placarFinal%5B0%5D%5B0%5D%0A%09for _, v := range placarFinal %7B%0A%09%09if v%5B0%5D %3C vencedor %7B%0A%09%09%09vencedor = v%5B0%5D%0A%09%09%7D%0A%09%7D%0A%09return vencedor\n+%09return 0\n %0A%7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-03-22_19-55-22",
+            "content": "@@ -301,28 +301,8 @@\n t32%0A\n-%09var vencedor int32%0A\n %09for\n@@ -531,22 +531,24 @@\n )%0A%0A%09var \n-minimo\n+vencedor\n  int32 =\n@@ -615,33 +615,18 @@\n %5D %3C \n-minimo %7B%0A%09%09%09minimo = v%5B0%5D\n+vencedor %7B\n %0A%09%09%09\n@@ -642,9 +642,9 @@\n = v%5B\n-1\n+0\n %5D%0A%09%09\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-22_19-56-35",
+            "content": "@@ -518,16 +518,42 @@\n gada)%0A%09%7D\n+%0A%09fmt.Println(placarFinal)\n %0A%0A%09var m\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-22_19-56-46",
+            "content": "@@ -522,34 +522,8 @@\n )%0A%09%7D\n-%0A%09fmt.Println(placarFinal)\n %0A%0A%09v\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-22_19-57-15",
+            "content": "@@ -518,16 +518,42 @@\n gada)%0A%09%7D\n+%0A%09fmt.Println(placarFinal)\n %0A%0A%09var m\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-22_19-58-29",
+            "content": "@@ -522,34 +522,8 @@\n )%0A%09%7D\n-%0A%09fmt.Println(placarFinal)\n %0A%0A%09v\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-22_19-58-44",
+            "content": "@@ -347,72 +347,8 @@\n s %7B%0A\n-%09%09if jogadas%5Bi%5D.pa %3C 10 %7C%7C jogadas%5Bi%5D.pb %3C 10 %7B%0A%09%09%09continue%0A%09%09%7D%0A\n %09%09va\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-22_20-00-36",
+            "content": "@@ -317,17 +317,16 @@\n r int32%0A\n-%0A\n %09for i :\n@@ -398,65 +398,16 @@\n %0A%09%09%09\n-placarFinal = append(placarFinal, %5B%5Dint32%7B100, int32(i)%7D)\n+continue\n %0A%09%09%7D\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-22_20-04-49",
+            "content": "@@ -457,20 +457,8 @@\n )%7D)%0A\n-%09%09%09continue%0A\n %09%09%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-22_20-05-22",
+            "content": "@@ -205,116 +205,8 @@\n %0A%09%7D%0A\n-%09var resultadoJogadas = jogar(jogadas)%0A%09if resultadoJogadas == 0 %7B%0A%09%09fmt.Println(%22sem ganhador%22)%0A%09%7D else %7B%0A%09\n %09fmt\n@@ -230,19 +230,16 @@\n gadas))%0A\n-%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-22_20-06-56",
+            "content": "@@ -755,16 +755,42 @@\n gada)%0A%09%7D\n+%0A%09fmt.Println(placarFinal)\n %0A%0A%09var m\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-22_20-07-04",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Jogada struct {\n\tpa, pb int\n}\n\nfunc main() {\n\tqtd := 0\n\tfmt.Scan(&qtd)\n\tjogadas := make([]Jogada, qtd)\n\tfor i := range jogadas {\n\t\tfmt.Scan(&jogadas[i].pa, &jogadas[i].pb)\n\t}\n\tvar resultadoJogadas = jogar(jogadas)\n\tif resultadoJogadas == 0 {\n\t\tfmt.Println(\"sem ganhador\")\n\t} else {\n\t\tfmt.Println(jogar(jogadas))\n\t}\n}\n\nfunc jogar(jogadas []Jogada) int32 {\n\tvar placarFinal [][]int32\n\tvar vencedor int32\n\n\tfor i := range jogadas {\n\t\tif jogadas[i].pa < 10 || jogadas[i].pb < 10 {\n\t\t\tplacarFinal = append(placarFinal, []int32{100, int32(i)})\n\t\t\tcontinue\n\t\t}\n\t\tvar resultadoJogada []int32\n\t\tresultadoJogada = append(resultadoJogada, int32(jogadas[i].pb-jogadas[i].pa), int32(i))\n\t\tplacarFinal = append(placarFinal, resultadoJogada)\n\t}\n\n\tvar minimo int32 = placarFinal[0][0]\n\tfor _, v := range placarFinal {\n\t\tif v[0] < minimo {\n\t\t\tminimo = v[0]\n\t\t\tvencedor = v[1]\n\t\t}\n\t}\n\treturn vencedor\n}\n",
+            "lines": "46"
         }
     ]
 }
