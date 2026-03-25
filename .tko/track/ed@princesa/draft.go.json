@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-25_20-25-56",
+            "content": "@@ -114,160 +114,34 @@\n     \n-%0A    var vivos = int32%5B%5D%0A    for i := range pessoas %7B%0A        vivos = append(vivos, i+1)%0A    %7D%0A%0A    for i := range vivos %7B%0A        fmt.Print(vivos)%0A    %7D%0A\n+fmt.Println(%22Hello, World!%22)\n %0A%7D\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-25_20-30-03",
+            "content": "@@ -129,15 +129,17 @@\n vos \n-%5B%5D\n+= \n int32\n+%5B%5D\n %0A   \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-25_20-30-29",
+            "content": "@@ -150,29 +150,21 @@\n  := \n-int32(0); i %3C\n+range\n  pessoas\n ; i+\n@@ -163,13 +163,8 @@\n soas\n-; i++\n  %7B%0A \n@@ -216,14 +216,8 @@\n for \n-int32 \n i :=\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-25_20-31-29",
+            "content": "@@ -221,24 +221,30 @@\n  %7D%0A%0A    for \n+int32 \n i := range v\n@@ -277,11 +277,8 @@\n ivos\n-%5Bi%5D\n )%0A  \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-25_20-31-54",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var pessoas int32\n    var espada int32\n\tfmt.Scan(&pessoas, &espada)\n    \n    var vivos []int32\n    for i := int32(0); i < pessoas; i++ {\n        vivos = append(vivos, i+1)\n    }\n\n    for i := range vivos {\n        fmt.Print(vivos[i])\n    }\n\n}",
+            "lines": "18"
+        }
+    ]
+}
