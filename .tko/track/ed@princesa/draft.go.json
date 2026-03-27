@@ -22,8 +22,18 @@
         },
         {
             "label": "2026-03-25_20-31-54",
-            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var pessoas int32\n    var espada int32\n\tfmt.Scan(&pessoas, &espada)\n    \n    var vivos []int32\n    for i := int32(0); i < pessoas; i++ {\n        vivos = append(vivos, i+1)\n    }\n\n    for i := range vivos {\n        fmt.Print(vivos[i])\n    }\n\n}",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -34,17 +34,20 @@\n ain() %7B%0A\n-%09\n+    \n var pess\n@@ -56,17 +56,20 @@\n s int32%0A\n-%09\n+    \n var espa\n@@ -106,18 +106,25 @@\n espada)%0A\n-%0A%09\n+    %0A    \n var vivo\n@@ -129,34 +129,20 @@\n vos \n-= make(%5B%5Dint32, pessoas)%0A%09\n+%5B%5Dint32%0A    \n for \n@@ -179,31 +179,54 @@\n + %7B%0A\n-%09%09vivos%5Bi%5D = i +1%0A%09%7D%0A%0A%09\n+        vivos = append(vivos, i+1)%0A    %7D%0A%0A    \n for \n@@ -248,10 +248,16 @@\n s %7B%0A\n-%09%09\n+        \n fmt.\n@@ -276,10 +276,12 @@\n i%5D)%0A\n-%09\n+    \n %7D%0A%0A%7D\n-%0A\n",
             "lines": "18"
+        },
+        {
+            "label": "2026-03-27_15-35-43",
+            "content": "@@ -25,60 +25,8 @@\n t%22%0A%0A\n-type vivo struct %7B%0A    num int32%0A    taVivo bool%0A%7D%0A%0A\n func\n@@ -122,20 +122,21 @@\n  make(%5B%5D\n-vivo\n+int32\n , pessoa\n@@ -191,230 +191,68 @@\n s%5Bi%5D\n-.num\n  = i +\n- \n 1%0A\n-        vivos%5Bi%5D.taVivo = true%0A%09%7D%0A%0A    fmt.Print(knext(vivos, espada))%0A%0A%7D%0A%0Afunc knext (vivos %5B%5Dvivo, espada int32) string %7B%0A    var result = %22%22%0A    %0A    %0A    if con %7B%0A%0A        knext(vivos, espada+2)%0A%0A    %7D%0A%0A    %0A%7D\n+%09%7D%0A%0A%09for i := range vivos %7B%0A%09%09fmt.Print(vivos%5Bi%5D)%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-03-27_15-50-45",
+            "content": "package main\n\nimport \"fmt\"\n\ntype vivo struct {\n    num int32\n    taVivo bool\n}\n\nfunc main() {\n\tvar pessoas int32\n\tvar espada int32\n\tfmt.Scan(&pessoas, &espada)\n\n\tvar vivos = make([]vivo, pessoas)\n\tfor i := int32(0); i < pessoas; i++ {\n\t\tvivos[i].num = i + 1\n        vivos[i].taVivo = true\n\t}\n\n    fmt.Print(knext(vivos, espada))\n\n}\n\nfunc knext (vivos []vivo, espada int32) string {\n    var result = \"\"\n    \n    \n    if con {\n\n        knext(vivos, espada+2)\n\n    }\n\n    \n}",
+            "lines": "36"
         }
     ]
 }

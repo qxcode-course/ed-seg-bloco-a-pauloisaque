@@ -25,8 +25,7 @@ flags:
   panel: 1
   inbox: 1
   show_panel: 0
-  tasks: 0
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@analise
+selected: ed@princesa
