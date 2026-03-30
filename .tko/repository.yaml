@@ -13,8 +13,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
 - ed@basic
+- ed@map_set
 tasks:
   ed@pintando: '{self:1, rate:100, study:45, friend:nao, code:1, debug:1}'
   ed@mumia: '{self:1, rate:100, study:14, friend:nao, problem:1, code:1, debug:1}'

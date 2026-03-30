@@ -142,8 +142,13 @@
         },
         {
             "label": "2026-03-30_16-17-37",
-            "content": "package main\n\nimport \"fmt\"\n\ntype vivo struct {\n\tnum    int32\n\ttaVivo bool\n}\n\nfunc main() {\n\tvar pessoas int32\n\tvar espada int32\n\tfmt.Scan(&pessoas, &espada)\n\n\tvar vivos = make([]vivo, pessoas)\n\tfor i := int32(0); i < pessoas; i++ {\n\t\tvivos[i].num = i + 1\n\t\tvivos[i].taVivo = true\n\t}\n\n\tfmt.Print(knext(vivos, espada))\n\n}\n\n// 1> 2 3 4\n\nfunc knext(vivos []vivo, espada int32) string {\n\tvar resultado = \"\"\n    var qtdVivos = len(vivos)\n\n\tresultado += \"[ \"\n\tfor i := range vivos {\n\t\tif vivos[i].taVivo == true && vivos[i].num == espada {\n\t\t\tresultado += fmt.Sprintf(\"%d\", vivos[i].num) + \"> \"\n\t\t\tcontinue\n\t\t}\n        if vivos[i].taVivo == true {\n\t\t\tresultado += fmt.Sprintf(\"%d \", vivos[i].num)\n\t\t\tcontinue\n\t\t}\n\t}\n\tresultado += \"]\"\n\n\tfor i := range vivos {\n        if vivos[i].num == espada {\n            if i < len(vivos) - 1 && vivos[i + 1].taVivo == true {\n                vivos[i+1].taVivo = false\n                if espada + 2 > int32(len(vivos))\n                espada += 2\n                qtdVivos--\n                continue\n            }\n        }\n\t}\n\n    if qtdVivos == 1 {\n        return resultado\n    }\n\n\treturn resultado + knext(vivos, espada)\n}\n",
+            "content": "@@ -943,32 +943,8 @@\n os))\n- %7B%0A%09%09%09%09%09espada = 1%0A%09%09%09%09%7D\n %0A   \n",
             "lines": "61"
+        },
+        {
+            "label": "2026-03-30_18-38-55",
+            "content": "package main\n\nimport \"fmt\"\n\ntype vivo struct {\n\tnum    int32\n\ttaVivo bool\n}\n\nfunc main() {\n\tvar pessoas int32\n\tvar espada int32\n\tfmt.Scan(&pessoas, &espada)\n\n\tvar vivos = make([]vivo, pessoas)\n\tfor i := int32(0); i < pessoas; i++ {\n\t\tvivos[i].num = i + 1\n\t\tvivos[i].taVivo = true\n\t}\n\n\tfmt.Print(knext(vivos, espada))\n\n}\n\n// 1> 2 3 4\n\nfunc knext(vivos []vivo, espada int32) string {\n\tvar resultado = \"\"\n    var qtdVivos = len(vivos)\n\n\tresultado += \"[ \"\n\tfor i := range vivos {\n\t\tif vivos[i].taVivo == true && vivos[i].num == espada {\n\t\t\tresultado += fmt.Sprintf(\"%d\", vivos[i].num) + \"> \"\n\t\t\tcontinue\n\t\t}\n        if vivos[i].taVivo == true {\n\t\t\tresultado += fmt.Sprintf(\"%d \", vivos[i].num)\n\t\t\tcontinue\n\t\t}\n\t}\n\tresultado += \"]\"\n\n\tfor i := range vivos {\n        if vivos[i].num == espada {\n            if i < len(vivos) - 1 && vivos[i + 1].taVivo == true {\n                vivos[i+1].taVivo = false\n                if espada + 2 > int32(len(vivos)) {\n\t\t\t\t\tespada = 1\n\t\t\t\t}\n                espada += 2\n                qtdVivos--\n                continue\n            }\n        }\n\t}\n\n    if qtdVivos == 1 {\n        return resultado\n    }\n\n\treturn resultado + knext(vivos, espada)\n}\n",
+            "lines": "63"
         }
     ]
 }

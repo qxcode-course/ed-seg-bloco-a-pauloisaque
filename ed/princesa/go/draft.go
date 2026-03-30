@@ -45,7 +45,9 @@ func knext(vivos []vivo, espada int32) string {
         if vivos[i].num == espada {
             if i < len(vivos) - 1 && vivos[i + 1].taVivo == true {
                 vivos[i+1].taVivo = false
-                if espada + 2 > int32(len(vivos))
+                if espada + 2 > int32(len(vivos)) {
+					espada = 1
+				}
                 espada += 2
                 qtdVivos--
                 continue
