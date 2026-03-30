@@ -32,8 +32,118 @@
         },
         {
             "label": "2026-03-27_15-50-45",
-            "content": "package main\n\nimport \"fmt\"\n\ntype vivo struct {\n    num int32\n    taVivo bool\n}\n\nfunc main() {\n\tvar pessoas int32\n\tvar espada int32\n\tfmt.Scan(&pessoas, &espada)\n\n\tvar vivos = make([]vivo, pessoas)\n\tfor i := int32(0); i < pessoas; i++ {\n\t\tvivos[i].num = i + 1\n        vivos[i].taVivo = true\n\t}\n\n    fmt.Print(knext(vivos, espada))\n\n}\n\nfunc knext (vivos []vivo, espada int32) string {\n    var result = \"\"\n    \n    \n    if con {\n\n        knext(vivos, espada+2)\n\n    }\n\n    \n}",
+            "content": "@@ -330,21 +330,8 @@\n %0A%7D%0A%0A\n-// 1%3E 2 3 4%0A%0A\n func\n@@ -379,42 +379,33 @@\n g %7B%0A\n-%0A%0A%0A\n     \n-for i := range vivos %7B\n+var result = %22%22\n %0A    \n+%0A\n     \n@@ -413,107 +413,56 @@\n     \n-    if vivos%5Bespada%5D.taVivo == true %7B%0A            vivos%5Bi + 1%5D.taVivo = false%0A        %7D \n+if con %7B%0A%0A        knext(vivos, espada+2)%0A\n %0A    %7D%0A\n-    \n %0A   \n",
             "lines": "36"
+        },
+        {
+            "label": "2026-03-30_15-27-28",
+            "content": "@@ -539,15 +539,6 @@\n     \n-return %22%22\n %0A%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-30_15-27-38",
+            "content": "@@ -392,212 +392,9 @@\n g %7B%0A\n-    var resultado = %22%22%0A%0A    resultado += %22%5B %22%0A    for i := range vivos %7B%0A        if vivos%5Bi%5D.taVivo == true %7B%0A            resultado += fmt.Sprintf(%22%25d %22, vivos%5Bi%5D.num)%0A        %7D%0A    %7D%0A    resultado += %22%5D%22\n+%0A\n %0A%0A  \n@@ -546,15 +546,8 @@\n urn \n-resultado\n+%22%22\n %0A%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-30_15-36-22",
+            "content": "@@ -465,145 +465,8 @@\n s %7B%0A\n-        if vivos%5Bi%5D.taVivo == true && vivos%5Bi%5D.num == espada %7B%0A            resultado += fmt.Sprintf(%22%25d %22, vivos%5Bi%5D.num) + %22%3E%22%0A        %7D%0A\n     \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-30_15-38-33",
+            "content": "@@ -592,29 +592,8 @@\n %22%3E%22%0A\n-            continue%0A\n     \n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-30_15-38-42",
+            "content": "@@ -564,16 +564,17 @@\n intf(%22%25d\n+ \n %22, vivos\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-30_15-38-51",
+            "content": "@@ -44,23 +44,26 @@\n t %7B%0A\n-%09\n+    \n num \n-   \n int32%0A\n-%09\n+    \n taVi\n@@ -251,18 +251,24 @@\n = i + 1%0A\n-%09%09\n+        \n vivos%5Bi%5D\n@@ -286,17 +286,20 @@\n rue%0A%09%7D%0A%0A\n-%09\n+    \n fmt.Prin\n@@ -345,24 +345,25 @@\n %0A%0Afunc knext\n+ \n (vivos %5B%5Dviv\n@@ -388,17 +388,20 @@\n tring %7B%0A\n-%09\n+    \n var resu\n@@ -412,17 +412,20 @@\n o = %22%22%0A%0A\n-%09\n+    \n resultad\n@@ -434,17 +434,20 @@\n += %22%5B %22%0A\n-%09\n+    \n for i :=\n@@ -461,18 +461,24 @@\n vivos %7B%0A\n-%09%09\n+        \n if vivos\n@@ -524,19 +524,28 @@\n spada %7B%0A\n-%09%09%09\n+            \n resultad\n@@ -589,29 +589,49 @@\n + %22%3E\n- \n %22%0A\n-%09%09%09continue%0A%09%09%7D%0A%09%09\n+            continue%0A        %7D%0A        \n if v\n@@ -655,19 +655,28 @@\n  true %7B%0A\n-%09%09%09\n+            \n resultad\n@@ -717,16 +717,28 @@\n um)%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n resu\n@@ -751,17 +751,20 @@\n += %22%5D%22%0A%0A\n-%09\n+    \n for i :=\n@@ -778,19 +778,33 @@\n vivos %7B%0A\n-%0A%09%09\n+        %0A        \n if vivos\n@@ -833,19 +833,30 @@\n e %7B%0A\n-%09%09%09\n+            \n vivos%5Bi\n-+\n+ + \n 1%5D.t\n@@ -873,17 +873,34 @@\n lse%0A\n-%09%09%7D%0A%09%7D%0A%0A%09\n+        %7D %0A    %7D%0A    %0A    \n retu\n@@ -913,9 +913,8 @@\n ultado%0A%7D\n-%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-30_15-38-56",
+            "content": "@@ -792,39 +792,7 @@\n tado\n- + %22%5Cn%22 + knext(vivos, espada+1)\n %0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-30_15-41-01",
+            "content": "@@ -689,32 +689,33 @@\n = range vivos %7B%0A\n+%0A\n %09%09if vivos%5Bi + 1\n@@ -709,21 +709,22 @@\n f vivos%5B\n-i + 1\n+espada\n %5D.taVivo\n@@ -817,12 +817,14 @@\n , espada\n++1\n )%0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-30_15-42-58",
+            "content": "@@ -788,16 +788,23 @@\n ultado +\n+ %22%5Cn%22 +\n  knext(v\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-30_15-43-25",
+            "content": "@@ -705,30 +705,8 @@\n %09%09if\n- i %3C len(vivos - 1) &&\n  viv\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-30_15-44-58",
+            "content": "@@ -719,13 +719,13 @@\n ivos\n-)\n  - 1\n+)\n  && \n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-30_15-45-13",
+            "content": "@@ -567,16 +567,100 @@\n nue%0A%09%09%7D%0A\n+%09%09if vivos%5Bi%5D.taVivo == true %7B%0A%09%09%09resultado += fmt.Sprintf(%22%25d %22, vivos%5Bi%5D.num)%0A%09%09%7D%0A\n %09%7D%0A%09resu\n@@ -795,34 +795,8 @@\n %09%7D%0A%0A\n-    fmt.Print(resultado)%0A%0A\n %09ret\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-30_15-46-05",
+            "content": "@@ -703,35 +703,40 @@\n lse%0A\n-            continue%0A%09%09%7D%0A%09%7D\n+%09%09%7D%0A%09%7D%0A%0A    fmt.Print(resultado)\n %0A%0A%09r\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-30_15-47-46",
+            "content": "@@ -732,65 +732,8 @@\n %09%7D%0A%0A\n-    if len(vivos) == 1 %7B%0A        return resultado%0A    %7D%0A%0A\n %09ret\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-30_15-50-20",
+            "content": "@@ -398,39 +398,8 @@\n = %22%22\n-%0A    var  qtdVivos = len(vivos)\n %0A%0A%09r\n@@ -703,31 +703,8 @@\n lse%0A\n-            qtdVivos--%0A\n     \n@@ -739,16 +739,19 @@\n  if \n-qtdV\n+len(v\n ivos\n+) \n == 1\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-30_15-54-03",
+            "content": "@@ -403,16 +403,17 @@\n     var \n+ \n qtdVivos\n@@ -602,116 +602,8 @@\n %09%09%7D%0A\n-        if vivos%5Bi%5D.taVivo == true %7B%0A%09%09%09resultado += fmt.Sprintf(%22%25d%22, vivos%5Bi%5D.num) + %22%3E %22%0A%09%09%09continue%0A%09%09%7D%0A\n %09%7D%0A%09\n@@ -797,17 +797,16 @@\n qtdVivos\n- \n == 1 %7B%0A \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-30_15-57-44",
+            "content": "@@ -665,17 +665,16 @@\n intf(%22%25d\n- \n %22, vivos\n@@ -681,16 +681,23 @@\n %5Bi%5D.num)\n+ + %22%3E %22\n %0A%09%09%09cont\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-30_15-58-02",
+            "content": "@@ -835,29 +835,8 @@\n lse%0A\n-            espada++%0A\n     \n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-30_15-58-38",
+            "content": "@@ -749,83 +749,10 @@\n s %7B%0A\n-        if vivos%5Bi%5D.num == espada && vivos%5Bi%5D.taVivo == true %7B%0A            \n+%09%09\n if i\n@@ -802,32 +802,19 @@\n  true %7B%0A\n-                \n+%09%09%09\n vivos%5Bi+\n@@ -843,20 +843,16 @@\n         \n-   \n- \n espada++\n@@ -852,20 +852,16 @@\n spada++%0A\n-    \n         \n@@ -887,20 +887,16 @@\n         \n-    \n continue\n@@ -900,30 +900,10 @@\n nue%0A\n-            %7D%0A        \n+%09%09\n %7D%0A%09%7D\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-30_16-01-00",
+            "content": "@@ -779,16 +779,43 @@\n  espada \n+&& vivos%5Bi%5D.taVivo == true \n %7B%0A      \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-30_16-01-50",
+            "content": "@@ -910,69 +910,16 @@\n     \n-if \n espada\n- + 2 %3E int32(len(vivos))%0A                espada += 2\n+++\n %0A   \n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-03-30_16-17-37",
+            "content": "package main\n\nimport \"fmt\"\n\ntype vivo struct {\n\tnum    int32\n\ttaVivo bool\n}\n\nfunc main() {\n\tvar pessoas int32\n\tvar espada int32\n\tfmt.Scan(&pessoas, &espada)\n\n\tvar vivos = make([]vivo, pessoas)\n\tfor i := int32(0); i < pessoas; i++ {\n\t\tvivos[i].num = i + 1\n\t\tvivos[i].taVivo = true\n\t}\n\n\tfmt.Print(knext(vivos, espada))\n\n}\n\n// 1> 2 3 4\n\nfunc knext(vivos []vivo, espada int32) string {\n\tvar resultado = \"\"\n    var qtdVivos = len(vivos)\n\n\tresultado += \"[ \"\n\tfor i := range vivos {\n\t\tif vivos[i].taVivo == true && vivos[i].num == espada {\n\t\t\tresultado += fmt.Sprintf(\"%d\", vivos[i].num) + \"> \"\n\t\t\tcontinue\n\t\t}\n        if vivos[i].taVivo == true {\n\t\t\tresultado += fmt.Sprintf(\"%d \", vivos[i].num)\n\t\t\tcontinue\n\t\t}\n\t}\n\tresultado += \"]\"\n\n\tfor i := range vivos {\n        if vivos[i].num == espada {\n            if i < len(vivos) - 1 && vivos[i + 1].taVivo == true {\n                vivos[i+1].taVivo = false\n                if espada + 2 > int32(len(vivos))\n                espada += 2\n                qtdVivos--\n                continue\n            }\n        }\n\t}\n\n    if qtdVivos == 1 {\n        return resultado\n    }\n\n\treturn resultado + knext(vivos, espada)\n}\n",
+            "lines": "61"
         }
     ]
 }
