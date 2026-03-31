@@ -15,13 +15,23 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@bfs
+- ed@vector
+- ed@dfs
+- ed@list
+- ed@basic
 - ed@rec
+- ed@backtrack
+- ed@linear
+- ed@tree
+- ed@map_set
 tasks:
   ed@pintando: '{self:1, rate:100, study:45, friend:nao, code:1, debug:1}'
   ed@mumia: '{self:1, rate:100, study:14, friend:nao, problem:1, code:1, debug:1}'
   ed@fuga: '{self:1, rate:100, study:60, friend:nao, code:1, debug:1}'
   ed@pedra: '{self:1, rate:100, study:90, friend:nao, concept:1, problem:1, code:1,
     debug:1, refactor:1}'
+  ed@triangulo: '{self:1, rate:100, study:15, concept:1, problem:1, code:1, debug:1}'
   ed@casais: '{}'
   ed@baruel: '{}'
   ed@gomos: '{}'
@@ -36,7 +46,6 @@ tasks:
   ed@crec_view: '{}'
   ed@rec_read: '{}'
   ed@fractais_png: '{}'
-  ed@triangulo: '{}'
   ed@treinando: '{}'
   ed@resto: '{}'
   ed@mdc: '{}'
@@ -117,4 +126,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@triangulo
+selected: ed@gomos

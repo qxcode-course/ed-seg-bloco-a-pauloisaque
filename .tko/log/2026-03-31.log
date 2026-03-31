@@ -5,3 +5,19 @@
 2026-03-31 15:37:03, MOVE, v:1, k:ed@triangulo, mode:PICK
 2026-03-31 15:37:19, MOVE, v:1, k:ed@triangulo, mode:BACK
 2026-03-31 15:37:22, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-03-31 19:00:34, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-03-31 19:04:26, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:47
+2026-03-31 19:17:48, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:53
+2026-03-31 19:17:59, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:53
+2026-03-31 19:18:23, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:55
+2026-03-31 19:18:47, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0
+2026-03-31 19:18:48, EXEC, v:1, k:ed@triangulo, mode:LOCK, rate:0
+2026-03-31 19:18:48, EXEC, v:1, k:ed@triangulo, mode:FREE
+2026-03-31 19:20:19, EXEC, v:1, k:ed@triangulo, mode:LOCK, rate:100, size:63
+2026-03-31 19:20:28, EXEC, v:1, k:ed@triangulo, mode:LOCK, rate:100
+2026-03-31 19:20:59, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-03-31 19:21:20, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-03-31 19:21:35, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100
+2026-03-31 19:28:49, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100, size:64
+2026-03-31 19:30:13, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-03-31 19:31:54, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:15, concept:1, problem:1, code:1, debug:1
