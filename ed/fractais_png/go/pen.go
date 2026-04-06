@@ -63,7 +63,7 @@ func (t *Pen) DrawCircle(radius float64) {
 		t.dc.DrawCircle(t.x, t.y, radius)
 		t.dc.Stroke()
 	}
-}
+}on
 
 func (t *Pen) DrawRect(w, h float64) {
 	if t.penDown {
