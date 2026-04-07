@@ -2,8 +2,18 @@
     "patches": [
         {
             "label": "2026-04-06_19-05-09",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.Left(30)              // dobra 30 graus para esquerda\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.DrawCircle(50)        // desenha um c\u00edrculo de raio 50\n\tpen.Right(60)             // gira para direita 60 graus\n\tpen.Walk(150)\n\tfor range 10 {\n\t\tpen.Up()\n\t\tpen.Walk(30) // anda sem riscar\n\t\tpen.Down()\n\n\t\tpen.DrawCircle(10) //desenha um circulo pequeno\n\n\t\tpen.Up()\n\t\tpen.Walk(-30) // volta sem riscar\n\t\tpen.Down()\n\n\t\tpen.Left(36) // gira\n\t}\n\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -139,18 +139,18 @@\n  NewPen(\n-2\n 5\n+0\n 0, 500) \n@@ -232,18 +232,16 @@\n  0)     \n-  \n // muda \n@@ -265,12 +265,15 @@\n ara \n-pret\n+vermelh\n o%0A%09p\n@@ -410,16 +410,17 @@\n .Walk(10\n+0\n )       \n",
             "lines": "39"
+        },
+        {
+            "label": "2026-04-07_19-17-39",
+            "content": "@@ -39,35 +39,8 @@\n and%22\n-%0A%0A%09%22github.com/fogleman/gg%22\n %0A)%0A%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_19-24-23",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n\n\t\"github.com/fogleman/gg\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc main() {\n\tpen := NewPen(250, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)       // muda a cor do pincel para preto\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.Walk(10)             // anda 100 pixels\n\tpen.Left(30)              // dobra 30 graus para esquerda\n\tpen.Walk(100)             // anda 100 pixels\n\tpen.DrawCircle(50)        // desenha um c\u00edrculo de raio 50\n\tpen.Right(60)             // gira para direita 60 graus\n\tpen.Walk(150)\n\tfor range 10 {\n\t\tpen.Up()\n\t\tpen.Walk(30) // anda sem riscar\n\t\tpen.Down()\n\n\t\tpen.DrawCircle(10) //desenha um circulo pequeno\n\n\t\tpen.Up()\n\t\tpen.Walk(-30) // volta sem riscar\n\t\tpen.Down()\n\n\t\tpen.Left(36) // gira\n\t}\n\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "41"
         }
     ]
 }

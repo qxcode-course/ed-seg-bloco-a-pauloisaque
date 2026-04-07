@@ -15,16 +15,16 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@basic
-- ed@list
-- ed@bfs
-- ed@dfs
-- ed@tree
-- ed@linear
 - ed@map_set
 - ed@rec
-- ed@vector
+- ed@tree
 - ed@backtrack
+- ed@basic
+- ed@dfs
+- ed@vector
+- ed@linear
+- ed@list
+- ed@bfs
 flags:
   inbox: all
   panel: help
@@ -32,4 +32,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@princesa
+selected: ed@fractais_png
