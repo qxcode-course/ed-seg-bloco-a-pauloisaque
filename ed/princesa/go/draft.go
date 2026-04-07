@@ -2,62 +2,44 @@ package main
 
 import "fmt"
 
-type vivo struct {
-	num    int32
-	taVivo bool
-}
-
 func main() {
-	var pessoas int32
-	var espada int32
-	fmt.Scan(&pessoas, &espada)
+	var n, e int
+	fmt.Scan(&n, &e)
 
-	var vivos = make([]vivo, pessoas)
-	for i := int32(0); i < pessoas; i++ {
-		vivos[i].num = i + 1
-		vivos[i].taVivo = true
+	//cria a fila inicial com as pessoas de 1 até n
+	vivos := make([]int, n)
+	for i := 0; i < n; i++ {
+		vivos[i] = i + 1
 	}
 
-	fmt.Print(knext(vivos, espada))
-
+	//a espada começa com a pessoa E
+	pos := e - 1
+	// 1 2> 3 4
+	// 0 1  2 3
+	//enquanto tiver mais de uma pessoa viva, a simulação irá continuar
+	for len(vivos) > 1 {
+		// mostra o estado atual da fila e quem está com a espada
+		imprime(vivos, pos)
+		// a vitima e a proxima pessoa viva
+		vitima := (pos + 1) % len(vivos)
+		//remove a vitima do vetor
+		vivos = append(vivos[:vitima], vivos[vitima+1:]...)
+		//depois da morte, a espada passa a proxima pessoa
+		//se a vitima estava no fim do veto, a espada volta ao inicio
+		pos = vitima % len(vivos)
+	}
+	//imprime o vencedor
+	imprime(vivos, pos)
 }
 
-// 1> 2 3 4
-
-func knext(vivos []vivo, espada int32) string {
-	var resultado = ""
-    var qtdVivos = len(vivos)
-
-	resultado += "[ "
-	for i := range vivos {
-		if vivos[i].taVivo == true && vivos[i].num == espada {
-			resultado += fmt.Sprintf("%d", vivos[i].num) + "> "
-			continue
-		}
-        if vivos[i].taVivo == true {
-			resultado += fmt.Sprintf("%d ", vivos[i].num)
-			continue
+func imprime(vivos []int, espada int) {
+	fmt.Print("[ ")
+	for i := 0; i < len(vivos); i++ {
+		if i == espada {
+			fmt.Printf("%d> ", vivos[i])
+		} else {
+			fmt.Printf("%d ", vivos[i])
 		}
 	}
-	resultado += "]"
-
-	for i := range vivos {
-        if vivos[i].num == espada {
-            if i < len(vivos) - 1 && vivos[i + 1].taVivo == true {
-                vivos[i+1].taVivo = false
-                if espada + 2 > int32(len(vivos)) {
-					espada = 1
-				}
-                espada += 2
-                qtdVivos--
-                continue
-            }
-        }
-	}
-
-    if qtdVivos == 1 {
-        return resultado
-    }
-
-	return resultado + knext(vivos, espada)
+	fmt.Println("]")
 }
