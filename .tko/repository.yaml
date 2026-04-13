@@ -14,17 +14,25 @@ sources:
   writeable: false
   quests: null
   tasks: null
+- name: eval1
+  target: https://github.com/senapk/eval_26_ed_1
+  index: README.md
+  type: git
+  writeable: false
+  quests: null
+  tasks: null
 expanded:
+- ed@tree
 - ed@map_set
 - ed@rec
-- ed@tree
-- ed@backtrack
 - ed@basic
-- ed@dfs
-- ed@vector
 - ed@linear
-- ed@list
+- ed@vector
+- ed@backtrack
+- ed@dfs
 - ed@bfs
+- ed@list
+- eval1@teste-1
 flags:
   inbox: all
   panel: help
@@ -32,4 +40,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
+selected: eval1@queimada
