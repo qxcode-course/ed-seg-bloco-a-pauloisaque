@@ -22,17 +22,7 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@tree
-- ed@map_set
-- ed@rec
 - ed@basic
-- ed@linear
-- ed@vector
-- ed@backtrack
-- ed@dfs
-- ed@bfs
-- ed@list
-- eval1@teste-1
 flags:
   inbox: all
   panel: help
@@ -40,4 +30,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@queimada
+selected: ed@map_set
+selected_index: 8
