@@ -27,8 +27,53 @@
         },
         {
             "label": "2026-03-19_11-01-05",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar a float64\n\tvar b float64\n\tvar c float64\n\tfmt.Scan(&a)\n\tfmt.Scan(&b)\n\tfmt.Scan(&c)\n\tfmt.Printf(\"%.2f\\n\", heron(a, b, c))\n}\n\nfunc heron(a float64, b float64, c float64) float64 {\n\tp := float64(a+b+c) / 2\n\tvar area float64\n\tarea = math.Sqrt(p * (p - a) * (p - b) * (p - c))\n\treturn area\n}\n",
+            "content": "@@ -18,13 +18,26 @@\n ort \n+(%0A%09\n %22fmt%22\n+%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -57,116 +57,242 @@\n var \n-lado1, lado2, lado3 float64%0A%09fmt.Scan(&lado1, &lado2, &lado3)%0A%0A%09p := (lado1 + lado2 + lado3) / 2%0A\n+a float64%0A%09var b float64%0A%09var c float64%0A%09fmt.Scan(&a)%0A%09fmt.Scan(&b)%0A%09fmt.Scan(&c)%0A%09fmt.Printf(%22%25.2f%5Cn%22, heron(a, b, c))%0A%7D%0A%0Afunc heron(a float64, b float64, c float64) float64 %7B%0A%09p := float64(a+b+c) / 2%0A%09var area float64\n %0A%09area \n-:\n = \n-s\n+math.S\n qrt(\n@@ -304,13 +304,9 @@\n p - \n-lado1\n+a\n ) * \n@@ -314,13 +314,9 @@\n p - \n-lado2\n+b\n ) * \n@@ -324,32 +324,23 @@\n p - \n-lado3))%0A%0A%09fmt.Print(\n+c))%0A%09return \n area\n-)\n %0A%7D%0A\n",
             "lines": "23"
+        },
+        {
+            "label": "2026-04-29_09-46-43",
+            "content": "@@ -18,22 +18,13 @@\n ort \n-(\n %22fmt%22\n- %22math%22)\n %0A%0Afu\n@@ -151,14 +151,9 @@\n  := \n-math.S\n+s\n qrt(\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-04-29_09-47-54",
+            "content": "@@ -19,24 +19,20 @@\n rt (\n-%0A%09\n %22fmt%22\n-%0A%09\n+ \n %22math%22\n-%0A\n )%0A%0Af\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-04-29_09-48-26",
+            "content": "@@ -230,16 +230,9 @@\n rint\n-f(%22%25f%22, \n+(\n area\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-29_09-48-40",
+            "content": "@@ -233,10 +233,8 @@\n tf(%22\n-2.\n %25f%22,\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-29_09-48-48",
+            "content": "@@ -229,16 +229,18 @@\n Printf(%22\n+2.\n %25f%22, are\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-29_09-49-12",
+            "content": "@@ -234,10 +234,8 @@\n f(%22%25\n-.2\n f%22, \n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-29_09-49-29",
+            "content": "@@ -237,10 +237,8 @@\n %25.2f\n-/n\n %22, a\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-29_09-49-38",
+            "content": "@@ -237,9 +237,9 @@\n %25.2f\n-%5C\n+/\n n%22, \n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-29_09-49-44",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar lado1, lado2, lado3 float64\n\tfmt.Scan(&lado1, &lado2, &lado3)\n\n\tp := (lado1 + lado2 + lado3) / 2\n\n\tarea := math.Sqrt(p * (p - lado1) * (p - lado2) * (p - lado3))\n\n\tfmt.Printf(\"%.2f\\n\", area)\n}\n",
+            "lines": "17"
         }
     ]
 }

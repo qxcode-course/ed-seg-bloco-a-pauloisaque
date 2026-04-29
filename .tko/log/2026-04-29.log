@@ -1,0 +1,15 @@
+2026-04-29 07:33:04, MOVE, v:1, k:ed@pintando, mode:PICK
+2026-04-29 09:17:09, MOVE, v:1, k:ed@pintando, mode:EDIT
+2026-04-29 09:46:43, EXEC, v:1, k:ed@pintando, mode:FULL, size:14, fail:COMP
+2026-04-29 09:45:40, MOVE, v:1, k:ed@pintando, mode:EDIT
+2026-04-29 09:47:54, EXEC, v:1, k:ed@pintando, mode:FULL, size:14, fail:COMP
+2026-04-29 09:48:26, EXEC, v:1, k:ed@pintando, mode:FULL, rate:0, size:17
+2026-04-29 09:48:40, EXEC, v:1, k:ed@pintando, mode:FULL, rate:0, size:17
+2026-04-29 09:48:48, EXEC, v:1, k:ed@pintando, mode:FULL, rate:0, size:17
+2026-04-29 09:49:12, EXEC, v:1, k:ed@pintando, mode:FULL, rate:0, size:17
+2026-04-29 09:49:29, EXEC, v:1, k:ed@pintando, mode:FULL, rate:0, size:17
+2026-04-29 09:49:38, EXEC, v:1, k:ed@pintando, mode:FULL, rate:0, size:17
+2026-04-29 09:49:44, EXEC, v:1, k:ed@pintando, mode:FULL, rate:100, size:17
+2026-04-29 09:49:48, MOVE, v:1, k:ed@pintando, mode:BACK
+2026-04-29 09:51:28, SELF, v:1, k:ed@pintando, self:1, rate:100, study:10, friend:nao, guided:1, concept:1, debug:1
+2026-04-29 09:49:43, MOVE, v:1, k:ed@pintando, mode:EDIT

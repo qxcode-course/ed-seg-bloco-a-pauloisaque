@@ -6,18 +6,12 @@ import (
 )
 
 func main() {
-	var a float64
-	var b float64
-	var c float64
-	fmt.Scan(&a)
-	fmt.Scan(&b)
-	fmt.Scan(&c)
-	fmt.Printf("%.2f\n", heron(a, b, c))
-}
+	var lado1, lado2, lado3 float64
+	fmt.Scan(&lado1, &lado2, &lado3)
 
-func heron(a float64, b float64, c float64) float64 {
-	p := float64(a+b+c) / 2
-	var area float64
-	area = math.Sqrt(p * (p - a) * (p - b) * (p - c))
-	return area
+	p := (lado1 + lado2 + lado3) / 2
+
+	area := math.Sqrt(p * (p - lado1) * (p - lado2) * (p - lado3))
+
+	fmt.Printf("%.2f\n", area)
 }
