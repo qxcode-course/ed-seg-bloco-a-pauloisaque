@@ -22,7 +22,12 @@
         },
         {
             "label": "2026-05-04_21-43-47",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qnt int\n\tfmt.Scan(&qnt)\n\tvar vetor []int\n\tfor {\n\t\tfmt.Scan(&vetor)\n\t}\n\n\tfmt.Print(verificaPares(vetor, qnt))\n\n}\n\nfunc verificaPares(vetor []int, qnt int) int {\n\tnovoVetor := append([]int{}, vetor...)\n\tpontaUm := 0\n\tpontaDois := 0\n\tcountPares := 0\n\n\tiniciarProcesso := func() {\n\t\tpontaUm = 0\n\t\tpontaDois = 0\n\t}\n\n\tfor pontaDois < qnt {\n\t\tif novoVetor[pontaUm] == novoVetor[pontaDois] && pontaUm != pontaDois {\n\t\t\tnovoVetor = append(vetor[:pontaUm], vetor[pontaUm+1:]...)\n\t\t\tnovoVetor = append(vetor[:pontaDois], vetor[pontaDois+1:]...)\n\t\t\tcountPares++\n\t\t\tiniciarProcesso()\n\t\t} else {\n\t\t\tif pontaDois > qnt {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tpontaDois++\n\t\t}\n\t}\n\n\treturn countPares\n\n}\n",
+            "content": "@@ -69,59 +69,28 @@\n t)%0A%09\n+var \n vetor \n-:= make(%5B%5Dint, qnt)%0A%09for i := 0; i %3C qnt; i++\n+%5B%5Dint%0A%09for\n  %7B%0A%09\n@@ -109,11 +109,8 @@\n etor\n-%5Bi%5D\n )%0A%09%7D\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-05_13-14-41",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qnt int\n\tfmt.Scan(&qnt)\n\tvetor := make([]int, qnt)\n\tfor i := 0; i < qnt; i++ {\n\t\tfmt.Scan(&vetor[i])\n\t}\n\n\tfmt.Print(verificaPares(vetor, qnt))\n\n}\n\nfunc verificaPares(vetor []int, qnt int) int {\n\tnovoVetor := append([]int{}, vetor...)\n\tpontaUm := 0\n\tpontaDois := 0\n\tcountPares := 0\n\n\tiniciarProcesso := func() {\n\t\tpontaUm = 0\n\t\tpontaDois = 0\n\t}\n\n\tfor pontaDois < qnt {\n\t\tif novoVetor[pontaUm] == novoVetor[pontaDois] && pontaUm != pontaDois {\n\t\t\tnovoVetor = append(vetor[:pontaUm], vetor[pontaUm+1:]...)\n\t\t\tnovoVetor = append(vetor[:pontaDois], vetor[pontaDois+1:]...)\n\t\t\tcountPares++\n\t\t\tiniciarProcesso()\n\t\t} else {\n\t\t\tif pontaDois > qnt {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tpontaDois++\n\t\t}\n\t}\n\n\treturn countPares\n\n}\n",
             "lines": "44"
         }
     ]

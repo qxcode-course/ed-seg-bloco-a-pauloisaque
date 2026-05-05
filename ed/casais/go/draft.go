@@ -5,9 +5,9 @@ import "fmt"
 func main() {
 	var qnt int
 	fmt.Scan(&qnt)
-	var vetor []int
-	for {
-		fmt.Scan(&vetor)
+	vetor := make([]int, qnt)
+	for i := 0; i < qnt; i++ {
+		fmt.Scan(&vetor[i])
 	}
 
 	fmt.Print(verificaPares(vetor, qnt))
