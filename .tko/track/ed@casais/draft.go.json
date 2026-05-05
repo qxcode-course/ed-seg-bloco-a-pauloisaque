@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-04_21-07-14",
+            "content": "@@ -130,19 +130,16 @@\n %0A    %7D%0A%0A\n-%7D%0A%0A\n %0A%0A    fu\n@@ -473,16 +473,17 @@\n ntaUm !=\n+=\n  pontaDo\n@@ -832,12 +832,17 @@\n      %0A    %7D%0A\n+%0A%0A%0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-04_21-09-09",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var qnt \n@@ -49,17 +49,20 @@\n qnt int%0A\n-%09\n+    \n fmt.Scan\n@@ -68,13 +68,16 @@\n n(&q\n-nt)%0A%09\n+td)%0A    \n var \n@@ -92,17 +92,26 @@\n int%0A\n-%09\n+    \n for %7B%0A\n-%09%09\n+        \n fmt.\n@@ -127,15 +127,24 @@\n or)%0A\n-%09\n+    \n %7D%0A%0A%7D%0A%0A\n+%0A\n+%0A    \n func\n@@ -173,26 +173,24 @@\n %5Dint\n-, qnt int) int %7B%0A%09\n+) int %7B%0A        \n novo\n@@ -224,17 +224,24 @@\n tor...)%0A\n-%09\n+        \n pontaUm \n@@ -245,17 +245,24 @@\n Um := 0%0A\n-%09\n+        \n pontaDoi\n@@ -268,17 +268,24 @@\n is := 0%0A\n-%09\n+        \n countPar\n@@ -293,17 +293,29 @@\n s := 0%0A%0A\n-%09\n+        func \n iniciarP\n@@ -325,377 +325,492 @@\n esso\n- := func() %7B%0A%09%09pontaUm = 0%0A%09%09pontaDois = 0%0A%09%7D%0A%0A%09for qnt %7B%0A%09%09if novoVetor%5BpontaUm%5D == novoVetor%5BpontaDois%5D && pontaUm != pontaDois %7B%0A%09%09%09novoVetor = append(vetor%5B:pontaUm%5D, vetor%5BpontaUm+1:%5D...)%0A%09%09%09novoVetor = append(vetor%5B:pontaDois%5D, vetor%5BpontaDois+1:%5D...)%0A%09%09%09countPares++%0A%09%09%09iniciarProcesso()%0A%09%09%7D else %7B%0A%09%09%09if pontaDois %3E qnt %7B%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%09pontaDois++%0A%09%09%7D%0A%09%7D%0A%0A%09\n+() %7B%0A            pontaUm = 0%0A            pontaDois = 0%0A        %7D%0A%0A        for qnt %7B%0A            if novoVetor%5BpontaUm%5D == novoVetor%5BpontaDois%5D && pontaUm != pontaDois %7B%0A                remove(novoVetor%5BpontaUm%5D) %0A                remove(novoVetor%5BpontaDois%5D)%0A                countPares++%0A                iniciarProcesso()%0A            %7D else %7B%0A                if pontaDois %3E qnt %7B%0A                    break%0A                %7D%0A                pontaDois++%0A            %7D%0A        %7D%0A%0A%0A        \n retu\n@@ -823,11 +823,23 @@\n ntPares%0A\n-%0A\n+        %0A    \n %7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-04_21-13-06",
+            "content": "@@ -320,20 +320,8 @@\n %09for\n- pontaDois %3C\n  qnt\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-04_21-14-07",
+            "content": "@@ -115,47 +115,8 @@\n %09%7D%0A%0A\n-%09fmt.Print(verificaPares(vetor, qnt))%0A%0A\n %7D%0A%0Af\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-04_21-43-47",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qnt int\n\tfmt.Scan(&qnt)\n\tvar vetor []int\n\tfor {\n\t\tfmt.Scan(&vetor)\n\t}\n\n\tfmt.Print(verificaPares(vetor, qnt))\n\n}\n\nfunc verificaPares(vetor []int, qnt int) int {\n\tnovoVetor := append([]int{}, vetor...)\n\tpontaUm := 0\n\tpontaDois := 0\n\tcountPares := 0\n\n\tiniciarProcesso := func() {\n\t\tpontaUm = 0\n\t\tpontaDois = 0\n\t}\n\n\tfor pontaDois < qnt {\n\t\tif novoVetor[pontaUm] == novoVetor[pontaDois] && pontaUm != pontaDois {\n\t\t\tnovoVetor = append(vetor[:pontaUm], vetor[pontaUm+1:]...)\n\t\t\tnovoVetor = append(vetor[:pontaDois], vetor[pontaDois+1:]...)\n\t\t\tcountPares++\n\t\t\tiniciarProcesso()\n\t\t} else {\n\t\t\tif pontaDois > qnt {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tpontaDois++\n\t\t}\n\t}\n\n\treturn countPares\n\n}\n",
+            "lines": "44"
+        }
+    ]
+}

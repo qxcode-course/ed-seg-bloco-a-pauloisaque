@@ -14,3 +14,17 @@
 2026-05-04 19:27:15, MOVE, v:1, k:ed@casais, mode:EDIT
 2026-05-04 19:30:43, MOVE, v:1, k:ed@casais, mode:EDIT
 2026-05-04 19:40:52, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-05-04 20:48:24, MOVE, v:1, k:ed@casais, mode:PICK
+2026-05-04 21:00:20, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-05-04 21:07:14, EXEC, v:1, k:ed@casais, mode:FULL, size:45, fail:COMP
+2026-05-04 21:07:31, EXEC, v:1, k:ed@casais, mode:FULL, fail:COMP
+2026-05-04 21:07:12, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-05-04 21:09:09, EXEC, v:1, k:ed@casais, mode:FULL, size:43, fail:COMP
+2026-05-04 21:13:06, EXEC, v:1, k:ed@casais, mode:FULL, size:42, fail:COMP
+2026-05-04 21:13:03, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-05-04 21:14:07, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:42
+2026-05-04 21:14:03, MOVE, v:1, k:ed@casais, mode:EDIT
+2026-05-04 21:42:56, EXEC, v:1, k:ed@casais, mode:FULL, rate:0
+2026-05-04 21:43:47, EXEC, v:1, k:ed@casais, mode:FULL, rate:0, size:44
+2026-05-04 21:46:05, EXEC, v:1, k:ed@casais, mode:FULL, rate:0
+2026-05-04 21:46:06, MOVE, v:1, k:ed@casais, mode:BACK
