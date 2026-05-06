@@ -27,8 +27,33 @@
         },
         {
             "label": "2026-05-05_13-14-41",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qnt int\n\tfmt.Scan(&qnt)\n\tvetor := make([]int, qnt)\n\tfor i := 0; i < qnt; i++ {\n\t\tfmt.Scan(&vetor[i])\n\t}\n\n\tfmt.Print(verificaPares(vetor, qnt))\n\n}\n\nfunc verificaPares(vetor []int, qnt int) int {\n\tnovoVetor := append([]int{}, vetor...)\n\tpontaUm := 0\n\tpontaDois := 0\n\tcountPares := 0\n\n\tiniciarProcesso := func() {\n\t\tpontaUm = 0\n\t\tpontaDois = 0\n\t}\n\n\tfor pontaDois < qnt {\n\t\tif novoVetor[pontaUm] == novoVetor[pontaDois] && pontaUm != pontaDois {\n\t\t\tnovoVetor = append(vetor[:pontaUm], vetor[pontaUm+1:]...)\n\t\t\tnovoVetor = append(vetor[:pontaDois], vetor[pontaDois+1:]...)\n\t\t\tcountPares++\n\t\t\tiniciarProcesso()\n\t\t} else {\n\t\t\tif pontaDois > qnt {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tpontaDois++\n\t\t}\n\t}\n\n\treturn countPares\n\n}\n",
+            "content": "@@ -399,18 +399,18 @@\n onta\n-Um\n+Dois\n  %3C qnt\n--1\n  %7B%0A%09\n@@ -462,38 +462,31 @@\n %5D &&\n-%0A%09%09%09novoVetor%5B\n+ \n pontaUm\n-%5D\n  != \n-0 &&\n+pontaDois %7B\n %0A%09%09%09\n@@ -498,107 +498,121 @@\n etor\n-%5BpontaDois%5D != 0 &&%0A%09%09%09pontaUm != pontaDois %7B%0A%09%09%09novoVetor%5BpontaDois%5D = 0%0A%09%09%09novoVetor%5BpontaUm%5D = 0\n+ = append(vetor%5B:pontaUm%5D, vetor%5BpontaUm+1:%5D...)%0A%09%09%09novoVetor = append(vetor%5B:pontaDois%5D, vetor%5BpontaDois+1:%5D...)\n %0A%09%09%09\n@@ -660,23 +660,8 @@\n e %7B%0A\n-%09%09%09pontaDois++%0A\n %09%09%09i\n@@ -672,18 +672,17 @@\n ntaDois \n-==\n+%3E\n  qnt %7B%0A%09\n@@ -688,38 +688,33 @@\n %09%09%09%09\n-pontaDois--%0A%09%09%09%09pontaUm++%0A%09%09%09%7D\n+break%0A%09%09%09%7D%0A%09%09%09pontaDois++\n %0A%09%09%7D\n",
             "lines": "44"
+        },
+        {
+            "label": "2026-05-05_22-45-07",
+            "content": "@@ -431,18 +431,16 @@\n pontaUm%5D\n-*1\n  == novo\n@@ -459,14 +459,15 @@\n ois%5D\n-*1\n  &&\n- \n+%0A%09%09%09\n novo\n@@ -488,17 +488,20 @@\n  != 0 &&\n- \n+%0A%09%09%09\n novoVeto\n@@ -520,17 +520,20 @@\n  != 0 &&\n- \n+%0A%09%09%09\n pontaUm \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-05-05_22-46-49",
+            "content": "@@ -18,26 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22math%22%0A)\n %0A%0Afu\n@@ -388,71 +388,8 @@\n %0A%09%7D%0A\n-%09abs := func(x int) int %7B%0A%09%09return int(math.Abs(float64(x)))%0A%09%7D\n %0A%09fo\n@@ -413,20 +413,16 @@\n  %7B%0A%09%09if \n-abs(\n novoVeto\n@@ -435,17 +435,14 @@\n aUm%5D\n-)\n+*1\n  == \n-abs(\n novo\n@@ -457,17 +457,18 @@\n ntaDois%5D\n-)\n+*1\n  && novo\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-05_22-56-55",
+            "content": "@@ -172,10 +172,8 @@\n rint\n-ln\n (ver\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-05_22-57-15",
+            "content": "@@ -366,16 +366,30 @@\n unc() %7B%0A\n+%09%09pontaUm = 0%0A\n %09%09pontaD\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-05_23-05-40",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar qnt int\n\tfmt.Scan(&qnt)\n\tvetor := make([]int, qnt)\n\tfor i := 0; i < qnt; i++ {\n\t\tfmt.Scan(&vetor[i])\n\t}\n\n\tfmt.Println(verificaPares(vetor, qnt))\n\n}\n\nfunc verificaPares(vetor []int, qnt int) int {\n\tnovoVetor := append([]int{}, vetor...)\n\tpontaUm := 0\n\tpontaDois := 0\n\tcountPares := 0\n\n\tiniciarProcesso := func() {\n\t\tpontaDois = 0\n\t}\n\tabs := func(x int) int {\n\t\treturn int(math.Abs(float64(x)))\n\t}\n\tfor pontaUm < qnt-1 {\n\t\tif abs(novoVetor[pontaUm]) == abs(novoVetor[pontaDois]) && novoVetor[pontaUm] != 0 && novoVetor[pontaDois] != 0 && pontaUm != pontaDois {\n\t\t\tnovoVetor[pontaDois] = 0\n\t\t\tnovoVetor[pontaUm] = 0\n\t\t\tcountPares++\n\t\t\tiniciarProcesso()\n\t\t} else {\n\t\t\tpontaDois++\n\t\t\tif pontaDois == qnt {\n\t\t\t\tpontaDois--\n\t\t\t\tpontaUm++\n\t\t\t}\n\t\t}\n\t}\n\n\treturn countPares\n\n}\n",
+            "lines": "49"
         }
     ]
 }

@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	var qnt int
@@ -10,7 +13,7 @@ func main() {
 		fmt.Scan(&vetor[i])
 	}
 
-	fmt.Print(verificaPares(vetor, qnt))
+	fmt.Println(verificaPares(vetor, qnt))
 
 }
 
@@ -21,21 +24,23 @@ func verificaPares(vetor []int, qnt int) int {
 	countPares := 0
 
 	iniciarProcesso := func() {
-		pontaUm = 0
 		pontaDois = 0
 	}
-
-	for pontaDois < qnt {
-		if novoVetor[pontaUm] == novoVetor[pontaDois] && pontaUm != pontaDois {
-			novoVetor = append(vetor[:pontaUm], vetor[pontaUm+1:]...)
-			novoVetor = append(vetor[:pontaDois], vetor[pontaDois+1:]...)
+	abs := func(x int) int {
+		return int(math.Abs(float64(x)))
+	}
+	for pontaUm < qnt-1 {
+		if abs(novoVetor[pontaUm]) == abs(novoVetor[pontaDois]) && novoVetor[pontaUm] != 0 && novoVetor[pontaDois] != 0 && pontaUm != pontaDois {
+			novoVetor[pontaDois] = 0
+			novoVetor[pontaUm] = 0
 			countPares++
 			iniciarProcesso()
 		} else {
-			if pontaDois > qnt {
-				break
-			}
 			pontaDois++
+			if pontaDois == qnt {
+				pontaDois--
+				pontaUm++
+			}
 		}
 	}
 
