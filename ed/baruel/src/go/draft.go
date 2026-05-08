@@ -13,10 +13,15 @@ func main() {
 		fmt.Scan(&figurinhas[i])
 	}
 
-	var quaisRepetem = verificaRepetidas(slotsAlbum, quantasTem, figurinhas)
-	var quaisFaltam = verificaFaltantes(slotsAlbum, quantasTem, figurinhas)
+	fmt.Println(verificarRepetidas(slotsAlbum, quantasTem, figurinhas))
+}
 
-	fmt.Println()
+func verificarRepetidas(slotsAlbum int, quantasTem int, figurinhas []int) {
+	var deveriaTer []int
+	for i := 0; i < slotsAlbum; i++ {
+		deveriaTer[i] = i + 1
+	}
+
 }
 
 func verificaRepetidas(slotsAlbum int, quantasTem int, figurinhas []int) []int {

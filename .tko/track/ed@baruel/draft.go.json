@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-08_19-17-18",
+            "content": "@@ -261,29 +261,26 @@\n %7D%0A%0A%09\n-fmt.Println()%0A%7D%0A%0Afunc\n+var quaisRepetem =\n  ver\n@@ -284,17 +284,16 @@\n verifica\n-r\n Repetida\n@@ -296,36 +296,32 @@\n tidas(slotsAlbum\n- int\n , quantasTem int\n@@ -320,34 +320,110 @@\n sTem\n- int, figurinhas %5B%5Dint) %7B%0A\n+, figurinhas)%0A%09var quaisFaltam = verificaFaltantes(slotsAlbum, quantasTem, figurinhas)%0A%0A%09fmt.Println()\n %0A%7D%0A%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-05-08_20-00-03",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hello, World!\")\n\tvar slotsAlbum int\n\tvar quantasTem int\n\tfigurinhas := make([]int, quantasTem)\n\tfmt.Scan(&slotsAlbum)\n\tfmt.Scan(&quantasTem)\n\tfor i := 0; i < quantasTem; i++ {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\n\tfmt.Println()\n}\n\nfunc verificarRepetidas(slotsAlbum int, quantasTem int, figurinhas []int) {\n\n}\n\nfunc verificaRepetidas(slotsAlbum int, quantasTem int, figurinhas []int) []int {\n\n}\n\nfunc verificaFaltantes(slotsAlbum int, quantasTem int, figurinhas []int) []int {\n\n}\n",
+            "lines": "29"
+        }
+    ]
+}
