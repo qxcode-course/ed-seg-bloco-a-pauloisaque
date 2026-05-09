@@ -17,8 +17,33 @@
         },
         {
             "label": "2026-05-09_08-54-30",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hello, World!\")\n\tvar slotsAlbum int\n\tvar quantasTem int\n\tfmt.Scan(&slotsAlbum)\n\tfmt.Scan(&quantasTem)\n\tfigurinhas := make([]int, quantasTem)\n\tfor i := 0; i < quantasTem; i++ {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\n\tverificarRepetidas(slotsAlbum, quantasTem, figurinhas)\n}\n\nfunc verificarRepetidas(slotsAlbum int, quantasTem int, figurinhas []int) {\n\ttype slots struct {\n\t\tdeviaTer int\n\t\tslot     int\n\t}\n\tvar deveriaTer []slots = make([]slots, slotsAlbum)\n\tfor i := 0; i < slotsAlbum; i++ {\n\t\tdeveriaTer[i] = slots{i + 1, 0}\n\t}\n\tvar figurinhasRepetidas []int = make([]int, 0)\n\n\tfor i := 0; i < quantasTem; i++ {\n\t\tfor i := 0; i < len(deveriaTer); i++ {\n\t\t\tif figurinhas[i] == deveriaTer[i].deviaTer && deveriaTer[i].slot == 0 {\n\t\t\t\tdeveriaTer[i].slot = figurinhas[i]\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 0; i < quantasTem; i++ {\n\t\tif figurinhas[i] == deveriaTer[i].deviaTer && deveriaTer[i].slot != 0 {\n\t\t\tfigurinhasRepetidas = append(figurinhasRepetidas, figurinhas[i])\n\t\t}\n\t}\n\n\tvar quantasEstaoFaltando int\n\tfor i := 0; i < len(deveriaTer); i++ {\n\t\tif deveriaTer[i].slot == 0 {\n\t\t\tquantasEstaoFaltando++\n\t\t}\n\t}\n\n\tfmt.Println(figurinhasRepetidas)\n\tfmt.Println(quantasEstaoFaltando)\n\n}\n",
+            "content": "@@ -631,39 +631,34 @@\n i := 0; i %3C \n-len(deveriaTer)\n+quantasTem\n ; i++ %7B%0A%09%09fo\n@@ -663,38 +663,38 @@\n for \n-j\n+i\n  := 0; \n-j\n+i\n  %3C len(\n-figurinhas); j\n+deveriaTer); i\n ++ %7B\n@@ -703,33 +703,33 @@\n %09%09if figurinhas%5B\n-j\n+i\n %5D == deveriaTer%5B\n@@ -769,65 +769,36 @@\n  == \n-1\n+0\n  %7B%0A%09%09%09%09\n-figurinhasRepetidas = append(figurinhasRepetidas,\n+deveriaTer%5Bi%5D.slot =\n  fig\n@@ -809,18 +809,59 @@\n has%5B\n-j%5D)\n+i%5D\n %0A%09%09%09%7D%0A%09\n+%09%7D%0A%09%7D%0A%0A%09for i := 0; i %3C quantasTem; i++ %7B%0A\n %09%09if\n@@ -876,9 +876,9 @@\n has%5B\n-j\n+i\n %5D ==\n@@ -915,33 +915,33 @@\n eriaTer%5Bi%5D.slot \n-=\n+!\n = 0 %7B%0A%09%09%09%09deveri\n@@ -937,36 +937,72 @@\n %0A%09%09%09\n-%09deveriaTer%5Bi%5D.slot = 1%0A%09%09%09%7D\n+figurinhasRepetidas = append(figurinhasRepetidas, figurinhas%5Bi%5D)\n %0A%09%09%7D\n@@ -1179,70 +1179,8 @@\n as)%0A\n-%09if quantasEstaoFaltando == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09\n %09fmt\n@@ -1209,15 +1209,12 @@\n altando)\n-%0A%09%7D\n %0A%0A%7D%0A\n",
             "lines": "54"
+        },
+        {
+            "label": "2026-05-09_16-27-13",
+            "content": "@@ -35,16 +35,46 @@\n ain() %7B%0A\n+%09fmt.Println(%22Hello, World!%22)%0A\n %09var slo\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-09_16-27-30",
+            "content": "@@ -1072,74 +1072,8 @@\n %09%7D%0A%0A\n-%09if len(figurinhasRepetidas) == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09\n %09fmt\n@@ -1102,20 +1102,16 @@\n etidas)%0A\n-%09%7D%0A%0A\n %09if quan\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-09_16-29-57",
+            "content": "@@ -938,26 +938,28 @@\n %7D%0A%0A%09var \n-figurinhas\n+quantasEstao\n Faltando\n@@ -959,38 +959,19 @@\n altando \n-%5B%5D\n int\n- = make(%5B%5Dint, 0)\n %0A%09for i \n@@ -1041,79 +1041,30 @@\n %0A%09%09%09\n-figurinhasFaltando = append(figurinhasFaltando, deveriaTer%5Bi%5D.deviaTer)\n+quantasEstaoFaltando++\n %0A%09%09%7D\n@@ -1180,30 +1180,28 @@\n %09if \n-len(figurinhas\n+quantasEstao\n Faltando\n ) ==\n@@ -1196,17 +1196,16 @@\n Faltando\n-)\n  == 0 %7B%0A\n@@ -1247,26 +1247,28 @@\n Println(\n-figurinhas\n+quantasEstao\n Faltando\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-05-09_16-34-03",
+            "content": "@@ -1197,38 +1197,35 @@\n %09%7D else %7B%0A%09%09\n-printSliceInts\n+fmt.Println\n (figurinhasR\n@@ -1304,30 +1304,27 @@\n lse %7B%0A%09%09\n-printSliceInts\n+fmt.Println\n (figurin\n@@ -1346,129 +1346,4 @@\n %0A%0A%7D%0A\n-%0Afunc printSliceInts(a %5B%5Dint) %7B%0A%09for i, v := range a %7B%0A%09%09if i %3E 0 %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A%09%09fmt.Print(v)%0A%09%7D%0A%09fmt.Println()%0A%7D%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-05-09_16-36-46",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar slotsAlbum int\n\tvar quantasTem int\n\tfmt.Scan(&slotsAlbum)\n\tfmt.Scan(&quantasTem)\n\tfigurinhas := make([]int, quantasTem)\n\tfor i := 0; i < quantasTem; i++ {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\n\tverificarRepetidas(slotsAlbum, quantasTem, figurinhas)\n}\n\nfunc verificarRepetidas(slotsAlbum int, quantasTem int, figurinhas []int) {\n\ttype slots struct {\n\t\tdeviaTer int\n\t\tslot     int\n\t}\n\tvar deveriaTer []slots = make([]slots, slotsAlbum)\n\tfor i := 0; i < slotsAlbum; i++ {\n\t\tdeveriaTer[i] = slots{i + 1, 0}\n\t}\n\tvar figurinhasRepetidas []int = make([]int, 0)\n\n\tfor i := 0; i < len(deveriaTer); i++ {\n\t\tfor j := 0; j < len(figurinhas); j++ {\n\t\t\tif figurinhas[j] == deveriaTer[i].deviaTer && deveriaTer[i].slot == 1 {\n\t\t\t\tfigurinhasRepetidas = append(figurinhasRepetidas, figurinhas[j])\n\t\t\t}\n\t\t\tif figurinhas[j] == deveriaTer[i].deviaTer && deveriaTer[i].slot == 0 {\n\t\t\t\tdeveriaTer[i].slot = 1\n\t\t\t}\n\t\t}\n\t}\n\n\tvar figurinhasFaltando []int = make([]int, 0)\n\tfor i := 0; i < len(deveriaTer); i++ {\n\t\tif deveriaTer[i].slot == 0 {\n\t\t\tfigurinhasFaltando = append(figurinhasFaltando, deveriaTer[i].deviaTer)\n\t\t}\n\t}\n\n\tif len(figurinhasRepetidas) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tprintSliceInts(figurinhasRepetidas)\n\t}\n\n\tif len(figurinhasFaltando) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tprintSliceInts(figurinhasFaltando)\n\t}\n\n}\n\nfunc printSliceInts(a []int) {\n\tfor i, v := range a {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t\tfmt.Print(v)\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "69"
         }
     ]
 }

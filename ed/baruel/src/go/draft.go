@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello, World!")
 	var slotsAlbum int
 	var quantasTem int
 	fmt.Scan(&slotsAlbum)
@@ -27,28 +26,44 @@ func verificarRepetidas(slotsAlbum int, quantasTem int, figurinhas []int) {
 	}
 	var figurinhasRepetidas []int = make([]int, 0)
 
-	for i := 0; i < quantasTem; i++ {
-		for i := 0; i < len(deveriaTer); i++ {
-			if figurinhas[i] == deveriaTer[i].deviaTer && deveriaTer[i].slot == 0 {
-				deveriaTer[i].slot = figurinhas[i]
+	for i := 0; i < len(deveriaTer); i++ {
+		for j := 0; j < len(figurinhas); j++ {
+			if figurinhas[j] == deveriaTer[i].deviaTer && deveriaTer[i].slot == 1 {
+				figurinhasRepetidas = append(figurinhasRepetidas, figurinhas[j])
+			}
+			if figurinhas[j] == deveriaTer[i].deviaTer && deveriaTer[i].slot == 0 {
+				deveriaTer[i].slot = 1
 			}
 		}
 	}
 
-	for i := 0; i < quantasTem; i++ {
-		if figurinhas[i] == deveriaTer[i].deviaTer && deveriaTer[i].slot != 0 {
-			figurinhasRepetidas = append(figurinhasRepetidas, figurinhas[i])
-		}
-	}
-
-	var quantasEstaoFaltando int
+	var figurinhasFaltando []int = make([]int, 0)
 	for i := 0; i < len(deveriaTer); i++ {
 		if deveriaTer[i].slot == 0 {
-			quantasEstaoFaltando++
+			figurinhasFaltando = append(figurinhasFaltando, deveriaTer[i].deviaTer)
 		}
 	}
 
-	fmt.Println(figurinhasRepetidas)
-	fmt.Println(quantasEstaoFaltando)
+	if len(figurinhasRepetidas) == 0 {
+		fmt.Println("N")
+	} else {
+		printSliceInts(figurinhasRepetidas)
+	}
 
+	if len(figurinhasFaltando) == 0 {
+		fmt.Println("N")
+	} else {
+		printSliceInts(figurinhasFaltando)
+	}
+
+}
+
+func printSliceInts(a []int) {
+	for i, v := range a {
+		if i > 0 {
+			fmt.Print(" ")
+		}
+		fmt.Print(v)
+	}
+	fmt.Println()
 }

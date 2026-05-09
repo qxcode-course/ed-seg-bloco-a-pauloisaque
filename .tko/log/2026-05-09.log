@@ -8,3 +8,21 @@
 2026-05-09 08:46:27, MOVE, v:1, k:ed@baruel, mode:EDIT
 2026-05-09 08:54:30, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:54
 2026-05-09 08:54:31, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-05-09 15:51:31, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-05-09 15:55:49, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 15:59:23, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:05:09, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:08:58, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:09:30, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:11:37, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:20:34, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:25:51, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:27:13, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:55
+2026-05-09 16:27:30, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:54
+2026-05-09 16:29:57, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:59
+2026-05-09 16:30:53, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:34:04, EXEC, v:1, k:ed@baruel, mode:FULL, rate:0, size:59
+2026-05-09 16:32:47, MOVE, v:1, k:ed@baruel, mode:EDIT
+2026-05-09 16:36:46, EXEC, v:1, k:ed@baruel, mode:FULL, rate:100, size:69
+2026-05-09 16:36:51, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-05-09 16:38:02, SELF, v:1, k:ed@baruel, self:1, rate:100, study:120, concept:1, refactor:1
