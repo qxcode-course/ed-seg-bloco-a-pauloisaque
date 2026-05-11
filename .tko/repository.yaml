@@ -22,7 +22,7 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@basic
+- ed@map_set
 flags:
   inbox: all
   panel: graph
@@ -30,5 +30,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@gomos
-selected_index: 7
+selected: ed@princesa
+selected_index: 3

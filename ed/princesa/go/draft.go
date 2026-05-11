@@ -5,41 +5,25 @@ import "fmt"
 func main() {
 	var n, e int
 	fmt.Scan(&n, &e)
-
-	//cria a fila inicial com as pessoas de 1 até n
-	vivos := make([]int, n)
-	for i := 0; i < n; i++ {
-		vivos[i] = i + 1
-	}
-
-	//a espada começa com a pessoa E
-	pos := e - 1
-	// 1 2> 3 4
-	// 0 1  2 3
-	//enquanto tiver mais de uma pessoa viva, a simulação irá continuar
-	for len(vivos) > 1 {
-		// mostra o estado atual da fila e quem está com a espada
-		imprime(vivos, pos)
-		// a vitima e a proxima pessoa viva
-		vitima := (pos + 1) % len(vivos)
-		//remove a vitima do vetor
-		vivos = append(vivos[:vitima], vivos[vitima+1:]...)
-		//depois da morte, a espada passa a proxima pessoa
-		//se a vitima estava no fim do veto, a espada volta ao inicio
-		pos = vitima % len(vivos)
-	}
-	//imprime o vencedor
-	imprime(vivos, pos)
+	e = e - 1
+	josephusProblem(n, e)
 }
 
-func imprime(vivos []int, espada int) {
-	fmt.Print("[ ")
-	for i := 0; i < len(vivos); i++ {
-		if i == espada {
-			fmt.Printf("%d> ", vivos[i])
+func josephusProblem(n int, e int) {
+	var vetor []int = make([]int, n)
+	for i := 0; i < n; i++ {
+		vetor[i] = i + 1
+	}
+	fmt.Println(vetor)
+
+	for i := 0; i < len(vetor); i++ {
+		valor := (i + e) % len(vetor)
+		if vetor[valor+1] != 0 {
+			vetor[valor+1] = 0
+			e = (e + 2) % len(vetor)
 		} else {
-			fmt.Printf("%d ", vivos[i])
+			continue
 		}
 	}
-	fmt.Println("]")
+
 }
