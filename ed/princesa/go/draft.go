@@ -28,27 +28,29 @@ func josephusProblem(n int, e int) {
 		return res
 	}
 
-	transformarProximoFalse := func() bool {
+	printar := func(v []int) {
+		fmt.Print("[")
+		for i := 0; i < len(v); i++ {
+			if v[i] == 1 {
+				if i == e {
+					fmt.Printf(" %d>", i+1)
+				} else {
+					fmt.Printf(" %d", i+1)
+				}
+			}
+		}
+		fmt.Println(" ]")
+	}
+
+	var quantosJaForam int
+	quantosJaForam = 0
+	printar(vetor)
+	for quantosJaForam < len(vetor)-1 {
 		var proximoTrue int
 		proximoTrue = proximo()
 		vetor[proximoTrue] = 0
-		return false
+		quantosJaForam++
+		e = proximo()
+		printar(vetor)
 	}
-
-	var temUmElemento bool
-	temUmElemento = false
-	for temUmElemento == false {
-		temUmElemento = transformarProximoFalse()
-	}
-
-	fmt.Println(proximo())
-
-}
-
-func transformaProximoEmFalse() {
-
-}
-
-func passarEspadaProximo() {
-
 }

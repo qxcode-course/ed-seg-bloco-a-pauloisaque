@@ -177,8 +177,43 @@
         },
         {
             "label": "2026-05-11_18-15-15",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n}\n",
+            "content": "@@ -71,681 +71,6 @@\n &e)%0A\n-%09e = e - 1%0A%09josephusProblem(n, e)%0A%7D%0A%0Afunc josephusProblem(n int, e int) %7B%0A%09var vetor %5B%5Dint = make(%5B%5Dint, n)%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09vetor%5Bi%5D = 1%0A%09%7D%0A%0A%09proximo := func() int %7B%0A%09%09var res int%0A%09%09for i := 0; i %3C len(vetor); i++ %7B%0A%09%09%09valorAtual := (i + e) %25 len(vetor)%0A%09%09%09valorVerificado := (valorAtual + 1) %25 len(vetor)%0A%09%09%09if vetor%5BvalorVerificado%5D == 1 %7B%0A%09%09%09%09res = valorVerificado%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%09return res%0A%09%7D%0A%0A%09var quantosJaForam int%0A%09quantosJaForam = 0%0A%09fmt.Println(vetor)%0A%09for quantosJaForam %3C len(vetor)-1 %7B%0A%09%09var proximoTrue int%0A%09%09proximoTrue = proximo()%0A%09%09vetor%5BproximoTrue%5D = 0%0A%09%09fmt.Println(vetor)%0A%09%09quantosJaForam++%0A%09%09e = proximo()%0A%09%7D%0A%0A%09fmt.Println(proximo())%0A%0A\n %7D%0A\n",
             "lines": "8"
+        },
+        {
+            "label": "2026-05-13_09-12-39",
+            "content": "@@ -716,10 +716,36 @@\n mo()%0A%09%7D%0A\n+%0A%09fmt.Println(proximo())%0A%0A\n %7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-13_09-12-56",
+            "content": "@@ -487,228 +487,8 @@\n %09%7D%0A%0A\n-%09printar := func(v %5B%5Dint) %7B%0A%09%09fmt.Print(%22%5B%22)%0A%09%09for i := 0; i %3C len(v); i++ %7B%0A%09%09%09if v%5Bi%5D == 1 %7B%0A%09%09%09%09if i == e %7B%0A%09%09%09%09%09fmt.Printf(%22 %25d%3E%22, i+1)%0A%09%09%09%09%7D else %7B%0A%09%09%09%09%09fmt.Printf(%22 %25d%22, i+1)%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println(%22 %5D%22)%0A%09%7D%0A%0A\n %09var\n@@ -532,15 +532,19 @@\n  0%0A%09\n-p\n+fmt.P\n rint\n-ar\n+ln\n (vet\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-13_09-21-03",
+            "content": "@@ -875,23 +875,27 @@\n %5D = 0%0A%09%09\n-p\n+fmt.P\n rint\n-ar\n+ln\n (vetor)%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-05-13_09-21-19",
+            "content": "@@ -522,18 +522,16 @@\n mt.Print\n-ln\n (%22%5B%22)%0A%09%09\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-05-13_09-21-45",
+            "content": "@@ -522,16 +522,18 @@\n mt.Print\n+ln\n (%22%5B%22)%0A%09%09\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-05-13_09-22-50",
+            "content": "@@ -873,16 +873,33 @@\n ue%5D = 0%0A\n+%09%09printar(vetor)%0A\n %09%09quanto\n@@ -925,30 +925,13 @@\n oximo()%0A\n-%09%09printar(vetor)%0A\n %09%7D%0A%7D%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-05-13_09-26-32",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\te = e - 1\n\tjosephusProblem(n, e)\n}\n\nfunc josephusProblem(n int, e int) {\n\tvar vetor []int = make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tvetor[i] = 1\n\t}\n\n\tproximo := func() int {\n\t\tvar res int\n\t\tfor i := 0; i < len(vetor); i++ {\n\t\t\tvalorAtual := (i + e) % len(vetor)\n\t\t\tvalorVerificado := (valorAtual + 1) % len(vetor)\n\t\t\tif vetor[valorVerificado] == 1 {\n\t\t\t\tres = valorVerificado\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\treturn res\n\t}\n\n\tprintar := func(v []int) {\n\t\tfmt.Print(\"[\")\n\t\tfor i := 0; i < len(v); i++ {\n\t\t\tif v[i] == 1 {\n\t\t\t\tif i == e {\n\t\t\t\t\tfmt.Printf(\" %d>\", i+1)\n\t\t\t\t} else {\n\t\t\t\t\tfmt.Printf(\" %d\", i+1)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfmt.Println(\" ]\")\n\t}\n\n\tvar quantosJaForam int\n\tquantosJaForam = 0\n\tprintar(vetor)\n\tfor quantosJaForam < len(vetor)-1 {\n\t\tvar proximoTrue int\n\t\tproximoTrue = proximo()\n\t\tvetor[proximoTrue] = 0\n\t\tquantosJaForam++\n\t\te = proximo()\n\t\tprintar(vetor)\n\t}\n}\n",
+            "lines": "56"
         }
     ]
 }
