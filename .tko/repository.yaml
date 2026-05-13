@@ -23,8 +23,8 @@ sources:
   tasks: null
 expanded:
 - ed@rec
-- ed@backtrack
 - ed@map_set
+- ed@backtrack
 flags:
   inbox: all
   panel: graph
