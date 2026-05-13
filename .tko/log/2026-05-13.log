@@ -14,3 +14,19 @@
 2026-05-13 09:26:32, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:56
 2026-05-13 09:26:40, MOVE, v:1, k:ed@princesa, mode:BACK
 2026-05-13 09:27:57, SELF, v:1, k:ed@princesa, self:1, rate:100, study:420, concept:1
+2026-05-13 09:29:49, MOVE, v:1, k:ed@apagando, mode:DOWN
+2026-05-13 09:29:53, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-05-13 09:32:41, EXEC, v:1, k:ed@apagando, mode:FULL, size:4, fail:COMP
+2026-05-13 09:32:46, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-05-13 12:15:32, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-05-13 12:33:37, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-05-13 12:33:44, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-05-13 12:33:34, MOVE, v:1, k:ed@apagando, mode:EDIT
+2026-05-13 12:40:11, MOVE, v:1, k:ed@apagando, mode:EDIT
+2026-05-13 12:46:10, MOVE, v:1, k:ed@apagando, mode:EDIT
+2026-05-13 12:56:38, MOVE, v:1, k:ed@apagando, mode:EDIT
+2026-05-13 13:00:13, MOVE, v:1, k:ed@apagando, mode:EDIT
+2026-05-13 13:16:51, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-05-13 13:16:44, MOVE, v:1, k:ed@apagando, mode:EDIT
+2026-05-13 19:59:04, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-05-13 20:06:11, MOVE, v:1, k:ed@apagando, mode:BACK
