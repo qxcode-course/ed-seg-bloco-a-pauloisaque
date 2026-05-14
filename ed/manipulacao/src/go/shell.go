@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -29,23 +30,46 @@ func getCalmWomen(vet []int) []int {
 }
 
 func sortVet(vet []int) []int {
-	_ = vet
-	return nil
+	for i := 0; i < len(vet); i++ {
+		for j := 0; j < len(vet); j++ {
+			if vet[i] < vet[j] {
+				k := vet[i]
+				l := vet[j]
+				vet[i] = l
+				vet[j] = k
+			}
+		}
+	}
+	return vet
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+
+	for i := 0; i < len(vet); i++ {
+		for j := 0; j < len(vet); j++ {
+			if math.Abs(float64(vet[i])) < math.Abs(float64(vet[j])) {
+				k := vet[i]
+				l := vet[j]
+				vet[i] = l
+				vet[j] = k
+			}
+		}
+	}
+	return vet
 }
 
 func reverse(vet []int) []int {
-	_ = vet
-	return nil
+	novoVetor := make([]int, 0)
+	for i := len(vet) - 1; i >= 0; i-- {
+		novoVetor = append(novoVetor, vet[i])
+	}
+	return novoVetor
 }
 
 func unique(vet []int) []int {
-	_ = vet
-	return nil
+	novoVetor
+
+	return novoVetor
 }
 
 func repeated(vet []int) []int {

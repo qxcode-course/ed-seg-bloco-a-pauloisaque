@@ -7,8 +7,33 @@
         },
         {
             "label": "2026-05-13_20-32-21",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc getMen(vet []int) []int {\n\tvetor := make([]int, 0)\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > 0 {\n\t\t\tvetor = append(vetor, vet[i])\n\t\t}\n\t}\n\treturn vetor\n}\n\nfunc getCalmWomen(vet []int) []int {\n\tvetor := make([]int, 0)\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > -10 && vet[i] < 0 {\n\t\t\tvetor = append(vetor, vet[i])\n\t\t}\n\t}\n\treturn vetor\n}\n\nfunc sortVet(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc sortStress(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc reverse(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc unique(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc repeated(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n",
+            "content": "@@ -450,171 +450,15 @@\n  %7B%0A%09\n-for i := 0; i %3C len(vet); i++ %7B%0A%09%09for j := 0; j %3C len(vet); j++ %7B%0A%09%09%09if vet%5Bi%5D %3E vet%5Bj%5D %7B%0A%09%09%09%09k := vet%5Bi%5D%0A%09%09%09%09l := vet%5Bj%5D%0A%09%09%09%09vet%5Bi%5D = l%0A%09%09%09%09vet%5Bj%5D = k%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+_ = vet\n %0A%09re\n@@ -462,19 +462,19 @@\n %09return \n-vet\n+nil\n %0A%7D%0A%0Afunc\n",
             "lines": "115"
+        },
+        {
+            "label": "2026-05-14_08-19-33",
+            "content": "@@ -525,17 +525,17 @@\n  vet%5Bi%5D \n-%3C\n+%3E\n  vet%5Bj%5D \n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-05-14_08-39-01",
+            "content": "@@ -36,16 +36,8 @@\n mt%22%0A\n-%09%22math%22%0A\n %09%22os\n@@ -664,211 +664,16 @@\n t %7B%0A\n-%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09for j := 0; j %3C len(vet); j++ %7B%0A%09%09%09if math.Abs(float64(vet%5Bi%5D)) %3C math.Abs(float64(vet%5Bj%5D)) %7B%0A%09%09%09%09k := vet%5Bi%5D%0A%09%09%09%09l := vet%5Bj%5D%0A%09%09%09%09vet%5Bi%5D = l%0A%09%09%09%09vet%5Bj%5D = k%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+%09_ = vet\n %0A%09re\n@@ -669,35 +669,35 @@\n _ = vet%0A%09return \n-vet\n+nil\n %0A%7D%0A%0Afunc reverse\n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-05-14_08-43-39",
+            "content": "@@ -924,116 +924,15 @@\n  %7B%0A%09\n-novoVetor := make(%5B%5Dint, 0)%0A%09for i := len(vet) - 1; i %3E= 0; i-- %7B%0A%09%09novoVetor = append(novoVetor, vet%5Bi%5D)%0A%09%7D\n+_ = vet\n %0A%09re\n@@ -928,35 +928,35 @@\n _ = vet%0A%09return \n-vet\n+nil\n %0A%7D%0A%0Afunc unique(\n",
+            "lines": "135"
+        },
+        {
+            "label": "2026-05-14_08-48-50",
+            "content": "@@ -1037,25 +1037,19 @@\n %09return \n-novoVetor\n+vet\n %0A%7D%0A%0Afunc\n",
+            "lines": "138"
+        },
+        {
+            "label": "2026-05-14_08-49-13",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc getMen(vet []int) []int {\n\tvetor := make([]int, 0)\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > 0 {\n\t\t\tvetor = append(vetor, vet[i])\n\t\t}\n\t}\n\treturn vetor\n}\n\nfunc getCalmWomen(vet []int) []int {\n\tvetor := make([]int, 0)\n\tfor i := 0; i < len(vet); i++ {\n\t\tif vet[i] > -10 && vet[i] < 0 {\n\t\t\tvetor = append(vetor, vet[i])\n\t\t}\n\t}\n\treturn vetor\n}\n\nfunc sortVet(vet []int) []int {\n\tfor i := 0; i < len(vet); i++ {\n\t\tfor j := 0; j < len(vet); j++ {\n\t\t\tif vet[i] < vet[j] {\n\t\t\t\tk := vet[i]\n\t\t\t\tl := vet[j]\n\t\t\t\tvet[i] = l\n\t\t\t\tvet[j] = k\n\t\t\t}\n\t\t}\n\t}\n\treturn vet\n}\n\nfunc sortStress(vet []int) []int {\n\n\tfor i := 0; i < len(vet); i++ {\n\t\tfor j := 0; j < len(vet); j++ {\n\t\t\tif math.Abs(float64(vet[i])) < math.Abs(float64(vet[j])) {\n\t\t\t\tk := vet[i]\n\t\t\t\tl := vet[j]\n\t\t\t\tvet[i] = l\n\t\t\t\tvet[j] = k\n\t\t\t}\n\t\t}\n\t}\n\treturn vet\n}\n\nfunc reverse(vet []int) []int {\n\tnovoVetor := make([]int, 0)\n\tfor i := len(vet) - 1; i >= 0; i-- {\n\t\tnovoVetor = append(novoVetor, vet[i])\n\t}\n\treturn novoVetor\n}\n\nfunc unique(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc repeated(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n",
+            "lines": "138"
         }
     ]
 }
