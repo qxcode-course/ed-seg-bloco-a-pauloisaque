@@ -9,28 +9,22 @@ import (
 )
 
 func processa(vet []int) {
-	if len(vet) == 0 {
-		return
+	aux := make([]int, 0)
+	for i := 0; i < len(vet); i++ {
+		if len(aux) == len(vet)-1 {
+			break
+		}
+		aux = append(aux, vet[i]+vet[i+1])
 	}
 
-	if len(vet) == 1 {
-		fmt.Printf("[ %d ]\n", vet[0])
-		return
+	if len(vet) != 1 {
+		processa(aux)
 	}
-
-	aux := make([]int, len(vet)-1)
-	
-	for i := 0; i < len(vet)-1; i++ {
-		aux[i] = vet[i] + vet[i+1]
-	}
-
-	processa(aux)
-
-	fmt.Printf("[ %s ]\n", Join(vet, " "))
 	// 1. defina o ponto de parada
 	// 2. monte o vetor auxiliar com os resultados das somas
 	// 3. chame recursivamente a função processa para o vetor auxiliar
 	// 4. imprima o vetor original
+	fmt.Println("[ " + Join(vet, " ") + " ]")
 }
 
 func main() {
