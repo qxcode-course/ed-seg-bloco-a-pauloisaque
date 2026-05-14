@@ -2,8 +2,33 @@
     "patches": [
         {
             "label": "2026-05-13_09-32-41",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n}\n",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,628 +37,6 @@\n ) %7B%0A\n-%09var n int%0A%09fmt.Scan(&n)%0A%0A%09fila := make(%5B%5Dint, n)%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scan(&fila%5Bi%5D)%0A%09%7D%0A%0A%09var m int%0A%09fmt.Scan(&m)%0A%0A%09sairam := make(%5B%5Dint, m)%0A%09for i := 0; i %3C m; i++ %7B%0A%09%09fmt.Scan(&sairam%5Bi%5D)%0A%09%7D%0A%0A%09subtrairVetor(fila, sairam)%0A%0A%7D%0A%0Afunc subtrairVetor(fila %5B%5Dint, sairam %5B%5Dint) %7B%0A%09for i := 0; i %3C len(fila); i++ %7B%0A%09%09for j := 0; j %3C len(sairam); j++ %7B%0A%09%09%09if fila%5Bi%5D == sairam%5Bj%5D %7B%0A%09%09%09%09fila%5Bi%5D = 0%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09novaFila := make(%5B%5Dint, len(fila)-len(sairam))%0A%09for i := 0; i %3C len(novaFila); i++ %7B%0A%09%09for j := 0; j %3C len(fila); j++ %7B%0A%09%09%09if fila%5Bj%5D != 0 %7B%0A%09%09%09%09novaFila%5Bi%5D = fila%5Bj%5D%0A%09%09%09%09fila%5Bj%5D = 0%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A\n %7D%0A\n",
             "lines": "4"
+        },
+        {
+            "label": "2026-05-13_20-10-19",
+            "content": "@@ -661,65 +661,6 @@\n %09%7D%0A%0A\n-%09for i := 0; i %3C len(fila); i++ %7B%0A%09%09fmt.Print(fila%5Bi%5D)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-13_20-11-49",
+            "content": "@@ -670,37 +670,33 @@\n i := 0; i %3C len(\n-novaF\n+f\n ila); i++ %7B%0A%09%09fm\n@@ -703,21 +703,17 @@\n t.Print(\n-novaF\n+f\n ila%5Bi%5D)%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-13_20-12-04",
+            "content": "@@ -710,17 +710,9 @@\n rint\n-f(%22%25d %22, \n+(\n nova\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-13_20-13-00",
+            "content": "@@ -734,25 +734,8 @@\n )%0A%09%7D\n-%0A%09fmt.Print(%22%5Cn%22)\n %0A%0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-13_20-13-26",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tfila := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&fila[i])\n\t}\n\n\tvar m int\n\tfmt.Scan(&m)\n\n\tsairam := make([]int, m)\n\tfor i := 0; i < m; i++ {\n\t\tfmt.Scan(&sairam[i])\n\t}\n\n\tsubtrairVetor(fila, sairam)\n\n}\n\nfunc subtrairVetor(fila []int, sairam []int) {\n\tfor i := 0; i < len(fila); i++ {\n\t\tfor j := 0; j < len(sairam); j++ {\n\t\t\tif fila[i] == sairam[j] {\n\t\t\t\tfila[i] = 0\n\t\t\t}\n\t\t}\n\t}\n\n\tnovaFila := make([]int, len(fila)-len(sairam))\n\tfor i := 0; i < len(novaFila); i++ {\n\t\tfor j := 0; j < len(fila); j++ {\n\t\t\tif fila[j] != 0 {\n\t\t\t\tnovaFila[i] = fila[j]\n\t\t\t\tfila[j] = 0\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 0; i < len(novaFila); i++ {\n\t\tfmt.Printf(\"%d \", novaFila[i])\n\t}\n\tfmt.Print(\"\\n\")\n\n}\n",
+            "lines": "51"
         }
     ]
 }

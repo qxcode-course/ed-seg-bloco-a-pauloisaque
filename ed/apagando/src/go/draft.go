@@ -43,4 +43,9 @@ func subtrairVetor(fila []int, sairam []int) {
 		}
 	}
 
+	for i := 0; i < len(novaFila); i++ {
+		fmt.Printf("%d ", novaFila[i])
+	}
+	fmt.Print("\n")
+
 }
