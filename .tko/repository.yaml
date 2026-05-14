@@ -21,10 +21,7 @@ sources:
   writeable: false
   quests: null
   tasks: null
-expanded:
-- ed@backtrack
-- ed@map_set
-- ed@rec
+expanded: []
 flags:
   inbox: all
   panel: graph
@@ -32,5 +29,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@manipulacao
-selected_index: 5
+selected: ed@vector
+selected_index: 4

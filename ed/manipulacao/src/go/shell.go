@@ -67,14 +67,50 @@ func reverse(vet []int) []int {
 }
 
 func unique(vet []int) []int {
-	novoVetor
+	novoVetor := make([]int, 0)
+
+	for i := 0; i < len(vet); i++ {
+		for j := 0; j < len(vet); j++ {
+			if i == j {
+				continue
+			}
+			if vet[i] == 0 {
+				continue
+			}
+			if vet[i] == vet[j] {
+				vet[j] = 0
+			}
+		}
+	}
+
+	for i := 0; i < len(vet); i++ {
+		if vet[i] != 0 {
+			novoVetor = append(novoVetor, vet[i])
+		}
+	}
 
 	return novoVetor
 }
 
 func repeated(vet []int) []int {
-	_ = vet
-	return nil
+	novoVetor := make([]int, 0)
+
+	for i := 0; i < len(vet); i++ {
+		for j := 0; j < len(vet); j++ {
+			if i == j {
+				continue
+			}
+			if vet[i] == 0 {
+				continue
+			}
+			if vet[i] == vet[j] {
+				novoVetor = append(novoVetor, vet[j])
+				vet[j] = 0
+			}
+		}
+	}
+
+	return sortVet(novoVetor)
 }
 
 func main() {
