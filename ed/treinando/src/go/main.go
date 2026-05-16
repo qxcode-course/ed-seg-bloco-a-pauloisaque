@@ -8,13 +8,21 @@ import (
 	"strings"
 )
 
-func tostr(vet []int) string {
-	if len(vet) == 1 {
-		return "["
-	}
+func tostr(vet []int, primeiraVez bool) string {
 	aux := vet
+
+	if len(vet) == 0 {
+		return "]"
+	}
+	if len(vet) == 1 {
+		vet = vet[1:]
+		return fmt.Sprintf("%d", aux[0]) + tostr(vet, false)
+	}
 	vet = vet[1:]
-	return fmt.Sprint(aux[0]) + tostr(vet)
+	if primeiraVez {
+		return fmt.Sprintf("[%d, ", aux[0]) + tostr(vet, false)
+	}
+	return fmt.Sprintf("%d, ", aux[0]) + tostr(vet, false)
 }
 
 func tostrrev(vet []int) string {
@@ -70,7 +78,7 @@ func main() {
 				}
 			}
 		case "tostr":
-			fmt.Println(tostr(vet))
+			fmt.Println(tostr(vet, true))
 		case "torev":
 			fmt.Println(tostrrev(vet))
 		case "reverse":
