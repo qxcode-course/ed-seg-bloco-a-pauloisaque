@@ -7,8 +7,13 @@
         },
         {
             "label": "2026-05-19_11-13-33",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar num int\n\tfmt.Scan(&num)\n\trestofunc(num)\n}\n\nfunc restofunc(num int) int {\n\tresto := num % 2\n\tnum = num / 2\n\n\tif num != 0 {\n\t\treturn restofunc(num)\n\t}\n\n\tfmt.Printf(\"%d %d\\n\", num, resto)\n\treturn num\n}\n",
+            "content": "@@ -166,44 +166,8 @@\n 0 %7B%0A\n-%09%09fmt.Printf(%22%25d %25d%5Cn%22, num, resto)%0A\n %09%09re\n",
             "lines": "21"
+        },
+        {
+            "label": "2026-05-19_18-51-56",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar num int\n\tfmt.Scan(&num)\n\trestofunc(num)\n}\n\nfunc restofunc(num int) int {\n\tresto := num % 2\n\tnum = num / 2\n\n\tif num != 0 {\n\t\tfmt.Printf(\"%d %d\\n\", num, resto)\n\t\treturn restofunc(num)\n\t}\n\n\tfmt.Printf(\"%d %d\\n\", num, resto)\n\treturn num\n}\n",
+            "lines": "22"
         }
     ]
 }

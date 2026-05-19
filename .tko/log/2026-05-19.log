@@ -40,3 +40,38 @@
 2026-05-19 11:13:33, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:21
 2026-05-19 11:16:47, MOVE, v:1, k:ed@resto, mode:EDIT
 2026-05-19 11:17:50, MOVE, v:1, k:ed@resto, mode:BACK
+2026-05-19 18:51:41, MOVE, v:1, k:ed@resto, mode:PICK
+2026-05-19 18:51:56, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:22
+2026-05-19 18:52:22, MOVE, v:1, k:ed@resto, mode:BACK
+2026-05-19 18:52:33, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-05-19 18:53:55, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:70
+2026-05-19 18:51:56, MOVE, v:1, k:ed@resto, mode:EDIT
+2026-05-19 18:53:55, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-05-19 18:58:58, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:70, size:56
+2026-05-19 18:58:13, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-05-19 18:58:57, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-05-19 19:01:20, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:70, size:58
+2026-05-19 19:03:34, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:60, size:60
+2026-05-19 19:03:33, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-05-19 19:03:34, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-05-19 19:05:53, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:0, size:60
+2026-05-19 19:06:04, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:60, size:60
+2026-05-19 19:07:27, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-05-19 19:07:53, SELF, v:1, k:ed@vetequals, self:1, rate:60
+2026-05-19 19:06:03, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-05-19 19:06:04, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-05-19 19:17:57, MOVE, v:1, k:ed@resto, mode:PICK
+2026-05-19 19:18:09, MOVE, v:1, k:ed@resto, mode:BACK
+2026-05-19 19:19:36, MOVE, v:1, k:ed@gomos, mode:DOWN
+2026-05-19 19:19:38, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-05-19 19:20:17, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-05-19 19:19:36, MOVE, v:1, k:ed@gomos, mode:EDIT
+2026-05-19 19:19:36, MOVE, v:1, k:ed@gomos, mode:EDIT
+2026-05-19 19:19:36, MOVE, v:1, k:ed@gomos, mode:EDIT
+2026-05-19 19:25:55, MOVE, v:1, k:ed@resto, mode:PICK
+2026-05-19 19:26:13, EXEC, v:1, k:ed@resto, mode:FULL, rate:0
+2026-05-19 19:27:46, MOVE, v:1, k:ed@resto, mode:BACK
+2026-05-19 19:27:55, MOVE, v:1, k:ed@mdc, mode:DOWN
+2026-05-19 19:27:57, MOVE, v:1, k:ed@mdc, mode:PICK
+2026-05-19 19:28:51, EXEC, v:1, k:ed@mdc, mode:FULL, rate:0, size:15
+2026-05-19 19:28:58, MOVE, v:1, k:ed@mdc, mode:BACK
