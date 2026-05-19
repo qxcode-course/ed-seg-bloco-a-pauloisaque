@@ -24,35 +24,37 @@ func tostr(vet []int) string {
 	return "[" + auxilia_tostr(vet) + "]"
 }
 
-func auxilia_tostrrev(vet []int, i int) []int {
-	vet = append(vet, vet[0])
-	vet = vet[1:]
-	if i == 0 {
-		return vet
+func auxilia_tostrrev(vet []int) []int {
+	if len(vet) >= 1 {
+		last := vet[len(vet)-1]
+		return append([]int{last}, auxilia_tostrrev(vet[:len(vet)-1])...)
 	}
-	i--
-	return auxilia_tostrrev(vet, i)
+	return vet
 }
 
 func tostrrev(vet []int) string {
-	return tostr(auxilia_tostrrev(vet, len(vet)-1))
+	return tostr(auxilia_tostrrev(vet))
 }
 
 // reverse: inverte os elementos do slice
-func reverse(vet []int) {
-	_ = vet
+func reverse(vet []int) []int {
+	return auxilia_tostrrev(vet)
 }
 
 // sum: soma dos elementos do slice
 func sum(vet []int) int {
-	_ = vet
-	return 0
+	if len(vet) == 0 {
+		return 0
+	}
+	return vet[0] + sum(vet[1:])
 }
 
 // mult: produto dos elementos do slice
 func mult(vet []int) int {
-	_ = vet
-	return 0
+	if len(vet) == 0 {
+		return 1
+	}
+	return vet[0] * mult(vet[1:])
 }
 
 // min: retorna o índice e valor do menor valor
@@ -60,9 +62,10 @@ func mult(vet []int) int {
 // var rec func(v []int) (int, int)
 // para fazer uma recursão que retorna valor e índice
 func min(vet []int) int {
-	_ = vet
-	return 0
+
 }
+
+func aux_min(vet[int]) int
 
 func main() {
 	var vet []int
@@ -90,7 +93,7 @@ func main() {
 		case "torev":
 			fmt.Println(tostrrev(vet))
 		case "reverse":
-			reverse(vet)
+			vet = reverse(vet)
 		case "sum":
 			fmt.Println(sum(vet))
 		case "mult":
