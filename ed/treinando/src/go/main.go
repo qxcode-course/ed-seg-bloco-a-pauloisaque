@@ -8,26 +8,34 @@ import (
 	"strings"
 )
 
-func tostr(vet []int, primeiraVez bool) string {
+func auxilia_tostr(vet []int) string {
 	aux := vet
-
 	if len(vet) == 0 {
-		return "]"
+		return ""
 	}
 	if len(vet) == 1 {
-		vet = vet[1:]
-		return fmt.Sprintf("%d", aux[0]) + tostr(vet, false)
+		return fmt.Sprint(vet[0])
 	}
 	vet = vet[1:]
-	if primeiraVez {
-		return fmt.Sprintf("[%d, ", aux[0]) + tostr(vet, false)
+	return fmt.Sprintf("%d, ", aux[0]) + auxilia_tostr(vet)
+}
+
+func tostr(vet []int) string {
+	return "[" + auxilia_tostr(vet) + "]"
+}
+
+func auxilia_tostrrev(vet []int, i int) []int {
+	vet = append(vet, vet[0])
+	vet = vet[1:]
+	if i == 0 {
+		return vet
 	}
-	return fmt.Sprintf("%d, ", aux[0]) + tostr(vet, false)
+	i--
+	return auxilia_tostrrev(vet, i)
 }
 
 func tostrrev(vet []int) string {
-	_ = vet
-	return ""
+	return tostr(auxilia_tostrrev(vet, len(vet)-1))
 }
 
 // reverse: inverte os elementos do slice
@@ -78,7 +86,7 @@ func main() {
 				}
 			}
 		case "tostr":
-			fmt.Println(tostr(vet, true))
+			fmt.Println(tostr(vet))
 		case "torev":
 			fmt.Println(tostrrev(vet))
 		case "reverse":
