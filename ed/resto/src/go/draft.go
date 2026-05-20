@@ -12,11 +12,9 @@ func restofunc(num int) int {
 	resto := num % 2
 	num = num / 2
 
-	if num != 0 {
-		fmt.Printf("%d %d\n", num, resto)
-		return restofunc(num)
+	if num > 0 {
+		restofunc(num)
 	}
-
 	fmt.Printf("%d %d\n", num, resto)
-	return num
+	return 0
 }
