@@ -18,15 +18,13 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@backtrack
-- ed@vector
+expanded: []
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@vetbuild
-selected_index: 11
+selected: ed@backtrack
+selected_index: 3

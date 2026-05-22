@@ -23,8 +23,23 @@ func match(grid [][]rune, p Pos, value rune) bool {
 }
 
 // Função recursiva que tenta encontrar o caminho do início ao fim
-func search(grid [][]rune, startPos, endPos Pos) bool {
-	_, _, _ = grid, startPos, endPos
+func search(grid [][]rune, pos, endPos Pos, visited map[Pos]bool) bool {
+	if !match(grid, pos, ' ') || visited[pos] {
+		return false
+	}
+
+	visited[pos] = true
+	if pos == endPos {
+		grid[pos.l][pos.c] = '.'
+		return true
+	}
+
+	for _, elem := range getNeig(pos) {
+		if search(grid, elem, endPos, visited) {
+			grid[pos.l][pos.c] = '.'
+			return true
+		}
+	}
 	return false
 }
 
@@ -57,7 +72,8 @@ func main() {
 		}
 	}
 
-	search(grid, startPos, endPos)
+	visited := make(map[Pos]bool, 0)
+	search(grid, startPos, endPos, visited)
 
 	// Imprime o labirinto final
 	for _, line := range grid {
