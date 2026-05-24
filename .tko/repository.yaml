@@ -18,15 +18,13 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@backtrack
-- ed@rec
+expanded: []
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
-selected_index: 26
+selected: ed@rec
+selected_index: 2
