@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_08-07-32",
+            "content": "@@ -239,25 +239,25 @@\n %0A%0Afunc enesi\n-m\n+n\n oPrimo(n int\n@@ -515,21 +515,16 @@\n (enesimo\n-Primo\n (n))%0A%0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-25_08-08-04",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc ehPrimo(n int) bool {\n\tif n < 2 {\n\t\treturn false\n\t}\n\treturn ehPrimoRec(n, 2)\n}\n\nfunc ehPrimoRec(n, d int) bool {\n\tif d*d > n {\n\t\treturn true\n\t}\n\tif n%d == 0 {\n\t\treturn false\n\t}\n\treturn ehPrimoRec(n, d+1)\n}\n\nfunc enesimoPrimo(n int) int {\n\treturn buscaPrimo(n, 2, 0)\n}\n\nfunc buscaPrimo(alvo, atual, cont int) int {\n\tif ehPrimo(atual) {\n\t\tcont++\n\t\tif cont == alvo {\n\t\t\treturn atual\n\t\t}\n\t}\n\treturn buscaPrimo(alvo, atual+1, cont)\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tfmt.Println(enesimoPrimo(n))\n\n}\n",
+            "lines": "41"
+        }
+    ]
+}
