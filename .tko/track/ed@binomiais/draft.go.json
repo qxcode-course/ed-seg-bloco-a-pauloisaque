@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_12-41-58",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\tfmt.Println(binomial(n, k))\n}\n\nfunc binomial(n, k int) int {\n\tif k == 0 || k == n {\n\t\treturn 1\n\t}\n\treturn binomial(n-1, k-1) + binomial(n-1, k)\n}\n",
+            "lines": "18"
+        }
+    ]
+}

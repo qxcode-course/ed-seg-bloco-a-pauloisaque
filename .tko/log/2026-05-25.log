@@ -60,3 +60,35 @@
 2026-05-25 10:39:05, MOVE, v:1, k:ed@binomiais, mode:EDIT
 2026-05-25 10:39:05, MOVE, v:1, k:ed@binomiais, mode:EDIT
 2026-05-25 10:50:21, MOVE, v:1, k:ed@binomiais, mode:BACK
+2026-05-25 12:32:28, MOVE, v:1, k:ed@binomiais, mode:PICK
+2026-05-25 12:41:59, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:100, size:18
+2026-05-25 12:42:06, MOVE, v:1, k:ed@binomiais, mode:BACK
+2026-05-25 12:44:31, SELF, v:1, k:ed@binomiais, self:1, rate:100, study:7, concept:1, problem:1, code:1
+2026-05-25 12:44:53, MOVE, v:1, k:ed@diagonal, mode:DOWN
+2026-05-25 12:41:56, MOVE, v:1, k:ed@binomiais, mode:EDIT
+2026-05-25 12:44:53, MOVE, v:1, k:ed@diagonal, mode:EDIT
+2026-05-25 12:44:53, MOVE, v:1, k:ed@diagonal, mode:EDIT
+2026-05-25 12:44:53, MOVE, v:1, k:ed@diagonal, mode:EDIT
+2026-05-25 12:44:54, MOVE, v:1, k:ed@diagonal, mode:PICK
+2026-05-25 12:50:55, EXEC, v:1, k:ed@diagonal, mode:FULL, rate:100, size:26
+2026-05-25 12:52:37, MOVE, v:1, k:ed@diagonal, mode:BACK
+2026-05-25 12:53:06, SELF, v:1, k:ed@diagonal, self:1, rate:100, study:6, concept:1, problem:1, code:1
+2026-05-25 13:01:28, MOVE, v:1, k:ed@sufixos, mode:DOWN
+2026-05-25 13:01:43, SELF, v:1, k:ed@diagonal, self:1, rate:100, study:6, concept:1, problem:1, code:1
+2026-05-25 13:01:45, MOVE, v:1, k:ed@sufixos, mode:PICK
+2026-05-25 13:01:56, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:5
+2026-05-25 13:01:28, MOVE, v:1, k:ed@sufixos, mode:EDIT
+2026-05-25 13:01:28, MOVE, v:1, k:ed@sufixos, mode:EDIT
+2026-05-25 13:01:28, MOVE, v:1, k:ed@sufixos, mode:EDIT
+2026-05-25 13:10:41, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:17
+2026-05-25 13:12:04, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:100, size:17
+2026-05-25 13:12:02, MOVE, v:1, k:ed@sufixos, mode:EDIT
+2026-05-25 13:16:29, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:100
+2026-05-25 13:16:33, MOVE, v:1, k:ed@sufixos, mode:BACK
+2026-05-25 13:16:57, SELF, v:1, k:ed@sufixos, self:1, rate:100, study:5, problem:1, code:1
+2026-05-25 13:19:45, MOVE, v:1, k:ed@padroes1, mode:DOWN
+2026-05-25 13:20:25, MOVE, v:1, k:ed@padroes1, mode:PICK
+2026-05-25 13:19:45, MOVE, v:1, k:ed@padroes1, mode:EDIT
+2026-05-25 13:19:45, MOVE, v:1, k:ed@padroes1, mode:EDIT
+2026-05-25 13:19:45, MOVE, v:1, k:ed@padroes1, mode:EDIT
+2026-05-25 13:31:43, MOVE, v:1, k:ed@padroes1, mode:BACK

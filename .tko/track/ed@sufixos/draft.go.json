@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_13-01-56",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,167 +37,39 @@\n ) %7B%0A\n-%09var s string%0A%09fmt.Scan(&s)%0A%09printSufixos(s, len(s)-1)%0A%7D%0A%0Afunc printSufixos(s string, i int) %7B%0A%09if i %3C 0 %7B%0A%09%09return%0A%09%7D%0A%09printSufixos(s, i-1)%0A%09fmt.Println(s%5Bi:%5D\n+    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-25_13-10-41",
+            "content": "@@ -159,47 +159,47 @@\n %09%7D%0A%09\n-fmt.Println(s%5Bi:%5D)%0A%09printSufixos(s, i-1\n+printSufixos(s, i-1)%0A%09fmt.Println(s%5Bi:%5D\n )%0A%7D%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-05-25_13-12-04",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar s string\n\tfmt.Scan(&s)\n\tprintSufixos(s, len(s)-1)\n}\n\nfunc printSufixos(s string, i int) {\n\tif i < 0 {\n\t\treturn\n\t}\n\tfmt.Println(s[i:])\n\tprintSufixos(s, i-1)\n}\n",
+            "lines": "17"
+        }
+    ]
+}

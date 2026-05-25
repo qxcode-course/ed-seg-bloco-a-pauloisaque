@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_12-50-55",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar s string\n\tfmt.Scan(&s)\n\tdiagonal(s, 0)\n}\n\nfunc diagonal(s string, k int) {\n\tif len(s) == 0 {\n\t\treturn\n\t}\n\tspaces(k)\n\tfmt.Println(string(s[0]))\n\tdiagonal(s[1:], k+1)\n}\n\nfunc spaces(k int) {\n\tif k == 0 {\n\t\treturn\n\t}\n\tfmt.Print(\" \")\n\tspaces(k - 1)\n}\n",
+            "lines": "26"
+        }
+    ]
+}
