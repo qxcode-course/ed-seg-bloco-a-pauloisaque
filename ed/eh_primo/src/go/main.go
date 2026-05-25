@@ -5,8 +5,16 @@ import "fmt"
 // x: número que está sendo testado
 // div: divisor que está sendo testado
 func eh_primo(x int, div int) bool {
-	_, _ = x, div
-	return false;
+	if x < 2 {
+		return false
+	}
+	if x < div*div {
+		return true
+	}
+	if x%div == 0 {
+		return false
+	}
+	return eh_primo(x, div+1)
 }
 
 func main() {

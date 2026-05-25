@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_10-35-19",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tfmt.Println(maneiras(n))\n}\n\nfunc maneiras(n int) int {\n\tif n == 1 {\n\t\treturn 1\n\t}\n\tif n == 2 {\n\t\treturn 1\n\t}\n\tif n == 3 {\n\t\treturn 2\n\t}\n\treturn maneiras(n-1) + maneiras(n-3)\n}\n",
+            "lines": "22"
+        }
+    ]
+}
