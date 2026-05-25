@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_13-48-50",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tfmt.Println(blocks(n))\n}\n\nfunc blocks(n int) int {\n\tif n == 1 {\n\t\treturn 20\n\t}\n\treturn blocks(n-1) + 8\n}\n",
+            "lines": "16"
+        }
+    ]
+}
