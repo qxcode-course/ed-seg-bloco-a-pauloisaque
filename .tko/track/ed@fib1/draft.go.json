@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_16-33-53",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\tfmt.Println(rabbit(n, k))\n}\n\nfunc rabbit(n int, k int) int {\n\tif n <= 2 {\n\t\treturn 1\n\t}\n\treturn rabbit(n-1, k) + k*rabbit(n-2, k)\n}\n",
+            "lines": "16"
+        }
+    ]
+}

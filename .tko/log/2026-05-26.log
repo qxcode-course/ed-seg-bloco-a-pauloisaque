@@ -26,3 +26,23 @@
 2026-05-26 12:58:14, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:0, size:130
 2026-05-26 12:59:16, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:0
 2026-05-26 13:16:01, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-05-26 16:11:47, MOVE, v:1, k:ed@quadrado, mode:PICK
+2026-05-26 16:19:53, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:100, size:23
+2026-05-26 16:19:58, MOVE, v:1, k:ed@quadrado, mode:BACK
+2026-05-26 16:20:34, SELF, v:1, k:ed@quadrado, self:1, rate:100, study:10, problem:1, code:1
+2026-05-26 16:19:49, MOVE, v:1, k:ed@quadrado, mode:EDIT
+2026-05-26 16:27:15, MOVE, v:1, k:ed@fib1, mode:DOWN
+2026-05-26 16:27:18, MOVE, v:1, k:ed@fib1, mode:PICK
+2026-05-26 16:27:15, MOVE, v:1, k:ed@fib1, mode:EDIT
+2026-05-26 16:27:15, MOVE, v:1, k:ed@fib1, mode:EDIT
+2026-05-26 16:27:15, MOVE, v:1, k:ed@fib1, mode:EDIT
+2026-05-26 16:33:54, EXEC, v:1, k:ed@fib1, mode:FULL, rate:100, size:16
+2026-05-26 16:33:50, MOVE, v:1, k:ed@fib1, mode:EDIT
+2026-05-26 16:41:39, MOVE, v:1, k:ed@fib1, mode:BACK
+2026-05-26 16:41:54, SELF, v:1, k:ed@fib1, self:1, rate:100, study:5, problem:1, code:1
+2026-05-26 16:43:57, MOVE, v:1, k:ed@fib2, mode:DOWN
+2026-05-26 16:43:59, MOVE, v:1, k:ed@fib2, mode:PICK
+2026-05-26 16:43:57, MOVE, v:1, k:ed@fib2, mode:EDIT
+2026-05-26 16:43:57, MOVE, v:1, k:ed@fib2, mode:EDIT
+2026-05-26 16:43:57, MOVE, v:1, k:ed@fib2, mode:EDIT
+2026-05-26 16:56:54, MOVE, v:1, k:ed@fib2, mode:BACK

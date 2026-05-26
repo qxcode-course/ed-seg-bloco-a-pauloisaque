@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2026-05-26_12-36-48",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,343 +37,39 @@\n ) %7B%0A\n-%09var n int%0A%09if _, err := fmt.Scan(&n); err != nil %7B%0A%09%09return%0A%09%7D%0A%09square(n)%0A%7D%0A%0Afunc square(n int) int %7B%0A%09if n == 1 %7B%0A%09%09fmt.Println(%221%5E2 = 1%22)%0A%09%09return 1%0A%09%7D%0A%09fmt.Printf(%22%25d%5E2 = %25d%5E2 + 2*%25d + 1 = ?%5Cn%22, n, n-1, n-1)%0A%09prev := square(n - 1)%0A%09res := prev + 2*(n-1) + 1%0A%09fmt.Printf(%22%25d%5E2 = %25d%5E2 + 2*%25d + 1 = %25d%5Cn%22, n, n-1, n-1, res)%0A%09return res\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-05-26_16-19-52",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tif _, err := fmt.Scan(&n); err != nil {\n\t\treturn\n\t}\n\tsquare(n)\n}\n\nfunc square(n int) int {\n\tif n == 1 {\n\t\tfmt.Println(\"1^2 = 1\")\n\t\treturn 1\n\t}\n\tfmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = ?\\n\", n, n-1, n-1)\n\tprev := square(n - 1)\n\tres := prev + 2*(n-1) + 1\n\tfmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = %d\\n\", n, n-1, n-1, res)\n\treturn res\n}\n",
+            "lines": "23"
         }
     ]
 }
