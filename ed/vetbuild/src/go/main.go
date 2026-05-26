@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -19,7 +20,6 @@ func NewVector(capacity int) *Vector {
 		capacity: capacity,
 	}
 }
-
 
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
@@ -114,7 +114,7 @@ func main() {
 			// if err != nil {
 			// 	fmt.Println(err)
 			// }
-			// 
+			//
 		case "reserve":
 			// newCapacity, _ := strconv.Atoi(parts[1])
 			// v.Reserve(newCapacity)
