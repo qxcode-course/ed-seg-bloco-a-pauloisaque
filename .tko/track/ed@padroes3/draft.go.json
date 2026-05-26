@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_07-45-47",
+            "content": "@@ -193,20 +193,12 @@\n + (n\n--2)*(m-1) + 1\n+ - 2)\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-26_07-46-00",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, m int\n\tfmt.Scan(&n, &m)\n\tfmt.Println(calcular(n, m))\n}\n\nfunc calcular(n int, m int) int {\n\tif m == 1 {\n\t\treturn 1\n\t}\n\treturn calcular(n, m-1) + (n-2)*(m-1) + 1\n}\n",
+            "lines": "16"
+        }
+    ]
+}

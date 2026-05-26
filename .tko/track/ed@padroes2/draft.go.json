@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_07-32-58",
+            "content": "@@ -35,16 +35,46 @@\n ain() %7B%0A\n+%09fmt.Println(%22Hello, World!%22)%0A\n %09var n i\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-05-26_07-33-05",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tfmt.Println(codigo(n))\n}\n\nfunc codigo(n int) int {\n\tif n == 0 {\n\t\treturn 0\n\t}\n\treturn codigo(n-1) + 2*n + 1\n}\n",
+            "lines": "16"
+        }
+    ]
+}

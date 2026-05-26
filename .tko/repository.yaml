@@ -19,7 +19,8 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@linear
+- ed@backtrack
+- ed@rec
 flags:
   inbox: all
   panel: skills
@@ -27,5 +28,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@queimando
-selected_index: 11
+selected: ed@quadrado
+selected_index: 22
