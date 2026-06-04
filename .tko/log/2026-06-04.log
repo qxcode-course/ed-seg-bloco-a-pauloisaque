@@ -74,3 +74,8 @@
 2026-06-04 01:59:03, MOVE, v:1, k:ed@vetbuild, mode:EDIT
 2026-06-04 02:02:16, EXEC, v:1, k:ed@vetbuild, mode:FULL, rate:54, size:200
 2026-06-04 02:05:14, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-06-04 02:12:27, SELF, v:1, k:ed@vetbuild, self:1, rate:54, study:180
+2026-06-04 02:12:40, SELF, v:1, k:ed@vetbuild, self:1, rate:54, study:180, guided:1
+2026-06-04 02:12:40, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-06-04 02:12:44, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-06-04 02:13:39, SELF, v:1, k:ed@vetbuild, self:1, rate:54, study:180, guided:1

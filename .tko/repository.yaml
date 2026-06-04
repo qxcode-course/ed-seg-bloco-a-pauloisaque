@@ -21,8 +21,8 @@ sources:
 expanded:
 - ed@vector
 flags:
-  inbox: inbox
-  panel: graph
+  inbox: all
+  panel: skills
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
