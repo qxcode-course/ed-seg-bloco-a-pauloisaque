@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -19,6 +20,20 @@ func NewVector(capacity int) *Vector {
 		size:     0,
 		capacity: capacity,
 	}
+}
+
+func (v *Vector) PushBack(value int) {
+	v.capacity++
+	v.size++
+	v.data = append(v.data, value)
+}
+
+func (v *Vector) Status() string {
+	return fmt.Sprintf("size:%d capacity:%d", v.size, v.capacity)
+}
+
+func (v *Vector) String() string {
+	return "[" + Join(v.data[0:v.size], ", ") + "]"
 }
 
 func Join(slice []int, sep string) string {
@@ -37,7 +52,7 @@ func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
 
-	// v := NewVector(0)
+	var v *Vector = NewVector(0)
 	for {
 		fmt.Print("$")
 		if !scanner.Scan() {
@@ -55,17 +70,17 @@ func main() {
 		case "end":
 			return
 		case "init":
-			// value, _ := strconv.Atoi(parts[1])
-			// v = NewVector(value)
+			value, _ := strconv.Atoi(parts[1])
+			v = NewVector(value)
 		case "push":
-			// for _, part := range parts[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// 	v.PushBack(value)
-			// }
+			for _, part := range parts[1:] {
+				value, _ := strconv.Atoi(part)
+				v.PushBack(value)
+			}
 		case "show":
-			// fmt.Println(v)
+			fmt.Println(v)
 		case "status":
-			// fmt.Println(v.Status())
+			fmt.Println(v.Status())
 		case "pop":
 			// err := v.PopBack()
 			// if err != nil {

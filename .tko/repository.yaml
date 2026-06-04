@@ -20,19 +20,12 @@ sources:
   quests: null
 expanded:
 - ed@vector
-- ed@rec
-- ed@basic
-- ed@tree
-- ed@backtrack
-- ed@map_set
-- ed@linear
-- ed@list
 flags:
-  inbox: all
-  panel: skills
+  inbox: inbox
+  panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fib2
-selected_index: 39
+selected: ed@vetbuild
+selected_index: 4
