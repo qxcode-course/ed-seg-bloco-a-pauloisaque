@@ -51,11 +51,31 @@ func (v *Vector) PopBack() error {
 }
 
 func (v *Vector) Insert(index int, value int) error {
-	v.data = v.data
+	v.PushBack(1)
+	for i := v.size - 1; i > index; i-- {
+		v.data[i] = v.data[i-1]
+	}
+	v.data[index] = value
+	return nil
 }
 
 func (v *Vector) Reserve(newCapacity int) {
 	v.capacity = newCapacity
+}
+
+func (v *Vector) Erase(index int) error {
+	if index < v.size {
+		for i := 0; i < v.size; i++ {
+			if i == index {
+				for j := index + 1; j < v.size; j++ {
+					v.data[j-1] = v.data[j]
+				}
+			}
+		}
+		v.PopBack()
+		return nil
+	}
+	return errors.New("index out of range")
 }
 
 func (v *Vector) Clear() {
@@ -144,11 +164,11 @@ func main() {
 				fmt.Println(err)
 			}
 		case "erase":
-			// index, _ := strconv.Atoi(parts[1])
-			// err := v.Erase(index)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			err := v.Erase(index)
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "indexOf":
 			// value, _ := strconv.Atoi(parts[1])
 			// index := v.IndexOf(value)
