@@ -78,6 +78,24 @@ func (v *Vector) Erase(index int) error {
 	return errors.New("index out of range")
 }
 
+func (v *Vector) IndexOf(value int) int {
+	for i := 0; i < v.size; i++ {
+		if v.data[i] == value {
+			return i
+		}
+	}
+	return -1
+}
+
+func (v *Vector) Contains(value int) bool {
+	for i := 0; i < v.size; i++ {
+		if v.data[i] == value {
+			return true
+		}
+	}
+	return false
+}
+
 func (v *Vector) Clear() {
 	v.size = 0
 	v.data = v.data[:]
@@ -170,16 +188,16 @@ func main() {
 				fmt.Println(err)
 			}
 		case "indexOf":
-			// value, _ := strconv.Atoi(parts[1])
-			// index := v.IndexOf(value)
-			// fmt.Println(index)
+			value, _ := strconv.Atoi(parts[1])
+			index := v.IndexOf(value)
+			fmt.Println(index)
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
-			// if v.Contains(value) {
-			// 	fmt.Println("true")
-			// } else {
-			// 	fmt.Println("false")
-			// }
+			value, _ := strconv.Atoi(parts[1])
+			if v.Contains(value) {
+				fmt.Println("true")
+			} else {
+				fmt.Println("false")
+			}
 		case "clear":
 			v.Clear()
 		case "capacity":
