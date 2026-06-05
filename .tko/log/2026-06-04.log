@@ -294,3 +294,10 @@
 2026-06-04 22:58:23, EXEC, v:1, k:ed@multiset, mode:FULL, rate:66, size:173
 2026-06-04 22:58:53, MOVE, v:1, k:ed@multiset, mode:BACK
 2026-06-04 22:59:44, SELF, v:1, k:ed@multiset, self:1, rate:66, study:140, concept:1
+2026-06-04 23:51:14, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-06-04 23:52:10, EXEC, v:1, k:ed@multiset, mode:FULL, rate:66
+2026-06-04 23:53:05, EXEC, v:1, k:ed@multiset, mode:FULL, rate:66, size:170
+2026-06-04 23:54:57, EXEC, v:1, k:ed@multiset, mode:FULL, rate:66, size:171
+2026-06-04 23:55:23, EXEC, v:1, k:ed@multiset, mode:FULL, rate:83, size:171
+2026-06-04 23:55:22, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-04 23:59:20, EXEC, v:1, k:ed@multiset, mode:FULL, rate:83, size:178

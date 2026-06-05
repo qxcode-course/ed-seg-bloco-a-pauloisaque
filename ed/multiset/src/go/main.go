@@ -99,6 +99,9 @@ func (v *Vector) Erase(value int) error {
 
 func (v *Vector) Count(value int) int {
 	qnt := 0
+	if v.size == 0 {
+		return qnt
+	}
 	for i := 0; i < v.size; i++ {
 		if v.data[i] == value {
 			qnt++
@@ -108,19 +111,26 @@ func (v *Vector) Count(value int) int {
 }
 
 func (v *Vector) Unique() int {
-	unique := 0
-	valores := make([]int, 0)
+	if v.size == 0 {
+		return 0
+	}
 	element := v.data[0]
-	valores = append(valores, v.data[0])
+	unique := 1
 
 	for i := 0; i < v.size; i++ {
 		if v.data[i] != element {
-			valores = append(valores, v.data[i])
 			element = v.data[i]
+			unique++
 		}
 	}
 
 	return unique
+}
+
+func (v *Vector) Clear() {
+	v.data = make([]int, 0)
+	v.size = 0
+	v.capacity = 0
 }
 
 func main() {
@@ -166,6 +176,7 @@ func main() {
 		case "unique":
 			fmt.Println(ms.Unique())
 		case "clear":
+			ms.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
