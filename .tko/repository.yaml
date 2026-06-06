@@ -21,7 +21,7 @@ sources:
 expanded:
 - ed@list
 flags:
-  inbox: inbox
+  inbox: all
   panel: skills
   show_panel: 'true'
   task_graph_mode: executions
