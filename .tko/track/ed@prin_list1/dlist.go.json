@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-05_23-51-02",
+            "content": "@@ -1629,23 +1629,8 @@\n ing(\n-sword *DNode%5BT%5D\n ) st\n@@ -1711,98 +1711,8 @@\n t %7B%0A\n-%09%09if n.Value == sword.Value %7B%0A%09%09%09values = append(values, fmt.Sprintf(%22%25s%3E%22, n.Value))%0A%09%09%7D%0A\n %09%09va\n",
+            "lines": "136"
+        },
+        {
+            "label": "2026-06-06_00-29-29",
+            "content": "@@ -1793,17 +1793,17 @@\n rintf(%22%25\n-d\n+s\n %3E%22, n.Va\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-06-06_00-30-41",
+            "content": "@@ -1621,24 +1621,39 @@\n %5BT%5D) String(\n+sword *DNode%5BT%5D\n ) string %7B%0A%09\n@@ -1722,16 +1722,106 @@\n .next %7B%0A\n+%09%09if n.Value == sword.Value %7B%0A%09%09%09values = append(values, fmt.Sprintf(%22%25d%3E%22, n.Value))%0A%09%09%7D%0A\n %09%09values\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-06-06_00-37-41",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\n/*\nclass DNode<T> {\n\tValue: T\n\tnext, prev, root: *DNode<T>\n\tNext() *DNode<T>\n\tPrev() *DNode<T>\n}\nclass DList<T> {\n\troot: *DNode<T>\n\tsize: int\n\t___ m\u00e9todos de altera\u00e7\u00e3o ___\n\tPushBack(value T)\n\tPushFront(value T)\n\tPopBack()\n\tPopFront()\n\tInsert(it *DNode<T>, value T)\n\tErase(it *DNode<T>)\n\tClear()\n\t___ m\u00e9todos de acesso e percorrimento ___\n\tFront() *DNode<T>\n\tBack() *DNode<T>\n\tEnd() *DNode<T>\n\t___\n\tString() string\n\tSize() int\n*/\n\ntype DNode[T comparable] struct {\n\tValue            T\n\tnext, prev, root *DNode[T]\n}\n\nfunc (n *DNode[T]) Next() *DNode[T] {\n\tif n == n.root {\n\t\treturn n\n\t}\n\treturn n.next\n}\n\nfunc (n *DNode[T]) Prev() *DNode[T] {\n\tif n == n.root {\n\t\treturn n\n\t}\n\treturn n.prev\n}\n\ntype DList[T comparable] struct {\n\troot *DNode[T]\n\tsize int\n}\n\nfunc NewDList[T comparable]() *DList[T] {\n\troot := &DNode[T]{}\n\troot.next = root\n\troot.prev = root\n\troot.root = root\n\treturn &DList[T]{root: root, size: 0}\n}\n\nfunc (l *DList[T]) PushBack(value T) {\n\tl.Insert(l.root, value)\n}\n\nfunc (l *DList[T]) PopBack() {\n\tif l.size == 0 {\n\t\treturn\n\t}\n\tl.Erase(l.root.prev)\n}\n\nfunc (l *DList[T]) PopFront() {\n\tif l.size == 0 {\n\t\treturn\n\t}\n\tl.Erase(l.root.next)\n}\n\nfunc (l *DList[T]) PushFront(value T) {\n\tl.Insert(l.root.next, value)\n}\n\nfunc (l *DList[T]) Insert(it *DNode[T], value T) *DNode[T] {\n\tn := &DNode[T]{Value: value, root: l.root}\n\tn.prev = it.prev\n\tn.next = it\n\tit.prev.next = n\n\tit.prev = n\n\tl.size++\n\treturn n\n}\n\nfunc (l *DList[T]) Erase(it *DNode[T]) {\n\tif it == l.root || it == nil {\n\t\treturn\n\t}\n\tit.prev.next = it.next\n\tit.next.prev = it.prev\n\tl.size--\n}\n\nfunc (l *DList[T]) String() string {\n\tvalues := []string{}\n\tfor n := l.root.next; n != l.root; n = n.next {\n\t\tvalues = append(values, fmt.Sprint(n.Value))\n\t}\n\treturn \"[\" + strings.Join(values, \", \") + \"]\"\n}\n\nfunc (l *DList[T]) Size() int {\n\treturn l.size\n}\n\nfunc (l *DList[T]) Clear() {\n\tl.root.next = l.root\n\tl.root.prev = l.root\n\tl.size = 0\n}\n\nfunc (l *DList[T]) Front() *DNode[T] {\n\treturn l.root.next\n}\n\nfunc (l *DList[T]) Back() *DNode[T] {\n\treturn l.root.prev\n}\n\nfunc (l *DList[T]) End() *DNode[T] {\n\treturn l.root\n}\n",
+            "lines": "136"
+        }
+    ]
+}
