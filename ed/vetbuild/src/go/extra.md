@@ -5,7 +5,8 @@ Implemente a classe do vetor dinâmico sem utilizar os métodos len() ou cap() o
 ```ts
 class Vector {
   - data: []int                             ' Guarda os elementos do vetor
-  - size: int                               ' Guarda o número atual de elementos
+  - size: int            
+                     ' Guarda o número atual de elementos
   - capacity: int                           ' Guarda a capacidade atual do vetor
   --
   + NewVector(capacity: int): *Vector       ' Cria um novo vetor com a capacidade inicial especificada

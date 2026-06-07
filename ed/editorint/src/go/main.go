@@ -35,6 +35,7 @@ func (e *Editor) KeyEnter() {
 	e.text.Insert(e.itLine.Next(), NewList[rune]()) // cria uma nova linha e insere abaixo da linha corrente
 	e.itLine = e.itLine.Next()                      // vai pra próxima linha
 	e.itChar = e.itLine.Value.Front()               // move o cursor para o início da linha
+	return
 }
 
 func (e *Editor) KeyRight() {
@@ -43,19 +44,23 @@ func (e *Editor) KeyRight() {
 		return
 	}
 	if e.itLine != e.text.End() {
-		e.itLine = e.itLine.Next()        // Atualiza iterador de linha para linha anterior
-		e.itChar = e.itLine.Value.Front() // Move o cursor para o final da linha
+		e.itLine = e.itLine.Next()
+		e.itChar = e.itLine.Value.Front()
 	}
 }
 
 func (e *Editor) KeyUp() {
-	// if e.itLine != e.text.Front() {
-	// 	e.itLine = e.itLine.Prev()
-	// 	// e.itChar = e.itLine.Front()
-	// }
+	if e.itLine != e.text.Front() {
+		e.itLine = e.itLine.Prev()
+		e.itChar = e.itLine.Value.Front()
+	}
 }
 
 func (e *Editor) KeyDown() {
+	if e.itLine != e.text.End() {
+		e.itLine = e.itLine.Next()
+		e.itChar = e.itLine.Value.Front()
+	}
 }
 
 func (e *Editor) KeyBackspace() {
