@@ -21,10 +21,10 @@ sources:
 expanded: []
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@backtrack
-selected_index: 6
+selected: ed@dfs
+selected_index: 8

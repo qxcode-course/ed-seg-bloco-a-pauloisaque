@@ -33,23 +33,51 @@ func (e *Editor) KeyLeft() {
 
 func (e *Editor) KeyEnter() {
 	e.text.Insert(e.itLine.Next(), NewList[rune]()) // cria uma nova linha e insere abaixo da linha corrente
-	e.itLine = e.itLine.Next()        // vai pra próxima linha
-	e.itChar = e.itLine.Value.Front() // move o cursor para o início da linha
+	e.itLine = e.itLine.Next()                      // vai pra próxima linha
+	e.itChar = e.itLine.Value.Front()               // move o cursor para o início da linha
 }
 
 func (e *Editor) KeyRight() {
+	if e.itChar.Next() != e.itLine.Value.End() {
+		e.itChar = e.itChar.Next()
+		return
+	}
+	if e.itLine != e.text.End() {
+		e.itLine = e.itLine.Next()        // Atualiza iterador de linha para linha anterior
+		e.itChar = e.itLine.Value.Front() // Move o cursor para o final da linha
+	}
 }
 
 func (e *Editor) KeyUp() {
+	// if e.itLine != e.text.Front() {
+	// 	e.itLine = e.itLine.Prev()
+	// 	// e.itChar = e.itLine.Front()
+	// }
 }
 
 func (e *Editor) KeyDown() {
 }
 
 func (e *Editor) KeyBackspace() {
+	if e.itChar != e.itLine.Value.Front() {
+		e.itLine.Value.Erase(e.itChar.Prev())
+		return
+	}
+	if e.itLine != e.text.Front() {
+		e.itLine = e.itLine.Prev()
+		e.itChar = e.itLine.Value.End()
+		e.text.Erase(e.itLine.Next())
+	}
 }
 
 func (e *Editor) KeyDelete() {
+	if e.itChar != e.itLine.Value.End() {
+		e.itLine.Value.Erase(e.itChar.Next())
+		return
+	}
+	if e.itLine != e.text.End() {
+		e.text.Erase(e.itLine.Next())
+	}
 }
 
 func main() { // Texto inicial e posição do cursor
