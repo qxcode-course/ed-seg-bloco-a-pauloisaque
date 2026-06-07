@@ -32,9 +32,22 @@ func (e *Editor) KeyLeft() {
 }
 
 func (e *Editor) KeyEnter() {
-	e.text.Insert(e.itLine.Next(), NewList[rune]()) // cria uma nova linha e insere abaixo da linha corrente
-	e.itLine = e.itLine.Next()                      // vai pra próxima linha
-	e.itChar = e.itLine.Value.Front()               // move o cursor para o início da linha
+	e.text.Insert(e.itLine.Next(), NewList[rune]())
+
+	if e.itChar != e.itLine.Value.End() {
+		for {
+			e.itLine.Next().Value.Insert(e.itLine.Next().Value.Front(), e.itChar.Value)
+			fmt.Print("colou")
+			if e.itChar == e.itLine.Prev().Value.End() {
+				break
+			}
+			e.itChar = e.itChar.Next()
+		}
+
+	}
+
+	e.itLine = e.itLine.Next()
+	e.itChar = e.itLine.Value.Front()
 	return
 }
 
