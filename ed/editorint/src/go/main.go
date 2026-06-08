@@ -31,26 +31,6 @@ func (e *Editor) KeyLeft() {
 	}
 }
 
-func (e *Editor) KeyEnter() {
-	e.text.Insert(e.itLine.Next(), NewList[rune]())
-
-	if e.itChar != e.itLine.Value.End() {
-		for {
-			e.itLine.Next().Value.Insert(e.itLine.Next().Value.Front(), e.itChar.Value)
-			fmt.Print("colou")
-			if e.itChar == e.itLine.Prev().Value.End() {
-				break
-			}
-			e.itChar = e.itChar.Next()
-		}
-
-	}
-
-	e.itLine = e.itLine.Next()
-	e.itChar = e.itLine.Value.Front()
-	return
-}
-
 func (e *Editor) KeyRight() {
 	if e.itChar.Next() != e.itLine.Value.End() {
 		e.itChar = e.itChar.Next()
@@ -64,14 +44,38 @@ func (e *Editor) KeyRight() {
 
 func (e *Editor) KeyUp() {
 	if e.itLine != e.text.Front() {
+		index := e.itLine.Value.IndexOf(e.itChar)
 		e.itLine = e.itLine.Prev()
+		if index > e.itLine.Value.Size() {
+			e.itChar = e.itLine.Value.End()
+			return
+		}
+		if index < e.itLine.Value.Size() {
+			e.itChar = e.itLine.Value.Front()
+			for e.itLine.Value.IndexOf(e.itChar) != index {
+				e.itChar = e.itChar.Next()
+			}
+			return
+		}
 		e.itChar = e.itLine.Value.Front()
 	}
 }
 
 func (e *Editor) KeyDown() {
 	if e.itLine != e.text.End() {
+		index := e.itLine.Value.IndexOf(e.itChar)
 		e.itLine = e.itLine.Next()
+		if index > e.itLine.Value.Size() {
+			e.itChar = e.itLine.Value.End()
+			return
+		}
+		if index < e.itLine.Value.Size() {
+			e.itChar = e.itLine.Value.Front()
+			for e.itLine.Value.IndexOf(e.itChar) != index {
+				e.itChar = e.itChar.Next()
+			}
+			return
+		}
 		e.itChar = e.itLine.Value.Front()
 	}
 }
@@ -82,10 +86,37 @@ func (e *Editor) KeyBackspace() {
 		return
 	}
 	if e.itLine != e.text.Front() {
+		index := e.itLine.Prev().Value.IndexOf(e.itLine.Prev().Value.End())
+		for e.itChar != e.itLine.Value.End() {
+			e.itLine.Prev().Value.Insert(e.itLine.Prev().Value.root, e.itChar.Value)
+			e.itChar = e.itChar.Next()
+		}
+		e.itChar = e.itLine.Prev().Value.Front()
 		e.itLine = e.itLine.Prev()
-		e.itChar = e.itLine.Value.End()
+
+		for e.itLine.Value.IndexOf(e.itChar) != index {
+			e.itChar = e.itChar.Next()
+		}
 		e.text.Erase(e.itLine.Next())
+		return
 	}
+	e.itLine = e.itLine.Prev()
+	e.itChar = e.itLine.Value.End()
+	e.text.Erase(e.itLine.Next())
+}
+
+func (e *Editor) KeyEnter() {
+	e.text.Insert(e.itLine.Next(), NewList[rune]())
+	if e.itChar != e.itLine.Value.End() {
+		for e.itChar != e.itLine.Value.End() {
+			e.itLine.Next().Value.Insert(e.itLine.Next().Value.root, e.itChar.Value)
+			e.itLine.Value.Erase(e.itChar)
+			e.itChar = e.itChar.Next()
+		}
+	}
+	e.itLine = e.itLine.Next()
+	e.itChar = e.itLine.Value.Front()
+	return
 }
 
 func (e *Editor) KeyDelete() {
