@@ -26,13 +26,13 @@ func (e *Editor) KeyLeft() {
 	}
 	// Estamos no início da linha
 	if e.itLine != e.text.Front() { // Se não está na primeira linha
-		e.itLine = e.itLine.Prev()      // Atualiza iterador de linha para linha anterior
-		e.itChar = e.itLine.Value.End() // Move o cursor para o final da linha
+		e.itLine = e.itLine.Prev()     // Atualiza iterador de linha para linha anterior
+		e.itChar = e.itLine.Value.root // Move o cursor para o final da linha
 	}
 }
 
 func (e *Editor) KeyRight() {
-	if e.itChar.Next() != e.itLine.Value.End() {
+	if e.itChar.Next() != e.itLine.Value.Front() {
 		e.itChar = e.itChar.Next()
 		return
 	}
@@ -100,9 +100,29 @@ func (e *Editor) KeyBackspace() {
 		e.text.Erase(e.itLine.Next())
 		return
 	}
-	e.itLine = e.itLine.Prev()
-	e.itChar = e.itLine.Value.End()
-	e.text.Erase(e.itLine.Next())
+}
+
+func (e *Editor) KeyDelete() {
+	if e.itChar != e.itLine.Value.End() {
+		e.itLine.Value.Erase(e.itChar.Next())
+		return
+	}
+	if e.itLine != e.text.End() {
+		index := e.itLine.Value.IndexOf(e.itLine.Value.End())
+
+		for e.itLine.Next().Value.Front() != e.itLine.Next().Value.End() {
+			e.itLine.Value.Insert(e.itLine.Value.root, e.itLine.Next().Value.Front().Value)
+			e.itLine.Next().Value.Erase(e.itLine.Next().Value.Front())
+		}
+
+		e.itChar = e.itLine.Value.Front()
+		for e.itLine.Value.IndexOf(e.itChar) != index {
+			e.itChar = e.itChar.Next()
+		}
+
+		e.text.Erase(e.itLine.Next())
+		return
+	}
 }
 
 func (e *Editor) KeyEnter() {
@@ -117,16 +137,6 @@ func (e *Editor) KeyEnter() {
 	e.itLine = e.itLine.Next()
 	e.itChar = e.itLine.Value.Front()
 	return
-}
-
-func (e *Editor) KeyDelete() {
-	if e.itChar != e.itLine.Value.End() {
-		e.itLine.Value.Erase(e.itChar.Next())
-		return
-	}
-	if e.itLine != e.text.End() {
-		e.text.Erase(e.itLine.Next())
-	}
 }
 
 func main() { // Texto inicial e posição do cursor

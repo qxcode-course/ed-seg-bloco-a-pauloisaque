@@ -18,7 +18,7 @@ Para cada funcionalidade implementada, você receberá uma pontuação que vai d
 - [ok] 1 ponto - Enter no meio da linha divide a linha em duas e move o cursor para o início da nova linha.
 - [ok] 1 ponto - Up e Down para navegar entre as linhas movendo o cursor para a posição correta.
 - [ok] 1 ponto - Backspace no início da linha puxa a linha pra cima e move o cursor para a posição correta.
-- [ ] 1 ponto - Delete no final da linha junta as linhas e move o cursor para a posição correta.
+- [ok] 1 ponto - Delete no final da linha junta as linhas e move o cursor para a posição correta.
 
 ## Implementação
 
