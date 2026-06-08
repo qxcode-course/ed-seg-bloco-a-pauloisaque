@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-08_16-28-51",
+            "content": "@@ -413,18 +413,18 @@\n ack%5BPos%5D\n-()\n+%7B%7D\n %0A%09pilha.\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-08_16-29-01",
+            "content": "@@ -357,399 +357,99 @@\n unc \n-getNeig(p Pos) %5B%5DPos %7B%0A%09return %5B%5DPos%7B%7Bp.l, p.c - 1%7D, %7Bp.l - 1, p.c%7D, %7Bp.l, p.c + 1%7D, %7Bp.l + 1, p.c%7D%7D%0A%7D%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09pilha := NewStack%5BPos%5D()%0A%09pilha.Push(Pos%7Bl: l, c: c%7D)%0A%0A%09for !pilha.IsEmpty() %7B%0A%09%09elem := pilha.Pop()%0A%09%09if is_value(grid, elem, '#') %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09grid%5Belem.l%5D%5Belem.c%5D = 'o'%0A%09%09for _, neib := range getNeig(elem) %7B%0A%09%09%09pilha.Push(neib)%0A%09%09%7D%0A%09%7D\n+burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09pilha := NewStack%5BPos%5D()%0A%09pilha.Push(Pos%7Bl: l, c: c%7D)\n %0A%09//\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-08_16-46-06",
+            "content": "@@ -509,16 +509,19 @@\n ilha := \n+New\n Stack%5BPo\n@@ -526,10 +526,10 @@\n Pos%5D\n-%7B%7D\n+()\n %0A%09pi\n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-06-08_16-47-13",
+            "content": "@@ -504,20 +504,17 @@\n  %7B%0A%09\n-stack\n+pilha\n  := \n-New\n Stac\n@@ -523,17 +523,17 @@\n Pos%5D\n-()%0A%09stack\n+%7B%7D%0A%09pilha\n .Pus\n@@ -558,21 +558,21 @@\n %0A%0A%09for !\n-stack\n+pilha\n .IsEmpty\n@@ -586,21 +586,21 @@\n elem := \n-stack\n+pilha\n .Pop()%0A%09\n@@ -722,13 +722,13 @@\n %0A%09%09%09\n-stack\n+pilha\n .Pus\n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-06-08_16-54-44",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc get_size(grid [][]rune) (int, int) {\n\treturn len(grid), len(grid[0])\n}\n\nfunc is_value(grid [][]rune, pos Pos, value rune) bool {\n\tnl, nc := get_size(grid)\n\tl := pos.l\n\tc := pos.c\n\tif c < 0 || c >= nc || l < 0 || l >= nl {\n\t\treturn false\n\t}\n\treturn grid[l][c] != value\n}\n\nfunc getNeig(p Pos) []Pos {\n\treturn []Pos{{p.l, p.c - 1}, {p.l - 1, p.c}, {p.l, p.c + 1}, {p.l + 1, p.c}}\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tstack := NewStack[Pos]()\n\tstack.Push(Pos{l: l, c: c})\n\n\tfor !stack.IsEmpty() {\n\t\telem := stack.Pop()\n\t\tif is_value(grid, elem, '#') {\n\t\t\tcontinue\n\t\t}\n\t\tgrid[elem.l][elem.c] = 'o'\n\t\tfor _, neib := range getNeig(elem) {\n\t\t\tstack.Push(neib)\n\t\t}\n\t}\n\t// Essa fun\u00e7\u00e3o deve usar uma list como pilha\n\t// e marcar as \u00e1rvores na matriz como queimados\n\t// Uma sugest\u00e3o de como fazer isso \u00e9:\n\t// - adicionar a primeira posi\u00e7\u00e3o na pilha\n\t// - enquanto a pilha n\u00e3o estiver vazia:\n\t//   - retirar o elemento do topo\n\t//   - se puder ser queimado, queime e adicione seus vizinhos \u00e0 pilha\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(mat [][]rune) {\n\tfor _, linha := range mat {\n\t\tfmt.Println(string(linha))\n\t}\n}\n",
+            "lines": "76"
+        }
+    ]
+}

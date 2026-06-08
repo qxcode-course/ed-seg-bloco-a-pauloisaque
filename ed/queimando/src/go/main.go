@@ -6,10 +6,42 @@ import (
 	"os"
 )
 
+type Pos struct {
+	l, c int
+}
+
+func get_size(grid [][]rune) (int, int) {
+	return len(grid), len(grid[0])
+}
+
+func is_value(grid [][]rune, pos Pos, value rune) bool {
+	nl, nc := get_size(grid)
+	l := pos.l
+	c := pos.c
+	if c < 0 || c >= nc || l < 0 || l >= nl {
+		return false
+	}
+	return grid[l][c] != value
+}
+
+func getNeig(p Pos) []Pos {
+	return []Pos{{p.l, p.c - 1}, {p.l - 1, p.c}, {p.l, p.c + 1}, {p.l + 1, p.c}}
+}
+
 func burnTrees(grid [][]rune, l, c int) {
 	stack := NewStack[Pos]()
-	_, _, _ = mat, l, c
+	stack.Push(Pos{l: l, c: c})
 
+	for !stack.IsEmpty() {
+		elem := stack.Pop()
+		if is_value(grid, elem, '#') {
+			continue
+		}
+		grid[elem.l][elem.c] = 'o'
+		for _, neib := range getNeig(elem) {
+			stack.Push(neib)
+		}
+	}
 	// Essa função deve usar uma list como pilha
 	// e marcar as árvores na matriz como queimados
 	// Uma sugestão de como fazer isso é:
