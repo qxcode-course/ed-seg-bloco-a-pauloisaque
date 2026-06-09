@@ -21,7 +21,7 @@ func is_value(grid [][]rune, pos Pos, value rune) bool {
 	if c < 0 || c >= nc || l < 0 || l >= nl {
 		return false
 	}
-	return grid[l][c] != value
+	return grid[l][c] == value
 }
 
 func getNeig(p Pos) []Pos {
@@ -30,26 +30,24 @@ func getNeig(p Pos) []Pos {
 
 func burnTrees(grid [][]rune, l, c int) {
 	stack := NewStack[Pos]()
-	stack.Push(Pos{l: l, c: c})
-
+	pos := Pos{l, c}
+	stack.Push(pos)
+	visited := make(map[Pos]bool)
+	visited[pos] = true
 	for !stack.IsEmpty() {
 		elem := stack.Pop()
-		if is_value(grid, elem, '#') {
+		if !is_value(grid, elem, '#') {
 			continue
 		}
 		grid[elem.l][elem.c] = 'o'
+
 		for _, neib := range getNeig(elem) {
-			stack.Push(neib)
+			if !visited[neib] {
+				stack.Push(neib)
+				visited[neib] = true
+			}
 		}
 	}
-	// Essa função deve usar uma list como pilha
-	// e marcar as árvores na matriz como queimados
-	// Uma sugestão de como fazer isso é:
-	// - adicionar a primeira posição na pilha
-	// - enquanto a pilha não estiver vazia:
-	//   - retirar o elemento do topo
-	//   - se puder ser queimado, queime e adicione seus vizinhos à pilha
-
 }
 
 func main() {
