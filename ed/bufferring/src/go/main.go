@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -12,6 +13,24 @@ type Deque struct {
 	front    int
 	size     int
 	capacity int
+}
+
+func (d *Deque) isFull() bool{
+	return d.size == d.capacity
+}
+
+func (d *Deque) PushBack(value int) {
+	if d.isFull(){
+		fmt.Printf("Queue is full\n");
+        return;
+	}else{
+		d.data[d.size] = value
+		d.size++
+	}
+}
+
+func (d *Deque) Len() int {
+	return d.size
 }
 
 func (d *Deque) get(index int) int {
@@ -72,12 +91,12 @@ func main() {
 		case "debug":
 			fmt.Println(buf.Debug())
 		case "size":
-			// fmt.Println(buf.Len())
+			fmt.Println(buf.Len())
 		case "push_back":
-			// for _, v := range args[1:] {
-			// 	num, _ := strconv.Atoi(v)
-			// 	buf.PushBack(num)
-			// }
+			for _, v := range args[1:] {
+				num, _ := strconv.Atoi(v)
+				buf.PushBack(num)
+			}
 		case "push_front":
 			// for _, v := range args[1:] {
 			// 	num, _ := strconv.Atoi(v)
