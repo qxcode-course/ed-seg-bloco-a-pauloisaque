@@ -15,18 +15,37 @@ type Deque struct {
 	capacity int
 }
 
-func (d *Deque) isFull() bool{
-	return d.size == d.capacity
+func (d *Deque) PushBack(value int) {
+	if d.size == d.capacity {
+		novoVet := make([]int, d.capacity*2)
+		d.front = 0
+		j := 0
+		for i := d.front; i < d.size+1; i++ {
+			novoVet[j] = d.data[i%d.capacity]
+			j++
+		}
+		d.capacity = d.capacity * 2
+		d.data = novoVet
+	}
+	if d.size == 0 {
+		d.data[d.front+d.size] = value
+		d.size++
+		return
+	}
+	index := (d.front + d.size) % d.capacity
+	d.data[index] = value
+	d.size++
 }
 
-func (d *Deque) PushBack(value int) {
-	if d.isFull(){
-		fmt.Printf("Queue is full\n");
-        return;
-	}else{
-		d.data[d.size] = value
-		d.size++
+func (d *Deque) PopFront() error {
+	novoVet := make([]int, d.capacity)
+	d.front++
+	for i := d.front; i < d.size+1; i++ {
+		novoVet[i%d.capacity] = d.data[i%d.capacity]
 	}
+	d.size--
+	d.data = novoVet
+	return nil
 }
 
 func (d *Deque) Len() int {
@@ -107,9 +126,9 @@ func main() {
 			// 	fmt.Println(err)
 			// }
 		case "pop_front":
-			// if err := buf.PopFront(); err != nil {
-			// 	fmt.Println(err)
-			// }
+			if err := buf.PopFront(); err != nil {
+				fmt.Println(err)
+			}
 		case "front":
 			// if val, err := buf.Front(); err != nil {
 			// 	fmt.Println(err)
