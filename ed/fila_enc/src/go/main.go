@@ -8,9 +8,6 @@ import (
 	"strings"
 )
 
-// func (q *Queue[T]) Enqueue(value T)
-// func (q *Queue[T]) Dequeue() (T, bool)
-// func (q *Queue[T]) Peek() (T, bool)
 // func (q *Queue[T]) Size() int
 // func (q *Queue[T]) IsEmpty() bool
 // func (q *Queue[T]) Clear()
@@ -30,16 +27,39 @@ func NewQueue[T any]() *Queue[T] {
 	return &Queue[T]{}
 }
 
+func (q *Queue[T]) Peek() (T, bool) {
+	if q.size != 0 {
+		return q.head.Value, true
+	}
+	return q.head.Value, false
+}
+
+func (q *Queue[T]) Dequeue() bool {
+	aux := q.head
+	q.head = q.head.next
+	aux.next = q.head
+	q.size--
+	return true
+}
+
 func (q *Queue[T]) Enqueue(value T) {
 	novo := &Node[T]{
 		Value: value,
-		next:  q.head,
 	}
 	if q.size == 0 {
 		q.head = novo
+		q.size++
 		return
 	}
-	q.head.next = novo
+	if q.size == 1 {
+		q.tail = novo
+		q.head.next = q.tail
+		q.size++
+		return
+	}
+	q.tail.next = novo
+	q.tail = novo
+	q.size++
 }
 
 func (q *Queue[T]) String() string {
@@ -78,15 +98,15 @@ func main() {
 				queue.Enqueue(value)
 			}
 		case "pop":
-			// if _, ok := queue.Dequeue(); !ok {
-			// 	fmt.Println("falha: fila vazia")
-			// }
+			if ok := queue.Dequeue(); !ok {
+				fmt.Println("falha: fila vazia")
+			}
 		case "peek":
-			// if value, ok := queue.Peek(); ok {
-			// 	fmt.Println(value)
-			// } else {
-			// 	fmt.Println("falha: fila vazia")
-			// }
+			if value, ok := queue.Peek(); ok {
+				fmt.Println(value)
+			} else {
+				fmt.Println("falha: fila vazia")
+			}
 		default:
 			fmt.Println("Unknown command:", args[0])
 		}
