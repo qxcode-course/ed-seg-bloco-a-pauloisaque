@@ -105,3 +105,26 @@
 2026-06-15 10:08:14, MOVE, v:1, k:ed@pilhado, mode:BACK
 2026-06-15 10:07:57, MOVE, v:1, k:ed@pilhado, mode:EDIT
 2026-06-15 10:28:12, SELF, v:1, k:ed@editorint, self:1, rate:100, guided:1
+2026-06-15 15:25:55, MOVE, v:1, k:ed@serial, mode:DOWN
+2026-06-15 15:25:56, MOVE, v:1, k:ed@serial, mode:PICK
+2026-06-15 15:27:39, MOVE, v:1, k:ed@serial, mode:BACK
+2026-06-15 15:29:55, MOVE, v:1, k:ed@balanceada, mode:PICK
+2026-06-15 15:25:54, MOVE, v:1, k:ed@serial, mode:EDIT
+2026-06-15 15:25:54, MOVE, v:1, k:ed@serial, mode:EDIT
+2026-06-15 15:25:55, MOVE, v:1, k:ed@serial, mode:EDIT
+2026-06-15 15:25:55, MOVE, v:1, k:ed@serial, mode:EDIT
+2026-06-15 15:35:09, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-15 15:40:04, MOVE, v:1, k:ed@balanceada, mode:BACK
+2026-06-15 15:39:23, MOVE, v:1, k:ed@balanceada, mode:EDIT
+2026-06-15 15:40:41, SELF, v:1, k:ed@editorint, self:1, rate:100, guided:1
+2026-06-15 15:45:54, MOVE, v:1, k:ed@subset_sum, mode:DOWN
+2026-06-15 15:46:01, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-06-15 15:48:04, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-06-15 15:49:02, MOVE, v:1, k:ed@pilhado, mode:PICK
+2026-06-15 15:49:11, MOVE, v:1, k:ed@pilhado, mode:BACK
+2026-06-15 15:49:17, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-06-15 15:49:28, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-06-15 15:49:29, MOVE, v:1, k:ed@pilhado, mode:PICK
+2026-06-15 15:51:34, MOVE, v:1, k:ed@pilhado, mode:BACK
+2026-06-15 15:51:37, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-06-15 16:04:12, MOVE, v:1, k:ed@queimando, mode:BACK

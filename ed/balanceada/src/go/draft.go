@@ -1,5 +1,15 @@
 package main
 import "fmt"
 func main() {
-    fmt.Println("Hello, World!")
+    var a string
+    fmt.Scan(&a)
+    for i := 0; i < len(a); i++ {
+        if a[i] == "(" {
+            for j := i; j < len(a); j++ {
+                if a[j] == ")" {
+                    break;
+                }
+            }
+        }
+    }
 }
