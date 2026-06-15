@@ -2,8 +2,33 @@
     "patches": [
         {
             "label": "2026-06-13_22-21-41",
-            "content": "package main\n\nimport (\n)\n\nfunc main() {\n}\n",
+            "content": "@@ -7,16 +7,28 @@\n e main%0A%0A\n+import (%0A)%0A%0A\n func mai\n@@ -37,36 +37,6 @@\n ) %7B%0A\n-%09times := %22ABCDEFGHIJKLMNOP%22%0A%0A\n %7D%0A\n",
             "lines": "7"
+        },
+        {
+            "label": "2026-06-15_09-38-26",
+            "content": "@@ -25,30 +25,8 @@\n ) %7B%0A\n-%09lista := NewQueue()%0A%0A\n %09tim\n@@ -54,70 +54,7 @@\n OP%22%0A\n-%09for i := 0; i %3C len(times); i++ %7B%0A%09%09lista.Enqueue(times%5Bi%5D)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "6"
+        },
+        {
+            "label": "2026-06-15_09-42-12",
+            "content": "@@ -45,11 +45,8 @@\n ue()\n-%5BT%5D\n %0A%0A%09t\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-06-15_09-42-23",
+            "content": "@@ -43,13 +43,13 @@\n ueue\n+()\n %5BT%5D\n-()\n %0A%0A%09t\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-06-15_09-42-29",
+            "content": "@@ -45,16 +45,17 @@\n ue%5BT%5D()%0A\n+%0A\n %09times :\n@@ -66,16 +66,23 @@\n BCDEFGHI\n+JKLMNOP\n %22%0A%09for i\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-06-15_09-46-20",
+            "content": "package main\n\nfunc main() {\n\tlista := NewQueue[T]()\n\ttimes := \"ABCDEFGHI\"\n\tfor i := 0; i < len(times); i++ {\n\t\tlista.Enqueue(times[i])\n\t}\n}\n",
+            "lines": "9"
         }
     ]
 }

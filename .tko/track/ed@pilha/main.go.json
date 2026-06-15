@@ -1,0 +1,139 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-15_08-09-57",
+            "content": "@@ -94,17 +94,17 @@\n %5DT%0A%7D%0A%0A//\n-%09\n+ \n func (s \n@@ -134,17 +134,17 @@\n ing %7B%0A//\n-%09\n+ \n %09output \n@@ -151,17 +151,17 @@\n := %22%22%0A//\n-%09\n+ \n %09for i :\n@@ -184,17 +184,17 @@\n ta) %7B%0A//\n-%09\n+ \n %09%09if i !\n@@ -197,25 +197,25 @@\n  i != 0 %7B%0A//\n-%09\n+ \n %09%09%09output +=\n@@ -222,24 +222,24 @@\n  %22, %22%0A//\n-%09\n+ \n %09%09%7D%0A//\n-%09\n+ \n %09%09if i %3C\n@@ -251,25 +251,25 @@\n s.data) %7B%0A//\n-%09\n+ \n %09%09%09output +=\n@@ -300,17 +300,17 @@\n a%5Bi%5D)%0A//\n-%09\n+ \n %09%09%7D else\n@@ -314,17 +314,17 @@\n lse %7B%0A//\n-%09\n+ \n %09%09%09outpu\n@@ -338,22 +338,22 @@\n %22%0A//\n-%09\n+ \n %09%09%7D%0A//\n-%09\n+ \n %09%7D%0A//\n-%09\n+ \n %09ret\n@@ -365,18 +365,22 @@\n utput%0A//\n-%09%7D\n+ %7D%0A// \n %0Afunc ma\n@@ -926,24 +926,27 @@\n %22debug%22:%0A%09%09%09\n+// \n fmt.Println(\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-15_08-10-12",
+            "content": "@@ -445,16 +445,19 @@\n tdin)%0A%0A%09\n+// \n v := New\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-06-15_08-10-20",
+            "content": "@@ -92,16 +92,19 @@\n  %5B%5DT%0A%7D%0A%0A\n+//%09\n func (s \n@@ -132,16 +132,19 @@\n tring %7B%0A\n+//%09\n %09output \n@@ -149,16 +149,19 @@\n t := %22%22%0A\n+//%09\n %09for i :\n@@ -182,18 +182,21 @@\n data) %7B%0A\n+//\n %09%09\n+%09\n if i != \n@@ -199,16 +199,19 @@\n  != 0 %7B%0A\n+//%09\n %09%09%09outpu\n@@ -220,20 +220,26 @@\n += %22, %22%0A\n+//%09\n %09%09%7D%0A\n+//%09\n %09%09if i %3C\n@@ -253,16 +253,19 @@\n data) %7B%0A\n+//%09\n %09%09%09outpu\n@@ -298,16 +298,19 @@\n ata%5Bi%5D)%0A\n+//%09\n %09%09%7D else\n@@ -312,16 +312,19 @@\n  else %7B%0A\n+//%09\n %09%09%09outpu\n@@ -332,23 +332,32 @@\n  += %22_%22%0A\n+//\n %09%09\n+%09\n %7D%0A\n-%09%7D%0A\n+//%09%09%7D%0A//%09\n %09return \n@@ -363,16 +363,19 @@\n  output%0A\n+//%09\n %7D%0Afunc m\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-06-15_08-10-38",
+            "content": "@@ -96,66 +96,8 @@\n %0A%7D%0A%0A\n-func NewStack%5BT any%5D() *Stack%5BT%5D %7B%0A%09return &Stack%5BT%5D%7B%7D%0A%7D%0A%0A\n func\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-06-15_08-12-41",
+            "content": "@@ -117,17 +117,8 @@\n ny%5D(\n-value int\n ) *S\n@@ -149,36 +149,8 @@\n %5BT%5D%7B\n-%0A%09%09data: make(%5B%5DT, value),%0A%09\n %7D%0A%7D%0A\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-15_08-14-28",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -771,16 +771,19 @@\n it%22:%0A%09%09%09\n+// \n cap, _ :\n@@ -810,16 +810,19 @@\n %5B1%5D)%0A%09%09%09\n+// \n v = NewS\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-06-15_08-15-19",
+            "content": "@@ -193,11 +193,8 @@\n alue\n-, 0\n ),%0A%09\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-06-15_08-17-41",
+            "content": "@@ -104,18 +104,8 @@\n %5B%5DT%0A\n-%09size int%0A\n %7D%0A%0Af\n@@ -193,20 +193,12 @@\n alue\n-),%0A%09%09size:\n+,\n  0\n+)\n ,%0A%09%7D\n@@ -331,14 +331,19 @@\n i %3C \n-s.size\n+len(s.data)\n  %7B%0A%09\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-06-15_08-20-52",
+            "content": "@@ -223,78 +223,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Push(value T) %7B%0A%09s.data = append(s.data, value)%0A%7D%0A%0A\n func\n@@ -875,16 +875,19 @@\n sh%22:%0A%09%09%09\n+// \n for _, p\n@@ -914,16 +914,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09value, \n@@ -952,16 +952,19 @@\n art)%0A%09%09%09\n+// \n %09v.Push(\n@@ -973,16 +973,19 @@\n lue)%0A%09%09%09\n+// \n %7D%0A%09%09case\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-06-15_08-24-27",
+            "content": "@@ -290,16 +290,8 @@\n ue)%0A\n-%09size++%0A\n %7D%0A%0Af\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-06-15_08-24-42",
+            "content": "@@ -287,18 +287,16 @@\n value)%0A%09\n-s.\n size++%0A%7D\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-06-15_08-24-47",
+            "content": "@@ -265,24 +265,32 @@\n data\n-%5Bs.size%5D =\n+ = append(s.data,\n  value\n+)\n %0A%09s.\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-06-15_08-32-54",
+            "content": "@@ -258,150 +258,8 @@\n ) %7B%0A\n-%09if len(s.data) == s.size %7B%0A%09%09aux := make(%5B%5DT, s.size*2)%0A%09%09for i := 0; i %3C s.size; i++ %7B%0A%09%09%09aux%5Bi%5D = s.data%5Bi%5D%0A%09%09%7D%0A%09%09s.data = aux%0A%09%09return%0A%09%7D%0A\n %09s.d\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-06-15_08-52-16",
+            "content": "@@ -384,16 +384,25 @@\n a = aux%0A\n+%09%09return%0A\n %09%7D%0A%09s.da\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-06-15_08-52-28",
+            "content": "@@ -428,58 +428,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Size() int %7B%0A%09return s.size%0A%7D%0A%0A\n func\n@@ -1353,24 +1353,27 @@\n  %22size%22:%0A%09%09%09\n+// \n fmt.Println(\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-06-15_08-54-08",
+            "content": "@@ -478,65 +478,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Top() int %7B%0A%09return s.data%5Bs.size%5D%0A%7D%0A%0A\n func\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-06-15_08-54-35",
+            "content": "@@ -503,21 +503,21 @@\n p() \n-T\n+int\n  %7B%0A%09re\n-sul :=\n+turn\n  s.d\n@@ -532,22 +532,8 @@\n ze%5D%0A\n-%09return resul%0A\n %7D%0A%0Af\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-15_08-56-35",
+            "content": "@@ -530,10 +530,8 @@\n size\n--1\n %5D%0A%09r\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-06-15_08-57-04",
+            "content": "@@ -493,20 +493,19 @@\n ack%5BT%5D) \n-Peek\n+Top\n () T %7B%0A%09\n@@ -1345,16 +1345,19 @@\n op%22:%0A%09%09%09\n+// \n top, err\n@@ -1372,16 +1372,19 @@\n ek()%0A%09%09%09\n+// \n if err !\n@@ -1390,24 +1390,27 @@\n != nil %7B%0A%09%09%09\n+// \n %09fmt.Println\n@@ -1418,16 +1418,19 @@\n err)%0A%09%09%09\n+// \n %7D else %7B\n@@ -1433,16 +1433,19 @@\n se %7B%0A%09%09%09\n+// \n %09fmt.Pri\n@@ -1453,24 +1453,27 @@\n tln(top)%0A%09%09%09\n+// \n %7D%0A%09%09case %22si\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-06-15_08-57-51",
+            "content": "@@ -504,18 +504,9 @@\n k() \n-(T, error)\n+T\n  %7B%0A%09\n@@ -548,13 +548,8 @@\n esul\n-, nil\n %0A%7D%0A%0A\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-06-15_08-58-22",
+            "content": "@@ -566,80 +566,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Clear() %7B%0A%09aux := make(%5B%5DT, s.size)%0A%09s.data = aux%0A%7D%0A%0A\n func\n@@ -1607,16 +1607,19 @@\n ar%22:%0A%09%09%09\n+// \n v.Clear(\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-06-15_08-59-15",
+            "content": "@@ -621,20 +621,8 @@\n ze)%0A\n-%09s.size = 0%0A\n %09s.d\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-06-15_08-59-37",
+            "content": "@@ -596,18 +596,58 @@\n  %7B%0A%09\n-s.size = 0\n+aux := make(%5B%5DT, s.size)%0A%09s.size = 0%0A%09s.data = aux\n %0A%7D%0A%0A\n",
+            "lines": "115"
+        },
+        {
+            "label": "2026-06-15_09-00-06",
+            "content": "@@ -29,18 +29,8 @@\n io%22%0A\n-%09%22errors%22%0A\n %09%22fm\n@@ -610,220 +610,8 @@\n %0A%7D%0A%0A\n-func (s *Stack%5BT%5D) Pop() error %7B%0A%09if s.size == 0 %7B%0A%09%09return errors.New(%22stack is empty%22)%0A%09%7D%0A%09aux := make(%5B%5DT, s.size)%0A%09for i := 0; i %3C s.size; i++ %7B%0A%09%09aux%5Bi%5D = s.data%5Bi%5D%0A%09%7D%0A%09s.data = aux%0A%09s.size--%0A%09return nil%0A%7D%0A%0A\n func\n@@ -1560,16 +1560,19 @@\n op%22:%0A%09%09%09\n+// \n err := v\n@@ -1577,24 +1577,27 @@\n  v.Pop()%0A%09%09%09\n+// \n if err != ni\n@@ -1595,32 +1595,35 @@\n err != nil %7B%0A%09%09%09\n+// \n %09fmt.Println(err\n@@ -1623,24 +1623,27 @@\n tln(err)%0A%09%09%09\n+// \n %7D%0A%09%09case %22cl\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-06-15_09-03-57",
+            "content": "@@ -527,86 +527,8 @@\n ) %7B%0A\n-%09if s.size == 0 %7B%0A%09%09var zero T%0A%09%09return zero, errors.New(%22stack is empty%22)%0A%09%7D%0A\n %09res\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-06-15_09-05-46",
+            "content": "@@ -804,27 +804,22 @@\n ke(%5B%5DT, \n-len(s.data)\n+s.size\n )%0A%09for i\n",
+            "lines": "131"
+        },
+        {
+            "label": "2026-06-15_09-08-58",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"errors\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Stack[T any] struct {\n\tdata []T\n\tsize int\n}\n\nfunc NewStack[T any](value int) *Stack[T] {\n\treturn &Stack[T]{\n\t\tdata: make([]T, value),\n\t\tsize: 0,\n\t}\n}\n\nfunc (s *Stack[T]) Push(value T) {\n\tif len(s.data) == s.size {\n\t\taux := make([]T, s.size*2)\n\t\tfor i := 0; i < s.size; i++ {\n\t\t\taux[i] = s.data[i]\n\t\t}\n\t\ts.data = aux\n\t}\n\ts.data[s.size] = value\n\ts.size++\n}\n\nfunc (s *Stack[T]) Size() int {\n\treturn s.size\n}\n\nfunc (s *Stack[T]) Peek() (T, error) {\n\tif s.size == 0 {\n\t\tvar zero T\n\t\treturn zero, errors.New(\"stack is empty\")\n\t}\n\tresul := s.data[s.size-1]\n\treturn resul, nil\n}\n\nfunc (s *Stack[T]) Clear() {\n\ts.size = 0\n}\n\nfunc (s *Stack[T]) Pop() error {\n\tif s.size == 0 {\n\t\treturn errors.New(\"stack is empty\")\n\t}\n\taux := make([]T, len(s.data))\n\tfor i := 0; i < s.size; i++ {\n\t\taux[i] = s.data[i]\n\t}\n\ts.data = aux\n\ts.size--\n\treturn nil\n}\n\nfunc (s *Stack[T]) String() string {\n\toutput := \"\"\n\tfor i := range cap(s.data) {\n\t\tif i != 0 {\n\t\t\toutput += \", \"\n\t\t}\n\t\tif i < s.size {\n\t\t\toutput += fmt.Sprintf(\"%v\", s.data[i])\n\t\t} else {\n\t\t\toutput += \"_\"\n\t\t}\n\t}\n\treturn output\n}\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := NewStack[int](10)\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tcap, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewStack[int](cap)\n\t\tcase \"push\":\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tv.Push(value)\n\t\t\t}\n\t\tcase \"debug\":\n\t\t\tfmt.Println(v)\n\t\tcase \"top\":\n\t\t\ttop, err := v.Peek()\n\t\t\tif err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t} else {\n\t\t\t\tfmt.Println(top)\n\t\t\t}\n\t\tcase \"size\":\n\t\t\tfmt.Println(v.Size())\n\t\tcase \"pop\":\n\t\t\terr := v.Pop()\n\t\t\tif err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t}\n\t\tcase \"clear\":\n\t\t\tv.Clear()\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "131"
+        }
+    ]
+}
