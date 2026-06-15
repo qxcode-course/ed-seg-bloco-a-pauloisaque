@@ -128,3 +128,6 @@
 2026-06-15 15:51:34, MOVE, v:1, k:ed@pilhado, mode:BACK
 2026-06-15 15:51:37, MOVE, v:1, k:ed@queimando, mode:PICK
 2026-06-15 16:04:12, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-06-15 16:14:29, SELF, v:1, k:ed@editorint, self:1, rate:100, guided:1
+2026-06-15 16:15:41, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-06-15 16:23:33, MOVE, v:1, k:ed@queimando, mode:BACK
