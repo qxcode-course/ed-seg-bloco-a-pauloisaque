@@ -27,8 +27,93 @@
         },
         {
             "label": "2026-06-15_09-46-20",
-            "content": "package main\n\nfunc main() {\n\tlista := NewQueue[T]()\n\ttimes := \"ABCDEFGHI\"\n\tfor i := 0; i < len(times); i++ {\n\t\tlista.Enqueue(times[i])\n\t}\n}\n",
+            "content": "@@ -40,22 +40,17 @@\n ewQueue%5B\n-string\n+T\n %5D()%0A%09tim\n@@ -122,15 +122,8 @@\n eue(\n-string(\n time\n@@ -127,15 +127,14 @@\n imes%5Bi%5D)\n-)\n %0A%09%7D%0A%7D%0A\n",
             "lines": "9"
+        },
+        {
+            "label": "2026-06-29_10-12-17",
+            "content": "@@ -11,22 +11,8 @@\n in%0A%0A\n-import %22fmt%22%0A%0A\n func\n@@ -145,27 +145,8 @@\n %5D))%0A\n-%09%09fmt.Print(lista)%0A\n %09%7D%0A%7D\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-06-29_10-12-52",
+            "content": "@@ -88,15 +88,8 @@\n FGHI\n-JKLMNOP\n %22%0A%09f\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-06-29_10-14-00",
+            "content": "@@ -188,36 +188,6 @@\n %0A%09%7D%0A\n-%09fmt.Print(lista.items.Len())%0A\n %7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-06-29_10-19-35",
+            "content": "@@ -163,16 +163,37 @@\n s%5Bi%5D))%0A%09\n+%09fmt.Print(lista)%0A%09%7D%0A\n %09fmt.Pri\n@@ -218,11 +218,6 @@\n ())%0A\n-%09%7D%0A%09%0A\n %7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-06-29_10-19-44",
+            "content": "@@ -25,111 +25,21 @@\n t%22%0A%0A\n-type Gols struct %7B%0A%09gols1 int%0A%09gols2 int%0A%7D%0A%0Afunc main() %7B%0A%09var gols %5B%5DGols%0A%09for %7B%0A%09%09fmt.Scan(&a, &b)%0A%09%7D\n+func main() %7B\n %0A%09li\n@@ -167,15 +167,19 @@\n ))%0A%09\n-%7D%0A%09for \n+%09fmt.Print(\n list\n@@ -195,70 +195,9 @@\n en()\n- %3E 1 %7B%0A%09%09e1 := string(times%5B0%5D)%0A%09%09e2 := string(times%5B1%5D)%0A%09%09if \n+)\n %0A%09%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-06-29_10-28-05",
+            "content": "@@ -69,31 +69,8 @@\n %0A%7D%0A%0A\n-func quemGanhou %7B%0A%09%0A%7D%0A%0A\n func\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-29_10-49-11",
+            "content": "@@ -25,131 +25,71 @@\n t%22%0A%0A\n-func (q *Queue%5BT%5D) quemGanhou(a int, b int) %7B%0A%09for q.items.Len() %3E 1 %7B%0A%09%09e1 := string(times%5B0%5D)%0A%09%09e2 := string(times%5B1%5D)\n+type Gols struct %7B%0A%09gols1 int%0A%09gols2 int%0A%7D%0A%0Afunc quemGanhou %7B\n %0A%09\n-%7D\n %0A%7D%0A%0A\n@@ -111,17 +111,48 @@\n var \n-a, b int%0A\n+gols %5B%5DGols%0A%09for %7B%0A%09%09fmt.Scan(&a, &b)%0A%09%7D\n %0A%09li\n@@ -177,17 +177,16 @@\n ring%5D()%0A\n-%0A\n %09times :\n@@ -282,64 +282,95 @@\n %0A%09%7D%0A\n-%0A\n %09for \n-%7B%0A%09%09fmt.Scan(&a, &b)%0A%09%09lista.quemGanhou(a, b)%0A%09%7D\n+lista.items.Len() %3E 1 %7B%0A%09%09e1 := string(times%5B0%5D)%0A%09%09e2 := string(times%5B1%5D)%0A%09%09if \n %0A%09\n+%7D\n %0A%09%0A%7D\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-06-29_10-55-27",
+            "content": "@@ -104,107 +104,49 @@\n  := \n-q.Dequeue()%0A%09%09e2 := q.Dequeue()%0A%09%09if a %3E b %7B%0A%09%09%09q.Enqueue(e1)%0A%09%09%7D%0A%09%09if b %3E a %7B%0A%09%09%09q.Enqueue(e2)%0A%09%09%7D\n+string(times%5B0%5D)%0A%09%09e2 := string(times%5B1%5D)\n %0A%09%7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-29_10-58-47",
+            "content": "@@ -397,26 +397,8 @@\n &b)%0A\n-%09%09fmt.Print(a, b)%0A\n %09%09li\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-06-29_11-02-12",
+            "content": "@@ -375,28 +375,8 @@\n %09for\n- i := 0; i %3C 15; i++\n  %7B%0A%09\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-06-29_11-04-14",
+            "content": "@@ -426,16 +426,19 @@\n .Print(a\n+, b\n )%0A%09%09list\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-06-29_11-04-51",
+            "content": "@@ -168,116 +168,36 @@\n )%0A%09%09\n-%09fmt.Println(%22Tirado e colocado%22, e1)%0A%09%09%7D%0A%09%09if b %3E a %7B%0A%09%09%09q.Enqueue(e2)%0A%09%09%09fmt.Println(%22Tirado e colocado%22, \n+%7D%0A%09%09if b %3E a %7B%0A%09%09%09q.Enqueue(\n e2)%0A\n@@ -413,16 +413,31 @@\n &a, &b)%0A\n+%09%09fmt.Print(a)%0A\n %09%09lista.\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-06-29_11-06-58",
+            "content": "@@ -181,38 +181,31 @@\n tln(\n-e1, %22 ganhou com %22, a, %22 gols%22\n+%22Tirado e colocado%22, e1\n )%0A%09%09\n@@ -255,38 +255,31 @@\n tln(\n-e2, %22 ganhou com %22, b, %22 gols%22\n+%22Tirado e colocado%22, e2\n )%0A%09%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-29_11-08-14",
+            "content": "@@ -205,33 +205,24 @@\n a, %22 gols%22)%0A\n-%09%09%09break%0A\n %09%09%7D%0A%09%09if b %3E\n@@ -294,17 +294,8 @@\n s%22)%0A\n-%09%09%09break%0A\n %09%09%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-29_11-09-18",
+            "content": "@@ -169,46 +169,140 @@\n %0A%09%09%09\n-break%0A%09%09%7D%0A%09%09if b %3E a %7B%0A%09%09%09q.Enqueue(e2\n+fmt.Println(e1, %22 ganhou com %22, a, %22 gols%22)%0A%09%09%09break%0A%09%09%7D%0A%09%09if b %3E a %7B%0A%09%09%09q.Enqueue(e2)%0A%09%09%09fmt.Println(e2, %22 ganhou com %22, b, %22 gols%22\n )%0A%09%09\n@@ -557,38 +557,8 @@\n %0A%09%7D%0A\n-%0A%09fmt.Print(lista.Dequeue())%0A%0A\n %09%0A%09%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-06-29_11-14-33",
+            "content": "@@ -474,10 +474,8 @@\n rint\n-ln\n (lis\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-29_11-14-46",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc (q *Queue[T]) quemGanhou(a int, b int) {\n\tfor q.items.Len() > 1 {\n\t\te1 := q.Dequeue()\n\t\te2 := q.Dequeue()\n\t\tif a > b {\n\t\t\tq.Enqueue(e1)\n\t\t\tbreak\n\t\t}\n\t\tif b > a {\n\t\t\tq.Enqueue(e2)\n\t\t\tbreak\n\t\t}\n\t}\n}\n\nfunc main() {\n\tvar a, b int\n\n\tlista := NewQueue[string]()\n\n\ttimes := \"ABCDEFGHIJKLMNOP\"\n\tfor i := 0; i < len(times); i++ {\n\t\tlista.Enqueue(string(times[i]))\n\t}\n\n\tfor i := 0; i < 15; i++ {\n\t\tfmt.Scan(&a, &b)\n\t\tlista.quemGanhou(a, b)\n\t}\n\n\tfmt.Println(lista.Dequeue())\n\n\t\n\t\n}\n",
+            "lines": "39"
         }
     ]
 }

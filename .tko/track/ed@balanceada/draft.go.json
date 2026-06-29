@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-29_11-18-16",
+            "content": "@@ -23,84 +23,8 @@\n mt%22%0A\n-%0Atype Table struct %7B%0A    parenteses int%0A    aspas int%0A    duplaAspas int%0A%7D%0A%0A\n func\n@@ -105,16 +105,16 @@\n + %7B%0A\n-\n         \n %0A   \n@@ -109,16 +109,176 @@\n         \n+if a%5Bi%5D == %22(%22 %7B%0A            for j := i; j %3C len(a); j++ %7B%0A                if a%5Bj%5D == %22)%22 %7B%0A                    break;%0A                %7D%0A            %7D%0A        %7D\n %0A    %7D%0A%7D\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-29_11-21-42",
+            "content": "@@ -96,26 +96,8 @@\n int%0A\n-    colchetes int%0A\n %7D%0A%0Af\n@@ -147,29 +147,8 @@\n &a)%0A\n-    var tabela Table%0A\n     \n@@ -189,265 +189,8 @@\n     \n-if a%5Bi%5D == '(' %7B%0A            tabela.parenteses++%0A        %7D%0A        if a%5Bi%5D == ')' %7B%0A            tabela.parenteses--%0A        %7D%0A        if a%5Bi%5D == '%5B' %7B%0A            tabela.colchetes++%0A        %7D%0A        if a%5Bi%5D == '%5D' %7B%0A            tabela.colchetes--%0A        %7D\n %0A   \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-06-29_11-26-25",
+            "content": "@@ -492,41 +492,6 @@\n   %7D%0A\n-    fmt.Println(tabela.parenteses)%0A\n %7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-29_11-26-56",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -40,17 +40,20 @@\n truct %7B%0A\n-%09\n+    \n parentes\n@@ -63,25 +63,26 @@\n int%0A\n-%09\n+    \n aspas \n+int%0A\n     \n- int%0A%09\n dupl\n@@ -92,17 +92,20 @@\n pas int%0A\n-%09\n+    \n colchete\n@@ -106,17 +106,16 @@\n lchetes \n- \n int%0A%7D%0A%0Af\n@@ -127,17 +127,20 @@\n ain() %7B%0A\n-%09\n+    \n var a st\n@@ -144,17 +144,20 @@\n  string%0A\n-%09\n+    \n fmt.Scan\n@@ -161,17 +161,20 @@\n can(&a)%0A\n-%09\n+    \n var tabe\n@@ -182,17 +182,20 @@\n a Table%0A\n-%09\n+    \n for i :=\n@@ -216,18 +216,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n if a%5Bi%5D \n@@ -237,27 +237,36 @@\n i%5D == '(' %7B%0A\n-%09%09%09\n+            \n tabela.paren\n@@ -269,30 +269,42 @@\n arenteses++%0A\n-%09%09%7D%0A%09%09\n+        %7D%0A        \n if a%5Bi%5D == '\n@@ -304,27 +304,36 @@\n i%5D == ')' %7B%0A\n-%09%09%09\n+            \n tabela.paren\n@@ -340,22 +340,34 @@\n teses--%0A\n-%09%09%7D%0A%09%09\n+        %7D%0A        \n if a%5Bi%5D \n@@ -371,27 +371,36 @@\n i%5D == '%5B' %7B%0A\n-%09%09%09\n+            \n tabela.colch\n@@ -410,14 +410,26 @@\n s++%0A\n-%09%09%7D%0A%09%09\n+        %7D%0A        \n if a\n@@ -445,11 +445,20 @@\n ' %7B%0A\n-%09%09%09\n+            \n tabe\n@@ -476,16 +476,28 @@\n s--%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n fmt.\n@@ -511,21 +511,22 @@\n (tabela.\n-colchet\n+parentes\n es)%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-06-29_11-27-24",
+            "content": "@@ -57,16 +57,48 @@\n ses int%0A\n+%09aspas      int%0A%09duplaAspas int%0A\n %09colchet\n@@ -389,146 +389,36 @@\n %09%7D%0A%09\n-if tabela.colchetes == 0 && tabela.parenteses == 0 %7B%0A        fmt.Print(%22balanceado%22)%0A    %7D else %7B%0A        fmt.Print(%22nao balanceado%22)%0A    %7D\n+fmt.Println(tabela.colchetes)\n %0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-06-29_11-28-41",
+            "content": "@@ -423,18 +423,16 @@\n mt.Print\n-ln\n (%22balanc\n@@ -472,10 +472,8 @@\n rint\n-ln\n (%22na\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-06-29_11-28-52",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Table struct {\n\tparenteses int\n\tcolchetes  int\n}\n\nfunc main() {\n\tvar a string\n\tfmt.Scan(&a)\n\tvar tabela Table\n\tfor i := 0; i < len(a); i++ {\n\t\tif a[i] == '(' {\n\t\t\ttabela.parenteses++\n\t\t}\n\t\tif a[i] == ')' {\n\t\t\ttabela.parenteses--\n\t\t}\n\t\tif a[i] == '[' {\n\t\t\ttabela.colchetes++\n\t\t}\n\t\tif a[i] == ']' {\n\t\t\ttabela.colchetes--\n\t\t}\n\t}\n\tif tabela.colchetes == 0 && tabela.parenteses == 0 {\n        fmt.Println(\"balanceado\")\n    } else {\n        fmt.Println(\"nao balanceado\")\n    }\n}\n",
+            "lines": "33"
+        }
+    ]
+}
