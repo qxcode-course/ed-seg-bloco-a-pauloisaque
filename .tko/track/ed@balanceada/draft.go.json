@@ -32,8 +32,23 @@
         },
         {
             "label": "2026-06-29_11-28-52",
-            "content": "package main\n\nimport \"fmt\"\n\ntype Table struct {\n\tparenteses int\n\tcolchetes  int\n}\n\nfunc main() {\n\tvar a string\n\tfmt.Scan(&a)\n\tvar tabela Table\n\tfor i := 0; i < len(a); i++ {\n\t\tif a[i] == '(' {\n\t\t\ttabela.parenteses++\n\t\t}\n\t\tif a[i] == ')' {\n\t\t\ttabela.parenteses--\n\t\t}\n\t\tif a[i] == '[' {\n\t\t\ttabela.colchetes++\n\t\t}\n\t\tif a[i] == ']' {\n\t\t\ttabela.colchetes--\n\t\t}\n\t}\n\tif tabela.colchetes == 0 && tabela.parenteses == 0 {\n        fmt.Println(\"balanceado\")\n    } else {\n        fmt.Println(\"nao balanceado\")\n    }\n}\n",
+            "content": "@@ -171,163 +171,8 @@\n + %7B%0A\n-        if a%5Bi%5D == ')' && tabela.parenteses == 0 %7B%0A%09%09%09tabela.parenteses--%0A%09%09%7D%0A        if a%5Bi%5D == '%5D' && tabela.colchetes == 0 %7B%0A%09%09%09tabela.parenteses--%0A%09%09%7D%0A\n %09%09if\n",
             "lines": "33"
+        },
+        {
+            "label": "2026-06-29_14-52-18",
+            "content": "@@ -217,29 +217,43 @@\n s == 0 %7B%0A%09%09%09\n-break\n+tabela.parenteses--\n %0A%09%09%7D%0A       \n@@ -302,13 +302,27 @@\n %0A%09%09%09\n-break\n+tabela.parenteses--\n %0A%09%09%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-29_14-53-20",
+            "content": "@@ -225,40 +225,8 @@\n %0A%09%09%09\n-tabela.parenteses--%0A            \n brea\n@@ -288,40 +288,8 @@\n %0A%09%09%09\n-tabela.parenteses--%0A            \n brea\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-29_14-53-37",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Table struct {\n\tparenteses int\n\tcolchetes  int\n}\n\nfunc main() {\n\tvar a string\n\tfmt.Scan(&a)\n\tvar tabela Table\n\tfor i := 0; i < len(a); i++ {\n        if a[i] == ')' && tabela.parenteses == 0 {\n\t\t\ttabela.parenteses--\n            break\n\t\t}\n        if a[i] == ']' && tabela.colchetes == 0 {\n\t\t\ttabela.parenteses--\n            break\n\t\t}\n\t\tif a[i] == '(' {\n\t\t\ttabela.parenteses++\n\t\t}\n\t\tif a[i] == ')' {\n\t\t\ttabela.parenteses--\n\t\t}\n\t\tif a[i] == '[' {\n\t\t\ttabela.colchetes++\n\t\t}\n\t\tif a[i] == ']' {\n\t\t\ttabela.colchetes--\n\t\t}\n\t}\n\tif tabela.colchetes == 0 && tabela.parenteses == 0 {\n        fmt.Println(\"balanceado\")\n    } else {\n        fmt.Println(\"nao balanceado\")\n    }\n}\n",
+            "lines": "41"
         }
     ]
 }

@@ -12,6 +12,14 @@ func main() {
 	fmt.Scan(&a)
 	var tabela Table
 	for i := 0; i < len(a); i++ {
+        if a[i] == ')' && tabela.parenteses == 0 {
+			tabela.parenteses--
+            break
+		}
+        if a[i] == ']' && tabela.colchetes == 0 {
+			tabela.parenteses--
+            break
+		}
 		if a[i] == '(' {
 			tabela.parenteses++
 		}

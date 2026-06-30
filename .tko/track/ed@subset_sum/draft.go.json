@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-29_14-56-03",
+            "content": "@@ -41,168 +41,35 @@\n     \n-var n, sum int%0A    fmt.Scan(&n, &sum)%0A    numeros := make(%5B%5Dint, n)%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&numeros%5Bi%5D)%0A    %7D%0A%7D%0A%0Afunc isSubsetSum() %7B%0A    \n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-29_19-50-00",
+            "content": "@@ -174,337 +174,35 @@\n   %7D%0A\n-    path := make(%5B%5Dint, 0)%0A    var isSubsetSum func(%5B%5Dint)%0A    isSubsetSum = func(path %5B%5Dint) %7B%0A        if len(path) == 2 %7B%0A            fmt.Println(%22true%22)%0A            return %0A        %7D%0A        for _, i := range numeros %7B%0A            path = append(path, i)%0A            isSubsetSum(path)%0A            path = path%5B:1%5D%0A        %7D%0A    %7D\n+%7D%0A%0Afunc isSubsetSum() %7B%0A    \n %0A%7D%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-06-29_20-17-24",
+            "content": "@@ -166,24 +166,51 @@\n s%5Bi%5D)%0A    %7D%0A\n+    path := make(%5B%5Dint, 0)%0A\n     var isSu\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-06-29_20-17-40",
+            "content": "@@ -10,27 +10,21 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-)%0A\n func\n@@ -206,35 +206,8 @@\n nt)%0A\n-    path := make(%5B%5Dint, 0)%0A\n     \n@@ -271,54 +271,8 @@\n 2 %7B%0A\n-            if path%5B0%5D + path%5B1%5D == sum %7B%0A    \n     \n@@ -303,22 +303,8 @@\n e%22)%0A\n-            %7D%0A\n     \n@@ -344,70 +344,30 @@\n  for\n+ _,\n  i := \n-0; i %3C len(numeros); i++ %7B%0A            number :=\n+range\n  numeros\n %5Bi%5D%0A\n@@ -362,19 +362,18 @@\n  numeros\n-%5Bi%5D\n+ %7B\n %0A       \n@@ -401,14 +401,9 @@\n th, \n-number\n+i\n )%0A  \n@@ -458,10 +458,10 @@\n ath%5B\n-1\n :\n+1\n %5D%0A  \n@@ -474,32 +474,10 @@\n %7D%0A    %7D%0A\n-    isSubsetSum(path)%0A\n %7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-06-29_20-30-58",
+            "content": "@@ -20,36 +20,17 @@\n t (%0A\n-%09%22container/list%22%0A\n %09%22fmt%22%0A\n+\n )%0A\n-%0A\n func\n@@ -39,17 +39,20 @@\n ain() %7B%0A\n-%09\n+    \n var n, s\n@@ -58,17 +58,20 @@\n sum int%0A\n-%09\n+    \n fmt.Scan\n@@ -81,17 +81,20 @@\n , &sum)%0A\n-%09\n+    \n numeros \n@@ -111,17 +111,20 @@\n int, n)%0A\n-%09\n+    \n for i :=\n@@ -140,18 +140,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -170,20 +170,26 @@\n ros%5Bi%5D)%0A\n-%09%7D%0A%09\n+    %7D%0A    \n var isSu\n@@ -205,30 +205,27 @@\n unc(\n-*Queue\n %5B\n+%5D\n int\n-%5D\n )%0A\n-%09\n+    \n path := \n NewQ\n@@ -224,26 +224,27 @@\n  := \n-NewQueue%5Bint%5D()%0A%0A%09\n+make(%5B%5Dint, 0)%0A    \n isSu\n@@ -267,183 +267,175 @@\n ath \n-*Queue\n %5B\n+%5D\n int\n-%5D\n ) %7B%0A\n-%09%09if path.items.Len() == 2 %7B%0A%09%09%09if path.items.Front().Value.(int) + path.items.Front().Next().Value.(int) == sum %7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7D%0A%09%09%09return%0A%09%09%7D%0A%09%09\n+        if len(path) == 2 %7B%0A            if path%5B0%5D + path%5B1%5D == sum %7B%0A                fmt.Println(%22true%22)%0A            %7D%0A            return %0A        %7D%0A        \n for \n@@ -466,19 +466,28 @@\n ; i++ %7B%0A\n-%09%09%09\n+            \n number :\n@@ -503,745 +503,142 @@\n %5Bi%5D%0A\n-%09%09%09path.Enqueue(number)%0A%09%09%09isSubsetSum(path)%0A%09%09%09path.Dequeue()%0A%09%09%7D%0A%09%7D%0A%09isSubsetSum(path)%0A%7D%0A%0Atype Queue%5BT any%5D struct %7B%0A%09items *list.List%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7Bitems: list.New()%7D%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Enqueue(item T) %7B%0A%09q.items.PushBack(item)%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Dequeue() T %7B%0A%09if q.items.Len() == 0 %7B%0A%09%09var zero T%0A%09%09return zero // Return zero value if queue is empty%0A%09%7D%0A%09front := q.items.Front().Value.(T)%0A%09q.items.Remove(q.items.Front())%0A%09return front%0A%7D%0A%0Afunc (q *Queue%5BT%5D) IsEmpty() bool %7B%0A%09return q.items.Len() == 0%0A%7D%0A%0Afunc (q *Queue%5BT%5D) String() string %7B%0A%09var result string%0A%09for e := q.items.Front(); e != nil; e = e.Next() %7B%0A%09%09result += fmt.Sprint(e.Value.(T)) + %22 %22%0A%09%7D%0A%09return %22%5B %22 + result + %22%5D%22\n+            path = append(path, number)%0A            isSubsetSum(path)%0A            path = path%5B1:%5D%0A        %7D%0A    %7D%0A    isSubsetSum(path)\n %0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-06-29_20-40-16",
+            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar n, sum int\n\tfmt.Scan(&n, &sum)\n\tnumeros := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&numeros[i])\n\t}\n\tvar isSubsetSum func(*Queue[int])\n\tpath := NewQueue[int]()\n\n\tisSubsetSum = func(path *Queue[int]) {\n\t\tif path.items.Len() == 2 {\n\t\t\tif path.items.Front().Value.(int) + path.items.Front().Next().Value.(int) == sum {\n\t\t\t\tfmt.Println(\"true\")\n\t\t\t}\n\t\t\treturn\n\t\t}\n\t\tfor i := 0; i < len(numeros); i++ {\n\t\t\tnumber := numeros[i]\n\t\t\tpath.Enqueue(number)\n\t\t\tisSubsetSum(path)\n\t\t\tpath.Dequeue()\n\t\t}\n\t}\n\tisSubsetSum(path)\n}\n\ntype Queue[T any] struct {\n\titems *list.List\n}\n\nfunc NewQueue[T any]() *Queue[T] {\n\treturn &Queue[T]{items: list.New()}\n}\n\nfunc (q *Queue[T]) Enqueue(item T) {\n\tq.items.PushBack(item)\n}\n\nfunc (q *Queue[T]) Dequeue() T {\n\tif q.items.Len() == 0 {\n\t\tvar zero T\n\t\treturn zero // Return zero value if queue is empty\n\t}\n\tfront := q.items.Front().Value.(T)\n\tq.items.Remove(q.items.Front())\n\treturn front\n}\n\nfunc (q *Queue[T]) IsEmpty() bool {\n\treturn q.items.Len() == 0\n}\n\nfunc (q *Queue[T]) String() string {\n\tvar result string\n\tfor e := q.items.Front(); e != nil; e = e.Next() {\n\t\tresult += fmt.Sprint(e.Value.(T)) + \" \"\n\t}\n\treturn \"[ \" + result + \"]\"\n}\n",
+            "lines": "67"
+        }
+    ]
+}
