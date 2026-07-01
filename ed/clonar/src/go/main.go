@@ -15,9 +15,16 @@ type Node struct {
 }
 
 func Clone(node *Node) *Node {
-	// TODO
-	_ = node
-	return nil
+	if node == nil {
+		return nil
+	}
+	n := &Node{}
+	n.Value = node.Value
+	n.Left = node.Left
+	Clone(node.Left)
+	n.Right = node.Right
+	Clone(node.Right)
+	return n
 }
 
 // -----------------------------------------------------------------------------------

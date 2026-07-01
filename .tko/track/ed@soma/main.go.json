@@ -2,8 +2,143 @@
     "patches": [
         {
             "label": "2026-06-30_22-34-02",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\nfunc rec_sum(node *Node) int {\n\t_ = node\n\treturn 0\n}\n\nfunc rec_min(node *Node) int {\n\t_ = node\n\treturn 0\n}\n\n// MyShow imprime a \u00e1rvore bin\u00e1ria de forma formatada.\nfunc MyShow(node *Node, nivel int) {\n\t_, _ = node, nivel\n\t// TODO\n}\n\nfunc BShow(node *Node, heranca string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, heranca+\"l\")\n\t}\n\tfor i := 0; i < len(heranca)-1; i++ {\n\t\tif heranca[i] != heranca[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif heranca != \"\" {\n\t\tif heranca[len(heranca)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, heranca+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\troot := create(&parts)\n\tfmt.Println(\"Arvore:\")\n\tBShow(root, \"\")\n\tfmt.Printf(\"Soma: %d, Minimo: %d\\n\", rec_sum(root), rec_min(root))\n}\n",
+            "content": "@@ -159,100 +159,26 @@\n  %7B%0A%09\n-if\n+_ =\n  node\n- == nil %7B%0A%09%09return 0%0A%09%7D%0A%09return node.Value + rec_sum(node.Left) + rec_sum(node.Right)\n+%0A%09return 0\n %0A%7D%0A%0A\n",
             "lines": "83"
+        },
+        {
+            "label": "2026-07-01_09-04-22",
+            "content": "@@ -287,173 +287,26 @@\n  %7B%0A%09\n-if node == nil %7B%0A%09%09return 0%0A%09%7D%0A%09rec_min(node.Right)%0A%09rec_min(node.Left)%0A%09if node.Right.Value %3C node.Left.Value %7B%0A%09%09return node.Right.Value%0A%09%7D%0A%09return node.Left.Value\n+_ = node%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-07-01_09-10-08",
+            "content": "@@ -319,17 +319,8 @@\n %09%7D%0A%09\n-right := \n rec_\n@@ -340,16 +340,8 @@\n t)%0A%09\n-left := \n rec_\n@@ -363,20 +363,42 @@\n %09if \n-right %3C left\n+node.Right.Value %3C node.Left.Value\n  %7B%0A%09\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-07-01_09-11-20",
+            "content": "@@ -424,28 +424,8 @@\n %0A%09%7D%0A\n-%09if left %3C right %7B%0A%09\n %09ret\n@@ -448,21 +448,8 @@\n lue%0A\n-%09%7D%0A%09return 0%0A\n %7D%0A%0A/\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-07-01_09-11-53",
+            "content": "@@ -475,26 +475,17 @@\n %09return \n-node.Value\n+0\n %0A%7D%0A%0A// M\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-07-01_09-18-21",
+            "content": "@@ -320,260 +320,80 @@\n %7D%0A%09r\n-ec_min(node.Right)%0A%09rec_min(node.Left)%0A%09if node.Right != nil && node.Left != nil %7B%0A%09%09if node.Right.Value %3E node.Left.Value %7B%0A%09%09%09return node.Left.Value%0A%09%09%7D%0A%09\n+ight := rec_min(node.Right)%0A%09left := rec_min(node.Left)%0A\n %09if \n-node.Left.Value %3E node.Right.Value %7B%0A%09%09%09return node.Right.Value%0A%09%09%7D%0A%09%7D%0A%09if node.Right != nil\n+right %3C left\n  %7B%0A%09\n@@ -424,32 +424,28 @@\n %0A%09%7D%0A%09if \n-node.Left != nil\n+left %3C right\n  %7B%0A%09%09ret\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-07-01_09-22-15",
+            "content": "@@ -543,24 +543,128 @@\n alue%0A%09%09%7D%0A%09%7D%0A\n+%09if node.Right != nil %7B%0A%09%09return node.Right.Value%0A%09%7D%0A%09if node.Left != nil %7B%0A%09%09return node.Left.Value%0A%09%7D%0A\n %09return node\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-07-01_09-23-57",
+            "content": "@@ -368,25 +368,75 @@\n ode.\n-Value %3C node.Righ\n+Right != nil && node.Left != nil %7B%0A%09%09if node.Right.Value %3E node.Lef\n t.Va\n@@ -435,32 +435,33 @@\n .Left.Value %7B%0A%09%09\n+%09\n return node.Valu\n@@ -456,25 +456,32 @@\n rn node.\n+Left.\n Value%0A\n+%09\n %09%7D%0A\n+%09\n %09if node\n@@ -485,24 +485,30 @@\n ode.\n+Left.\n Value \n-%3C\n+%3E\n  node.\n-Lef\n+Righ\n t.Va\n@@ -513,16 +513,17 @@\n Value %7B%0A\n+%09\n %09%09return\n@@ -528,22 +528,32 @@\n rn node.\n+Right.\n Value%0A\n+%09%09%7D%0A\n %09%7D%0A%09retu\n@@ -555,17 +555,26 @@\n %09return \n-0\n+node.Value\n %0A%7D%0A%0A// M\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-07-01_09-41-43",
+            "content": "@@ -368,23 +368,15 @@\n ode.\n-Right != nil &&\n+Value %3C\n  nod\n@@ -385,37 +385,24 @@\n Right.Value \n-%3C node.Value \n %7B%0A%09%09return n\n@@ -397,38 +397,32 @@\n %7B%0A%09%09return node.\n-Right.\n Value%0A%09%7D%0A%09if nod\n@@ -427,33 +427,8 @@\n ode.\n-Left != nil && node.Left.\n Valu\n@@ -432,24 +432,29 @@\n alue %3C node.\n+Left.\n Value %7B%0A%09%09re\n@@ -459,30 +459,24 @@\n return node.\n-Right.\n Value%0A%09%7D%0A%09re\n@@ -480,26 +480,17 @@\n %09return \n-node.Value\n+0\n %0A%7D%0A%0A// M\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-07-01_09-45-55",
+            "content": "@@ -506,27 +506,28 @@\n return node.\n-Lef\n+Righ\n t.Value%0A%09%7D%0A%09\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-07-01_09-47-47",
+            "content": "@@ -278,17 +278,8 @@\n Node\n-, aux int\n ) in\n@@ -318,45 +318,8 @@\n %0A%09%7D%0A\n-%09if aux == 0 %7B%0A%09%09aux = node.Value%0A%09%7D%0A\n %09rec\n@@ -333,21 +333,16 @@\n de.Right\n-, aux\n )%0A%09rec_m\n@@ -353,21 +353,16 @@\n ode.Left\n-, aux\n )%0A%09if no\n@@ -403,38 +403,20 @@\n e %3C \n-aux %7B%0A%09%09aux = node.Right\n+node\n .Value\n+ %7B\n %0A%09%09r\n@@ -487,37 +487,20 @@\n e %3C \n-aux %7B%0A%09%09aux = node.Left\n+node\n .Value\n+ %7B\n %0A%09%09r\n@@ -1645,18 +1645,8 @@\n %22%22)%0A\n-%09aux := 0%0A\n %09fmt\n@@ -1710,13 +1710,8 @@\n root\n-, aux\n ))%0A%7D\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-07-01_09-59-59",
+            "content": "@@ -623,17 +623,26 @@\n %09return \n-0\n+node.Value\n %0A%7D%0A%0A// M\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-07-01_10-00-15",
+            "content": "@@ -623,19 +623,17 @@\n %09return \n-aux\n+0\n %0A%7D%0A%0A// M\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-07-01_10-00-20",
+            "content": "@@ -623,17 +623,19 @@\n %09return \n-0\n+aux\n %0A%7D%0A%0A// M\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-07-01_10-00-26",
+            "content": "@@ -266,32 +266,41 @@\n c_min(node *Node\n+, aux int\n ) int %7B%0A%09if node\n@@ -326,28 +326,96 @@\n 0%0A%09%7D\n- %0A%09min := node.Value\n+%0A%09if aux == 0 %7B%0A%09%09aux = node.Value%0A%09%7D%0A%09rec_min(node.Right, aux)%0A%09rec_min(node.Left, aux)\n %0A%09if\n@@ -455,36 +455,55 @@\n Value %3C \n-node\n+aux %7B%0A%09%09aux = node.Right\n .Value\n- %7B\n %0A%09%09\n-min =\n+return\n  node.Ri\n@@ -561,26 +561,19 @@\n e %3C \n-node.Value\n+aux\n  %7B%0A%09%09\n-min\n+aux\n  = n\n@@ -592,49 +592,34 @@\n ue%0A%09\n-%7D%0A\n %09re\n-c_min(node.Left)%0A%09rec_min(node.Left)\n+turn node.Left.Value%0A%09%7D\n %0A%09re\n@@ -623,19 +623,17 @@\n %09return \n-min\n+0\n %0A%7D%0A%0A// M\n@@ -1723,16 +1723,26 @@\n ot, %22%22)%0A\n+%09aux := 0%0A\n %09fmt.Pri\n@@ -1798,13 +1798,18 @@\n min(root\n+, aux\n ))%0A%7D%0A\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-07-01_10-35-03",
+            "content": "@@ -319,48 +319,8 @@\n %09%7D %0A\n-%09rec_min(node.Left)%0A%09rec_min(node.Left)%0A\n %09min\n@@ -502,16 +502,54 @@\n lue%0A%09%7D%0A%09\n+rec_min(node.Left)%0A%09rec_min(node.Left)\n %0A%09return\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-07-01_10-35-18",
+            "content": "@@ -313,16 +313,57 @@\n urn 0%0A%09%7D\n+ %0A%09rec_min(node.Left)%0A%09rec_min(node.Left)\n %0A%09min :=\n@@ -546,46 +546,8 @@\n %09%7D%0A%09\n-rec_min(node.Left)%0A%09rec_min(node.Left)\n %0A%09re\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-07-01_10-35-33",
+            "content": "@@ -500,16 +500,55 @@\n alue%0A%09%7D%0A\n+%09rec_min(node.Left)%0A%09rec_min(node.Left)\n %0A%09return\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-07-01_10-36-00",
+            "content": "@@ -419,30 +419,8 @@\n lue%0A\n-%09%09rec_min(node.Right)%0A\n %09%7D%0A%09\n@@ -501,29 +501,8 @@\n lue%0A\n-%09%09rec_min(node.Left)%0A\n %09%7D%0A%0A\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-07-01_10-36-39",
+            "content": "@@ -309,17 +309,17 @@\n %09return \n-1\n+0\n %0A%09%7D%0A%09min\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-07-01_10-36-58",
+            "content": "@@ -556,9 +556,11 @@\n urn \n-2\n+min\n %0A%7D%0A%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-07-01_10-37-05",
+            "content": "@@ -555,14 +555,8 @@\n turn\n- min +\n  2%0A%7D\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-07-01_10-37-15",
+            "content": "@@ -313,62 +313,120 @@\n urn \n-0\n+1\n %0A%09%7D%0A%09\n-rec_min(node.Right)%0A%09rec_min(node.Left)%0A%09return \n+min := node.Value%0A%09if node.Right != nil && node.Right.Value %3C node.Value %7B%0A%09%09min = node.Right.Value%0A%09%09rec_\n min(\n@@ -435,17 +435,24 @@\n de.Right\n-,\n+)%0A%09%7D%0A%09if\n  node.Le\n@@ -457,61 +457,41 @@\n Left\n-)%0A%7D%0A%0Afunc min(a *Node, b *Node) int %7B%0A%09if a\n+ != nil && node.Left\n .Value \n-%3E b\n+%3C node\n .Val\n@@ -501,25 +501,54 @@\n %7B%0A%09%09\n-return b.Value%0A%09%7D\n+min = node.Left.Value%0A%09%09rec_min(node.Left)%0A%09%7D%0A\n %0A%09re\n@@ -556,15 +556,15 @@\n urn \n-a.Value\n+min + 2\n %0A%7D%0A%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-07-01_10-44-16",
+            "content": "@@ -286,79 +286,8 @@\n t %7B%0A\n-%09return rec_min_aux(Clone(node))%0A%7D%0A%0Afunc rec_min_aux(node *Node) int %7B%0A\n %09if \n@@ -360,204 +360,101 @@\n t)%0A%09\n-if node.Right != nil && node.Right.Value %3C node.Value %7B%0A%09%09node.Value = node.Right.Value%0A%09%09return node.Value%0A%09%7D%0A%09if node.Left != nil && node.Left.Value %3C node.Value %7B%0A%09%09node.Value = node.Left\n+return min(node.Right, node.Left)%0A%7D%0A%0Afunc min(a *Node, b *Node) int %7B%0A%09if a.Value %3E b\n .Value\n+ %7B\n %0A%09%09r\n@@ -455,28 +455,25 @@\n  %7B%0A%09%09return \n-node\n+b\n .Value%0A%09%7D%0A%09r\n@@ -482,211 +482,15 @@\n urn \n-node.Value%0A%7D%0A%0Afunc Clone(node *Node) *Node %7B%0A%09if node == nil %7B%0A%09%09return nil%0A%09%7D%0A%09n := &Node%7B%7D%0A%09n.Value = node.Value%0A%09n.Left = node.Left%0A%09Clone(node.Left)%0A%09n.Right = node.Right%0A%09Clone(node.Right)%0A%09return n\n+a.Value\n %0A%7D%0A%0A\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-07-01_10-48-54",
+            "content": "@@ -389,28 +389,24 @@\n %0A%09%7D%0A%09rec_min\n-_aux\n (node.Right)\n@@ -410,28 +410,24 @@\n ht)%0A%09rec_min\n-_aux\n (node.Left)%0A\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-07-01_10-50-59",
+            "content": "@@ -489,35 +489,16 @@\n e.Value \n-%7C%7C node.Value == 0 \n %7B%0A%09%09node\n@@ -603,27 +603,8 @@\n lue \n-%7C%7C node.Value == 0 \n %7B%0A%09%09\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-07-01_10-52-07",
+            "content": "@@ -481,32 +481,51 @@\n ue %3C node.Value \n+%7C%7C node.Value == 0 \n %7B%0A%09%09node.Value =\n@@ -618,16 +618,35 @@\n e.Value \n+%7C%7C node.Value == 0 \n %7B%0A%09%09node\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-07-01_10-52-27",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\nfunc rec_sum(node *Node) int {\n\tif node == nil {\n\t\treturn 0\n\t}\n\treturn node.Value + rec_sum(node.Left) + rec_sum(node.Right)\n}\n\nfunc rec_min(node *Node) int {\n\treturn rec_min_aux(Clone(node))\n}\n\nfunc rec_min_aux(node *Node) int {\n\tif node == nil {\n\t\treturn 0\n\t}\n\trec_min_aux(node.Right)\n\trec_min_aux(node.Left)\n\tif node.Right != nil && node.Right.Value < node.Value {\n\t\tnode.Value = node.Right.Value\n\t\treturn node.Value\n\t}\n\tif node.Left != nil && node.Left.Value < node.Value {\n\t\tnode.Value = node.Left.Value\n\t\treturn node.Value\n\t}\n\treturn node.Value\n}\n\nfunc Clone(node *Node) *Node {\n\tif node == nil {\n\t\treturn nil\n\t}\n\tn := &Node{}\n\tn.Value = node.Value\n\tn.Left = node.Left\n\tClone(node.Left)\n\tn.Right = node.Right\n\tClone(node.Right)\n\treturn n\n}\n\n// MyShow imprime a \u00e1rvore bin\u00e1ria de forma formatada.\nfunc MyShow(node *Node, nivel int) {\n\t_, _ = node, nivel\n\t// TODO\n}\n\nfunc BShow(node *Node, heranca string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, heranca+\"l\")\n\t}\n\tfor i := 0; i < len(heranca)-1; i++ {\n\t\tif heranca[i] != heranca[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif heranca != \"\" {\n\t\tif heranca[len(heranca)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, heranca+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\troot := create(&parts)\n\tfmt.Println(\"Arvore:\")\n\tBShow(root, \"\")\n\tfmt.Printf(\"Soma: %d, Minimo: %d\\n\", rec_sum(root), rec_min(root))\n}\n",
+            "lines": "114"
         }
     ]
 }

@@ -16,7 +16,7 @@ type Node struct {
 }
 
 func compare(a, b *Node) int {
-	_, _ = a, b
+	
 	return 0
 }
 

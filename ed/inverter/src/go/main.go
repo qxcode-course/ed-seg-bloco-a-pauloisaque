@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -16,8 +15,14 @@ type Node struct {
 }
 
 func Reverse(node *Node) {
-	_ = node
-	// TODO
+	if node == nil {
+		return
+	}
+	aux := node.Left
+	node.Left = node.Right
+	node.Right = aux
+	Reverse(node.Left)
+	Reverse(node.Right)
 }
 
 // -----------------------------------------------------------------------------------

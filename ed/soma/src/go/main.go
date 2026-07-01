@@ -16,13 +16,44 @@ type Node struct {
 }
 
 func rec_sum(node *Node) int {
-	_ = node
-	return 0
+	if node == nil {
+		return 0
+	}
+	return node.Value + rec_sum(node.Left) + rec_sum(node.Right)
 }
 
 func rec_min(node *Node) int {
-	_ = node
-	return 0
+	return rec_min_aux(Clone(node))
+}
+
+func rec_min_aux(node *Node) int {
+	if node == nil {
+		return 0
+	}
+	rec_min_aux(node.Right)
+	rec_min_aux(node.Left)
+	if node.Right != nil && node.Right.Value < node.Value {
+		node.Value = node.Right.Value
+		return node.Value
+	}
+	if node.Left != nil && node.Left.Value < node.Value {
+		node.Value = node.Left.Value
+		return node.Value
+	}
+	return node.Value
+}
+
+func Clone(node *Node) *Node {
+	if node == nil {
+		return nil
+	}
+	n := &Node{}
+	n.Value = node.Value
+	n.Left = node.Left
+	Clone(node.Left)
+	n.Right = node.Right
+	Clone(node.Right)
+	return n
 }
 
 // MyShow imprime a árvore binária de forma formatada.
