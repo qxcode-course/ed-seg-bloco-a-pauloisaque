@@ -1,0 +1,4 @@
+{"ts":1782823211,"hash":"db3b03f6fbe0dc132b6c32a2c7aa83378f95cb6a1a54ff9c1f1243dd3ad41413","mode":"full","content":"H4sIAD25Q2oC/ytITM5OTE9VyE3MzOPKzC3ILypRUErLLVHiSivNSwYLa2gqVHMpAAFQWC+gKDOvJCdPQ8kjNScnX0chPL8oJ0VRSZOrlgsAdYpEcEsAAAA="}
+{"ts":1782830874,"hash":"1d3449644a7fab426b56517f7002d18b0c835a37e89964ca7426a6445346b1f2","mode":"diff","ops":[{"tag":"replace","a1":3,"a2":4,"text":"    var texto string\n    var \n"}]}
+{"ts":1782830899,"hash":"d805f7d67467b293d2d96eef5deed2ed934210c97476e2442f133e2f76e29068","mode":"diff","ops":[{"tag":"replace","a1":4,"a2":5,"text":"    var l int\n    fmt.Scan(&texto)\n    fmt.Scan(&l)\n"}]}
+{"ts":1782830929,"hash":"560ddf4a180ca97b81d0f4c64e03227ba7d71e4d3335b87d6b820c05ecb01f25","mode":"diff","ops":[{"tag":"insert","a1":7,"a2":7,"text":"    funcao()\n"},{"tag":"insert","a1":8,"a2":8,"text":"\nfunc funcao() {\n    \n}\n"}]}

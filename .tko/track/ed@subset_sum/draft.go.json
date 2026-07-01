@@ -27,8 +27,48 @@
         },
         {
             "label": "2026-06-29_20-40-16",
-            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar n, sum int\n\tfmt.Scan(&n, &sum)\n\tnumeros := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&numeros[i])\n\t}\n\tvar isSubsetSum func(*Queue[int])\n\tpath := NewQueue[int]()\n\n\tisSubsetSum = func(path *Queue[int]) {\n\t\tif path.items.Len() == 2 {\n\t\t\tif path.items.Front().Value.(int) + path.items.Front().Next().Value.(int) == sum {\n\t\t\t\tfmt.Println(\"true\")\n\t\t\t}\n\t\t\treturn\n\t\t}\n\t\tfor i := 0; i < len(numeros); i++ {\n\t\t\tnumber := numeros[i]\n\t\t\tpath.Enqueue(number)\n\t\t\tisSubsetSum(path)\n\t\t\tpath.Dequeue()\n\t\t}\n\t}\n\tisSubsetSum(path)\n}\n\ntype Queue[T any] struct {\n\titems *list.List\n}\n\nfunc NewQueue[T any]() *Queue[T] {\n\treturn &Queue[T]{items: list.New()}\n}\n\nfunc (q *Queue[T]) Enqueue(item T) {\n\tq.items.PushBack(item)\n}\n\nfunc (q *Queue[T]) Dequeue() T {\n\tif q.items.Len() == 0 {\n\t\tvar zero T\n\t\treturn zero // Return zero value if queue is empty\n\t}\n\tfront := q.items.Front().Value.(T)\n\tq.items.Remove(q.items.Front())\n\treturn front\n}\n\nfunc (q *Queue[T]) IsEmpty() bool {\n\treturn q.items.Len() == 0\n}\n\nfunc (q *Queue[T]) String() string {\n\tvar result string\n\tfor e := q.items.Front(); e != nil; e = e.Next() {\n\t\tresult += fmt.Sprint(e.Value.(T)) + \" \"\n\t}\n\treturn \"[ \" + result + \"]\"\n}\n",
+            "content": "@@ -16,16 +16,34 @@\n mport (%0A\n+%09%22container/list%22%0A\n %09%22fmt%22%0A)\n@@ -174,10 +174,1070 @@\n %5Bi%5D)%0A%09%7D%0A\n+%09var isSubsetSum func(*Queue%5Bint%5D)%0A%09path := NewQueue%5Bint%5D()%0A%0A%09isSubsetSum = func(path *Queue%5Bint%5D) %7B%0A%09%09if path.items.Len() == 2 %7B%0A%09%09%09if path.items.Front().Value.(int) + path.items.Front().Next().Value.(int) == sum %7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7D%0A%09%09%09return%0A%09%09%7D%0A%09%09for i := 0; i %3C len(numeros); i++ %7B%0A%09%09%09number := numeros%5Bi%5D%0A%09%09%09path.Enqueue(number)%0A%09%09%09isSubsetSum(path)%0A%09%09%09path.Dequeue()%0A%09%09%7D%0A%09%7D%0A%09isSubsetSum(path)%0A%7D%0A%0Atype Queue%5BT any%5D struct %7B%0A%09items *list.List%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7Bitems: list.New()%7D%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Enqueue(item T) %7B%0A%09q.items.PushBack(item)%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Dequeue() T %7B%0A%09if q.items.Len() == 0 %7B%0A%09%09var zero T%0A%09%09return zero // Return zero value if queue is empty%0A%09%7D%0A%09front := q.items.Front().Value.(T)%0A%09q.items.Remove(q.items.Front())%0A%09return front%0A%7D%0A%0Afunc (q *Queue%5BT%5D) IsEmpty() bool %7B%0A%09return q.items.Len() == 0%0A%7D%0A%0Afunc (q *Queue%5BT%5D) String() string %7B%0A%09var result string%0A%09for e := q.items.Front(); e != nil; e = e.Next() %7B%0A%09%09result += fmt.Sprint(e.Value.(T)) + %22 %22%0A%09%7D%0A%09return %22%5B %22 + result + %22%5D%22%0A\n %7D%0A\n",
             "lines": "67"
+        },
+        {
+            "label": "2026-06-30_08-47-39",
+            "content": "@@ -107,32 +107,8 @@\n  n)%0A\n-%09path := make(%5B%5Dint, 0)%0A\n %09for\n@@ -160,330 +160,6 @@\n %0A%09%7D%0A\n-%09print(isSubset(path, numeros, sum))%0A%7D%0A%0Afunc isSubset(path %5B%5Dint, numeros %5B%5Dint, sum int) bool %7B%0A%09if len(path) == 2 %7B%0A%09%09if path%5B0%5D + path%5B1%5D == sum %7B%0A%09%09%09return true%0A%09%09%7D%0A%09%09return false%0A%09%7D%0A%09for i := 0; i %3C len(numeros); i++ %7B%0A%09%09path = append(path, numeros%5Bi%5D)%0A%09%09isSubset(path, numeros, sum)%0A%09%09path = path%5B1:%5D%0A%09%7D%0A%09return false%0A\n %7D%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-06-30_09-07-47",
+            "content": "@@ -181,19 +181,22 @@\n i%5D)%0A%09%7D%0A%09\n-if \n+print(\n isSubset\n@@ -219,68 +219,9 @@\n sum)\n- %7B%0A%09%09fmt.Println(%22true%22)%0A%09%7D else %7B%0A%09%09fmt.Println(%22false%22)%0A%09%7D\n+)\n %0A%7D%0A%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-06-30_09-08-30",
+            "content": "@@ -543,10 +543,10 @@\n ath%5B\n-:\n 1\n+:\n %5D%0A%09%7D\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-06-30_09-10-27",
+            "content": "@@ -184,25 +184,8 @@\n %0A%09%7D%0A\n-%09result := false%0A\n %09if \n@@ -211,24 +211,16 @@\n ros, sum\n-, result\n ) %7B%0A%09%09fm\n@@ -328,21 +328,8 @@\n  int\n-, result bool\n ) bo\n@@ -395,36 +395,17 @@\n %09%09re\n-sult = true%0A%09%09%09return result\n+turn true\n %0A%09%09%7D\n@@ -527,16 +527,8 @@\n  sum\n-, result\n )%0A%09%09\n@@ -550,33 +550,16 @@\n %0A%09%7D%0A\n-%09path = path%5B:0%5D%0A\n %09return \n resu\n@@ -558,13 +558,12 @@\n urn \n-result\n+false\n %0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-06-30_09-21-21",
+            "content": "@@ -363,16 +363,21 @@\n lt bool)\n+ bool\n  %7B%0A%09if l\n@@ -446,19 +446,16 @@\n ue%0A%09\n-%09%7D%0A\n %09%09return\n %0A%09%7D%0A\n@@ -450,16 +450,42 @@\n %09%09return\n+ result%0A%09%09%7D%0A%09%09return false\n %0A%09%7D%0A%09for\n@@ -594,31 +594,8 @@\n lt)%0A\n-%09%09if len(path) == 1 %7B%0A%09\n %09%09pa\n@@ -609,39 +609,14 @@\n th%5B:\n-0\n+1\n %5D%0A\n-%09\n %09%7D%0A\n-%09%09if len(path) == 2 %7B%0A%09%09\n %09pat\n@@ -629,24 +629,24 @@\n th%5B:\n-1%5D%0A%09%09%7D%0A%09%7D%0A%09return\n+0%5D%0A%09return result\n %0A%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-06-30_09-34-53",
+            "content": "@@ -198,16 +198,19 @@\n  false%0A%09\n+if \n isSubset\n@@ -234,27 +234,15 @@\n um, \n-&\n result)\n-%0A%09if result\n  %7B%0A%09\n@@ -358,17 +358,16 @@\n  result \n-*\n bool) %7B%0A\n@@ -426,9 +426,8 @@\n %0A%09%09%09\n-*\n resu\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-06-30_09-37-14",
+            "content": "@@ -579,33 +579,95 @@\n )%0A%09%09\n-path = path%5B:len(path)-1%5D\n+if len(path) == 1 %7B%0A%09%09%09path = path%5B:0%5D%0A%09%09%7D%0A%09%09if len(path) == 2 %7B%0A%09%09%09path = path%5B:1%5D%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-30_09-52-17",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar n, sum int\n\tfmt.Scan(&n, &sum)\n\tnumeros := make([]int, n)\n\tpath := make([]int, 0)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&numeros[i])\n\t}\n\tresult := false\n\tisSubset(path, numeros, sum, &result)\n\tif result {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n\nfunc isSubset(path []int, numeros []int, sum int, result *bool) {\n\tif len(path) == 2 {\n\t\tif path[0] + path[1] == sum {\n\t\t\t*result = true\n\t\t}\n\t\treturn\n\t}\n\tfor i := 0; i < len(numeros); i++ {\n\t\tpath = append(path, numeros[i])\n\t\tisSubset(path, numeros, sum, result)\n\t\tpath = path[:len(path)-1]\n\t}\n\treturn\n}\n",
+            "lines": "37"
         }
     ]
 }
