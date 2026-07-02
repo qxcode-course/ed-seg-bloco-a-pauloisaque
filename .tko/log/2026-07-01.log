@@ -216,3 +216,20 @@
 2026-07-01 19:29:20, MOVE, v:1, k:ed@caminho, mode:EDIT
 2026-07-01 19:29:20, MOVE, v:1, k:ed@caminho, mode:EDIT
 2026-07-01 19:30:02, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-07-01 19:50:03, MOVE, v:1, k:ed@dfs_read, mode:DOWN
+2026-07-01 19:50:05, MOVE, v:1, k:ed@dfs_read, mode:PICK
+2026-07-01 19:50:16, MOVE, v:1, k:ed@dfs_read, mode:BACK
+2026-07-01 19:51:14, MOVE, v:1, k:ed@ilhas, mode:DOWN
+2026-07-01 19:51:24, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-07-01 19:52:49, EXEC, v:1, k:ed@ilhas, mode:FULL, size:31, fail:COMP
+2026-07-01 19:53:00, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:0, size:29
+2026-07-01 19:50:03, MOVE, v:1, k:ed@dfs_read, mode:EDIT
+2026-07-01 19:51:14, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-07-01 19:52:58, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-07-01 20:01:13, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-07-01 20:03:35, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-07-01 20:04:10, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-07-01 20:13:11, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-07-01 20:14:48, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-07-01 20:18:36, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-07-01 20:18:28, MOVE, v:1, k:ed@ilhas, mode:EDIT
